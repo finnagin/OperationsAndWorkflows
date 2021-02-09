@@ -3,10 +3,10 @@ This document will catalogue the various design decisions that need to be made/w
 
 # Current design questions
 
-1. Operate on multiple messages
-    1. URI/URL or
-    1. POSTing the message itself or
-    1. Both
+1. Operate on existing/large/multiple messages
+    1. POSTing the message itself - this MUST be supported by all services
+    1. POSTing a URI/URL where the message can be obtained - this MAY be used where supported
+       - use of this feature MUST be negotiated in a way that requires no support of any kind from services that choose not to implement it
 1. Communications of operations
     1. Generic endpoint, upload, designate what operation you want to perform. (decided 1/12/21)
 1. How do you return operations that were actually done
