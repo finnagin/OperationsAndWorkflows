@@ -72,6 +72,6 @@
 
 - **no orphaned edges**: The `subject` and `object` for all qedges and kedges MUST map to qnode and knode keys, respectively.
 - **no orphaned bindings**: Each binding MUST map a knode or kedge key to a qnode or qedge key, respectively, OR to the dummy id “_”.
-- [optional] unbound things: There MAY be un-bound qnodes, qedges, knodes, and/or kedges.
+- **[optional] unbound things**: There MAY be un-bound qnodes, qedges, knodes, and/or kedges.
 - **unique query graph ids**: All qnode and qedge keys MUST be unique within the qgraph.
 - **unique knowledge graph ids**: All knode and kedge keys MUST be unique globally. i.e. the same id should not be used to refer to two distinct kedges, even in response to two completely distinct queries.
