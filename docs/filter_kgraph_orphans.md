@@ -1,6 +1,8 @@
 # filter kgraph (orphans)
 
-_subclass of [filter_kgraph](./filter_kgraph.md)_This operation removes kgraph elements that are not referenced by any results.
+_subclass of [filter_kgraph](./filter_kgraph.md)_
+
+This operation removes kgraph elements that are not referenced by any results.
 
 ### examples
 

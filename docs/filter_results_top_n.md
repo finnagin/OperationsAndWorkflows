@@ -1,6 +1,8 @@
 # filter results (top-n)
 
-_subclass of [filter_results](./filter_results.md)_This operation truncates the results to at most `max_results` that appear in the TRAPI JSON message.
+_subclass of [filter_results](./filter_results.md)_
+
+This operation truncates the results to at most `max_results` that appear in the TRAPI JSON message.
 
 ### examples
 

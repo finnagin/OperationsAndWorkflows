@@ -2,7 +2,8 @@
 
 {% if 'subclass_of' in data -%}
 _subclass of [{{ data.subclass_of }}](./{{ data.subclass_of }}.md)_
-{%- endif -%}{{ data.description }}
+
+{% endif -%}{{ data.description }}
 
 {% if data.examples -%}
 ### examples
