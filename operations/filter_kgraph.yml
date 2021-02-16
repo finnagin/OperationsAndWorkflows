@@ -1,0 +1,9 @@
+id: filter_kgraph
+name: filter kgraph
+description: This operation removes kgraph elements (nodes and/or edges).
+input_requirements: []
+output_guarantees: []
+allowed_changes:
+- remove knodes
+- remove kedges
+parameters: {}

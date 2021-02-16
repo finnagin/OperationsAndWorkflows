@@ -1,0 +1,8 @@
+id: filter_results
+name: filter results
+description: This operation allows the TRAPI server to remove elements from the list of results.
+input_requirements: []
+output_guarantees: []
+allowed_changes:
+- remove results
+parameters: {}
