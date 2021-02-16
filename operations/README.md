@@ -1,3 +1,7 @@
+# Translator Operations
+
+[Operation Index](../docs/index.md)
+
 ## rules
 
 - all of these operations are predicated on adherence to the TRAPI OpenAPI spec
