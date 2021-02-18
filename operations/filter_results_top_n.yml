@@ -13,10 +13,10 @@ allowed_changes:
 parameters:
   type: object
   properties:
-  - name: max_results
-    description: The maximum number of results to return. If not provided all results will be returned.
-    type: integer
-    minimum: 0
-    example: 50
+    max_results:
+      description: The maximum number of results to return. If not provided all results will be returned.
+      type: integer
+      minimum: 0
+      example: 50
   required:
   - max_results
