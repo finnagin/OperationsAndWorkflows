@@ -14,7 +14,7 @@ parameters:
   type: object
   properties:
     max_results:
-      description: The maximum number of results to return. If not provided all results will be returned.
+      description: The maximum number of results to return.
       type: integer
       minimum: 0
       example: 50
