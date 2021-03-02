@@ -1,0 +1,13 @@
+id: fill
+name: fill
+description: This operation adds knodes and kedges.
+examples:
+- input: fill_and_bind/messages/01_qgraph.json
+  output: fill_and_bind/messages/02_kgraph.json
+input_requirements: []
+output_guarantees:
+- kgraph exists
+allowed_changes:
+- add knodes
+- add kedges
+parameters: {}
