@@ -15,6 +15,9 @@
             "$ref": "#/definitions/OperationFilterKgraph"
         },
         {
+            "$ref": "#/definitions/OperationCompleteResults"
+        },
+        {
             "$ref": "#/definitions/OperationFilterResultsTopN"
         },
         {
@@ -77,6 +80,22 @@
                     "type": "string",
                     "enum": [
                         "filter_kgraph"
+                    ]
+                },
+                "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationCompleteResults": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "complete_results"
                     ]
                 },
                 "parameters": {}

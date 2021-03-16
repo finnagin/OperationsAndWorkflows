@@ -1,6 +1,6 @@
 # fill
 
-This operation adds knodes and kedges.
+This operation adds knodes and kedges. Implementations of this operation are _unique_; their behavior is not fully-specified by the operation parameters.
 
 ### examples
 
