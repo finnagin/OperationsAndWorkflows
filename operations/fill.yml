@@ -11,4 +11,20 @@ output_guarantees:
 allowed_changes:
 - add knodes
 - add kedges
-parameters: {}
+parameters:
+  type: object
+  oneOf:
+  - properties:
+      allowlist:
+        type: array
+        description: List of knowledge providers/sources that may be used to provide knowledge.
+        example: ['icees']
+        minLength: 1
+    additionalProperties: false
+  - properties:
+      denylist:
+        type: array
+        description: List of knowledge providers/sources that may NOT be used to provide knowledge.
+        example: ['ctd']
+        minLength: 1
+    additionalProperties: false
