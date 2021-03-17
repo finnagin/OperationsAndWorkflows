@@ -3,7 +3,7 @@ name: bind
 description: This operation adds results binding kgraph elements to qgraph elements.
 examples:
 - input: fill_and_bind/messages/02_kgraph.json
-  output: fill_and_bind/messages/03_results.json
+  output: fill_and_bind/messages/03_partial_results.json
 input_requirements:
 - qgraph exists
 - kgraph exists

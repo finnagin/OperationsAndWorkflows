@@ -4,7 +4,7 @@ This operation adds results binding kgraph elements to qgraph elements.
 
 ### examples
 
-- [input](../examples/fill_and_bind/messages/02_kgraph.json), [output](../examples/fill_and_bind/messages/03_results.json)
+- [input](../examples/fill_and_bind/messages/02_kgraph.json), [output](../examples/fill_and_bind/messages/03_partial_results.json)
 
 ### input requirements
 
@@ -18,6 +18,7 @@ This operation adds results binding kgraph elements to qgraph elements.
 ### allowed changes
 
 - add results
+- change qgraph
 
 ### parameters
 
