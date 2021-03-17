@@ -1,0 +1,32 @@
+{
+    "query_graph": {
+        "nodes": {
+            "type-2 diabetes": {
+                "id": "MONDO:0005148"
+            },
+            "drug": {
+                "category": "biolink:ChemicalSubstance"
+            },
+            "gene": {
+                "category": "biolink:Gene"
+            }
+        },
+        "edges": {
+            "treats": {
+                "subject": "drug",
+                "predicate": "biolink:treats",
+                "object": "type-2 diabetes"
+            },
+            "downregulates": {
+                "subject": "drug",
+                "predicate": "biolink:entity_negatively_regulates_entity",
+                "object": "gene"
+            },
+            "causes": {
+                "subject": "gene",
+                "predicate": "biolink:causes",
+                "object": "type-2 diabetes"
+            }
+        }
+    }
+}

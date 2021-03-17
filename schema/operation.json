@@ -15,6 +15,9 @@
             "$ref": "#/definitions/OperationFilterKgraph"
         },
         {
+            "$ref": "#/definitions/OperationRestate"
+        },
+        {
             "$ref": "#/definitions/OperationCompleteResults"
         },
         {
@@ -110,6 +113,22 @@
                     "type": "string",
                     "enum": [
                         "filter_kgraph"
+                    ]
+                },
+                "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationRestate": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "restate"
                     ]
                 },
                 "parameters": {}
