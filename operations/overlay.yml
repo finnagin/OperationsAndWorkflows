@@ -1,0 +1,10 @@
+id: overlay
+name: overlay
+description: This operation adds attributes to existing kedges/knodes or adds new edges.
+input_requirements: []
+output_guarantees: []
+allowed_changes:
+- add attributes to kedges
+- add kedges
+- add attributes to knodes
+parameters: {}
