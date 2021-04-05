@@ -2,14 +2,35 @@ id: overlay_compute_ngd
 subclass_of: overlay
 name: overlay compute ngd
 description: This operation computes the normalized Google distance: weighting edges based on subject/object node co-occurrence frequency in PubMed abstracts
-unique: true
 examples: #to be modified
 - input: overlay/messages/07_in_qnodes.json
   output: overlay/messages/07_out_kgraph.json
 input_requirements: []
-output_guarantees:
-- kgraph exists
+output_guarantees: []
 allowed_changes:
 - add kedges
 - edit kedges
-parameters: {}
+parameters: #a dict
+  type: object
+  properties: #nested dict
+    default_value:
+      description: The default value of the normalized Google distance (if its value cannot be determined)
+      type: string
+      example: [0, inf]
+      #default: inf
+    virtual_relation_label:
+      description: An optional label to help identify the virtual edge in the relation field
+      type: string
+      example: [N1, J2]
+      #default: ???
+    subject_qnode_key:
+      description: A specific subject query node id (optional, otherwise applied to all edges, must have a virtual_relation_label to use this parameter)
+      type: string
+      example: [n00, n01]
+      #default: ???
+    object_qnode_key:
+      description: A specific object query node id (optional, otherwise applied to all edges, must have a virtual_relation_label to use this parameter)
+      type: string
+      example: [n00, n01]
+      #default: ???
+  required: [] #use [] to replace null?
