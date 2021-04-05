@@ -1,3 +1,15 @@
 id: overlay_compute_ngd
 subclass_of: overlay
 name: overlay compute ngd
+description: This operation computes the normalized Google distance metric in abstracts of all PubMed articles for all kedges , or only between specified subject/object qnode id's.
+unique: true
+examples: #to be modified
+- input: overlay/messages/07_in_qnodes.json
+  output: overlay/messages/07_out_kgraph.json
+input_requirements: []
+output_guarantees:
+- kgraph exists
+allowed_changes:
+- add kedges
+- edit kedges
+parameters: {}
