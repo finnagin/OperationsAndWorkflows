@@ -8,7 +8,7 @@ examples:
 input_requirements:
 - Input qgraph contains the two qnodes specified in 'subject_qnode_key' and 'object_qnode_key'
 output_guarantees:
-- New virtual edge(s) between qnodes
+- At least 1 new edge between qnodes
 allowed_changes:
 - add kedges
 - add qedges
