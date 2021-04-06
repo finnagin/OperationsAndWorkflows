@@ -48,7 +48,7 @@
                 "subject": "CHEBI:6801",
                 "predicate": "biolink:has_normalized_google_distance_with",
                 "object": "MONDO:0005148",
-                "attributes": "attributes": [
+                "attributes": [
                     {
                       "name": "normalized_google_distance",
                       "value": "0.39848542438192275",
@@ -73,7 +73,7 @@
                 "subject": "CHEBI:5441",
                 "predicate": "biolink:has_normalized_google_distance_with",
                 "object": "MONDO:0005148",
-                "attributes": "attributes": [
+                "attributes": [
                     {
                       "name": "normalized_google_distance",
                       "value": "0.5011972500332819",
