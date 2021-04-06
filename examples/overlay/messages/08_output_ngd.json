@@ -1,0 +1,109 @@
+{
+    "query_graph": {
+        "nodes": {
+            "type-2 diabetes": {
+                "id": "MONDO:0005148"
+            },
+            "drug": {
+                "category": "biolink:ChemicalSubstance"
+            }
+        },
+        "edges": {
+            "treats": {
+                "subject": "drug",
+                "predicate": "biolink:treats",
+                "object": "type-2 diabetes"
+            },
+            "ngd1": {
+                "subject": "drug",
+                "predicate": "biolink:has_normalized_google_distance_with",
+                "object": "type-2 diabetes"
+            }
+        }
+    },
+    "knowledge_graph": {
+        "nodes": {
+            "MONDO:0005148": {"name": "type-2 diabetes"},
+            "CHEBI:6801": {
+                "name": "metformin",
+                "category": "biolink:ChemicalSubstance"
+            },
+            "CHEBI:5441": {
+                "name": "glyburide",
+                "category": "biolink:ChemicalSubstance"
+            }
+        },
+        "edges": {
+            "df87ff82": {
+                "subject": "CHEBI:6801",
+                "predicate": "biolink:treats",
+                "object": "MONDO:0005148"
+            },
+            "5133c100": {
+                "subject": "CHEBI:5441",
+                "predicate": "biolink:treats",
+                "object": "MONDO:0005148"
+            },
+            "ngd1_1": {
+                "subject": "CHEBI:6801",
+                "predicate": "biolink:has_normalized_google_distance_with",
+                "object": "MONDO:0005148",
+                "attributes": "attributes": [
+                    {
+                      "name": "normalized_google_distance",
+                      "value": "0.39848542438192275",
+                      "type": "EDAM:data_2526",
+                      "url": "https://arax.ncats.io/api/rtx/v1/ui/#/PubmedMeshNgd",
+                      "source": null
+                    },
+                    {
+                      "name": "publications",
+                      "value": [
+                        "PMID:10759684",
+                        "PMID:22728710",
+                        "PMID:26160718"
+                      ],
+                      "type": "biolink:publications",
+                      "url": null,
+                      "source": null
+                    }
+                ]
+            },
+            "ngd1_2": {
+                "subject": "CHEBI:5441",
+                "predicate": "biolink:has_normalized_google_distance_with",
+                "object": "MONDO:0005148",
+                "attributes": "attributes": [
+                    {
+                      "name": "normalized_google_distance",
+                      "value": "0.5011972500332819",
+                      "type": "EDAM:data_2526",
+                      "url": "https://arax.ncats.io/api/rtx/v1/ui/#/PubmedMeshNgd",
+                      "source": null
+                    },
+                    {
+                      "name": "publications",
+                      "value": [
+                        "PMID:25662501",
+                        "PMID:28438567"
+                      ],
+                      "type": "biolink:publications",
+                      "url": null,
+                      "source": null
+                    }
+                ]
+            }
+        }
+    },
+    "results": [
+        {
+            "node_bindings": {
+                "type-2 diabetes": [{"id": "MONDO:0005148"}],
+                "drug": [{"id": "CHEBI:6801"}]
+            },
+            "edge_bindings": {
+                "treats": [{"id": "df87ff82"}]
+            }
+        }
+    ]
+}
