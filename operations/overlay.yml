@@ -1,6 +1,6 @@
 id: overlay
 name: overlay
-description: This operation adds aditional qedges and/or kedges.
+description: This operation adds additional qedges and/or kedges.
 input_requirements: []
 output_guarantees: []
 allowed_changes:
