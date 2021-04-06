@@ -4,7 +4,7 @@ name: overlay compute ngd
 description: This operation computes the normalized Google distance (co-occurrence frequency) in PubMed abstracts and adds virual edges between qnodes OR knodes.
 examples: 
 - input: overlay/messages/07_input_ngd.json
-  output: overlay/messages/07_output_ngd.json
+  output: overlay/messages/08_output_ngd.json
 input_requirements:
 - Input qgraph contains the two qnodes specified in 'subject_qnode_key' and 'object_qnode_key'
 output_guarantees:
