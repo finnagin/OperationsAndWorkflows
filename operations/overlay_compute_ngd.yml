@@ -1,7 +1,7 @@
 id: overlay_compute_ngd
 subclass_of: overlay
 name: overlay compute ngd
-description: This operation computes the normalized Google distance (co-occurrence frequency) in PubMed abstracts and adds virual edges between qnodes OR knodes.
+description: This operation computes the normalized Google distance (co-occurrence frequency) in PubMed abstracts and adds virual edges between qnodes AND/OR knodes.
 examples: 
 - input: overlay/messages/07_input_ngd.json
   output: overlay/messages/08_output_ngd.json
