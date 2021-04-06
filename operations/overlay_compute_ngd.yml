@@ -8,7 +8,7 @@ examples:
 input_requirements:
 - At least 2 qnodes
 output_guarantees:
-- New virtual edges between qnodes or knodes
+- New virtual edge(s) between qnodes
 allowed_changes:
 - add kedges
 - add qedges
@@ -19,22 +19,19 @@ parameters:
       description: The default value of the normalized Google distance (if its value cannot be determined)
       type: string
       example: [0, inf]
-      #default: inf
+      default: inf
     virtual_relation_label:
       description: An optional label to help identify the virtual edge in the relation field
       type: string
       example: [N1, J2]
-      #default: ???
     subject_qnode_key:
       description: A specific subject query node id (optional, otherwise applied to all edges, must have a virtual_relation_label to use this parameter)
       type: string
       example: [n00, n01]
-      #default: ???
     object_qnode_key:
       description: A specific object query node id (optional, otherwise applied to all edges, must have a virtual_relation_label to use this parameter)
       type: string
       example: [n00, n01]
-      #default: ???
   required: 
   - virtual_relation_label
   - subject_qnode_key
