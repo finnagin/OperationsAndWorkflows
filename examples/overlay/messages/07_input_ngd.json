@@ -1,5 +1,3 @@
-### A DSL example, need to transfer into json style
-
 {
     "query_graph": {
         "nodes": {
