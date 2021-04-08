@@ -3,42 +3,32 @@
     "$id": "http://standards.ncats.io/operation.json",
     "anyOf": [
         {
-            "$ref": "#/definitions/OperationFilterResults"
-        },
-        {
-            "$ref": "#/definitions/OperationFilterKgraph"
+            "$ref": "#/definitions/OperationFilterKgraphOrphans"
         },
         {
             "$ref": "#/definitions/OperationFilterResultsTopN"
         },
         {
-            "$ref": "#/definitions/OperationFilterKgraphOrphans"
+            "$ref": "#/definitions/OperationFilterKgraph"
+        },
+        {
+            "$ref": "#/definitions/OperationOverlay"
+        },
+        {
+            "$ref": "#/definitions/OperationOverlayComputeNgd"
+        },
+        {
+            "$ref": "#/definitions/OperationFilterResults"
         }
     ],
     "definitions": {
-        "OperationFilterResults": {
+        "OperationFilterKgraphOrphans": {
             "type": "object",
             "properties": {
                 "id": {
                     "type": "string",
                     "enum": [
-                        "filter_results"
-                    ]
-                },
-                "parameters": {}
-            },
-            "required": [
-                "id"
-            ],
-            "additionalProperties": false
-        },
-        "OperationFilterKgraph": {
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "enum": [
-                        "filter_kgraph"
+                        "filter_kgraph_orphans"
                     ]
                 },
                 "parameters": {}
@@ -77,13 +67,103 @@
             ],
             "additionalProperties": false
         },
-        "OperationFilterKgraphOrphans": {
+        "OperationFilterKgraph": {
             "type": "object",
             "properties": {
                 "id": {
                     "type": "string",
                     "enum": [
-                        "filter_kgraph_orphans"
+                        "filter_kgraph"
+                    ]
+                },
+                "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationOverlay": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "overlay"
+                    ]
+                },
+                "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationOverlayComputeNgd": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "overlay_compute_ngd"
+                    ]
+                },
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "default_value": {
+                            "description": "The default value of the normalized Google distance (if its value cannot be determined)",
+                            "type": "string",
+                            "example": [
+                                0,
+                                "inf"
+                            ],
+                            "default": "inf"
+                        },
+                        "virtual_relation_label": {
+                            "description": "An label to help identify the virtual edge in the relation field",
+                            "type": "string",
+                            "example": [
+                                "N1",
+                                "J2"
+                            ]
+                        },
+                        "subject_qnode_key": {
+                            "description": "A specific subject query node id",
+                            "type": "string",
+                            "example": [
+                                "n00",
+                                "n01"
+                            ]
+                        },
+                        "object_qnode_key": {
+                            "description": "A specific object query node id",
+                            "type": "string",
+                            "example": [
+                                "n00",
+                                "n01"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "virtual_relation_label",
+                        "subject_qnode_key",
+                        "object_qnode_key"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationFilterResults": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "filter_results"
                     ]
                 },
                 "parameters": {}
