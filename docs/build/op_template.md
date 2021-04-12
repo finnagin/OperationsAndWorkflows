@@ -4,6 +4,8 @@
 _subclass of [{{ data.subclass_of }}](./{{ data.subclass_of }}.md)_
 
 {% endif -%}{{ data.description }}
+{%- if 'unique' in data and data.unique %} Implementations of this operation are _unique_; their behavior is not fully-specified by the operation parameters.
+{%- endif %}
 
 {% if data.examples -%}
 ### examples

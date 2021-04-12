@@ -1,0 +1,19 @@
+{
+    "query_graph": {
+        "nodes": {
+            "type-2 diabetes": {
+                "id": "MONDO:0005148"
+            },
+            "drug": {
+                "category": "biolink:ChemicalSubstance"
+            }
+        },
+        "edges": {
+            "treats": {
+                "subject": "drug",
+                "predicate": "biolink:treats",
+                "object": "type-2 diabetes"
+            }
+        }
+    }
+}

@@ -3,10 +3,22 @@
     "$id": "http://standards.ncats.io/operation.json",
     "anyOf": [
         {
+            "$ref": "#/definitions/OperationBind"
+        },
+        {
+            "$ref": "#/definitions/OperationFill"
+        },
+        {
             "$ref": "#/definitions/OperationFilterResults"
         },
         {
             "$ref": "#/definitions/OperationFilterKgraph"
+        },
+        {
+            "$ref": "#/definitions/OperationRestate"
+        },
+        {
+            "$ref": "#/definitions/OperationCompleteResults"
         },
         {
             "$ref": "#/definitions/OperationFilterResultsTopN"
@@ -16,6 +28,68 @@
         }
     ],
     "definitions": {
+        "OperationBind": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "bind"
+                    ]
+                },
+                "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationFill": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "fill"
+                    ]
+                },
+                "parameters": {
+                    "type": "object",
+                    "oneOf": [
+                        {
+                            "properties": {
+                                "allowlist": {
+                                    "type": "array",
+                                    "description": "List of knowledge providers/sources that may be used to provide knowledge.",
+                                    "example": [
+                                        "icees"
+                                    ],
+                                    "minLength": 1
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        {
+                            "properties": {
+                                "denylist": {
+                                    "type": "array",
+                                    "description": "List of knowledge providers/sources that may NOT be used to provide knowledge.",
+                                    "example": [
+                                        "ctd"
+                                    ],
+                                    "minLength": 1
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
         "OperationFilterResults": {
             "type": "object",
             "properties": {
@@ -39,6 +113,38 @@
                     "type": "string",
                     "enum": [
                         "filter_kgraph"
+                    ]
+                },
+                "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationRestate": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "restate"
+                    ]
+                },
+                "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationCompleteResults": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "complete_results"
                     ]
                 },
                 "parameters": {}

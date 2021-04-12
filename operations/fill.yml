@@ -1,0 +1,30 @@
+id: fill
+name: fill
+description: This operation adds knodes and kedges.
+unique: true
+examples:
+- input: fill_and_bind/messages/01_qgraph.json
+  output: fill_and_bind/messages/02_kgraph.json
+input_requirements: []
+output_guarantees:
+- kgraph exists
+allowed_changes:
+- add knodes
+- add kedges
+parameters:
+  type: object
+  oneOf:
+  - properties:
+      allowlist:
+        type: array
+        description: List of knowledge providers/sources that may be used to provide knowledge.
+        example: ['icees']
+        minLength: 1
+    additionalProperties: false
+  - properties:
+      denylist:
+        type: array
+        description: List of knowledge providers/sources that may NOT be used to provide knowledge.
+        example: ['ctd']
+        minLength: 1
+    additionalProperties: false

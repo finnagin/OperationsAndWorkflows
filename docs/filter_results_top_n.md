@@ -24,12 +24,11 @@ None
 
 ```yaml
 properties:
-- description: The maximum number of results to return. If not provided all results
-    will be returned.
-  example: 50
-  minimum: 0
-  name: max_results
-  type: integer
+  max_results:
+    description: The maximum number of results to return.
+    example: 50
+    minimum: 0
+    type: integer
 required:
 - max_results
 type: object
