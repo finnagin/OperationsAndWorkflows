@@ -1,6 +1,6 @@
 # Overlay example
 
-The OVERLAY operation accepts (a message with) a query graph and returns (a message with) a query graph with at least one additional query graph edge. It also may (but is not garuenteed to) add aditional knowledge graph edges.
+The OVERLAY operation accepts (a message with) a query graph and returns (a message with) a query graph with at least one additional query graph edge. It also may (but is not guaranteed to) add additional knowledge graph edges.
 
 This example contains two messages:
 
