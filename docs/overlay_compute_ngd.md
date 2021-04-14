@@ -29,27 +29,21 @@ properties:
     default: inf
     description: The default value of the normalized Google distance (if its value
       cannot be determined)
-    example:
-    - 0
-    - inf
+    example: 0
+    maximum: inf
+    minimum: 0
     type: string
   object_qnode_key:
     description: A specific object query node id
-    example:
-    - n00
-    - n01
+    example: n01
     type: string
   subject_qnode_key:
     description: A specific subject query node id
-    example:
-    - n00
-    - n01
+    example: n00
     type: string
   virtual_relation_label:
     description: An label to help identify the virtual edge in the relation field
-    example:
-    - N1
-    - J2
+    example: NGD1
     type: string
 required:
 - virtual_relation_label

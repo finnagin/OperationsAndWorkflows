@@ -40,24 +40,5 @@
                 "object": "MONDO:0005148"
             }
         }
-    },
-    "results": [
-        {
-            "node_bindings": {
-                "type-2 diabetes": [{"id": "MONDO:0005148"}],
-                "drug": [{"id": "CHEBI:6801"}]
-            },
-            "edge_bindings": {
-                "treats": [{"id": "df87ff82"}]
-            }
-        }
-    ],
-    "workflow": {
-        "id": "overlay_compute_ngd", 
-        "parameters": {
-            "virtual_relation_label": "ngd1", 
-            "subject_qnode_key": "drug", 
-            "object_qnode_key": "type-2 diabetes"
-        }
     }
 }

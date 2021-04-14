@@ -1,0 +1,12 @@
+id: restate
+name: restate
+description: This operation modifies the query graph.
+unique: true
+examples:
+- input: restate/messages/01_qgraph.json
+  output: restate/messages/02_restated.json
+input_requirements: []
+output_guarantees: []
+allowed_changes:
+- change qgraph
+parameters: {}

@@ -106,7 +106,7 @@
             }
         }
     ],
-    "processing_actions": {
+    "workflow": {
         "id": "overlay_compute_ngd", 
         "parameters": {
             "virtual_relation_label": "ngd1", 
