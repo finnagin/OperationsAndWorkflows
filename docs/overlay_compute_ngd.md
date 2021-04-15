@@ -20,6 +20,7 @@ This operation computes the normalized Google distance (co-occurrence frequency)
 
 - add kedges
 - add qedges
+- add bindings to results
 
 ### parameters
 

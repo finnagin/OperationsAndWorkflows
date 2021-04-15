@@ -102,7 +102,8 @@
                 "drug": [{"id": "CHEBI:6801"}]
             },
             "edge_bindings": {
-                "treats": [{"id": "df87ff82"}]
+                "treats": [{"id": "df87ff82"}],
+                "ngd1": [{"id": "ngd1_1"}]
             }
         }
     ],

@@ -1,6 +1,6 @@
 # overlay
 
-This operation adds additional qedges and/or kedges.
+This operation adds additional qedges and/or kedges and/or result edge bindings.
 
 ### input requirements
 
@@ -14,6 +14,7 @@ None
 
 - add qedges
 - add kedges
+- add bindings to results
 
 ### parameters
 
