@@ -1,7 +1,7 @@
 id: overlay_compute_ngd
 subclass_of: overlay
 name: overlay compute ngd
-description: This operation computes the normalized Google distance (co-occurrence frequency) in PubMed abstracts and adds virual edges between qnodes AND/OR knodes.
+description: This operation computes the normalized Google distance (co-occurrence frequency) in PubMed abstracts and adds virual edges between qnodes AND/OR knodes AND/OR results edge bindings.
 examples: 
 - input: overlay/messages/07_input_ngd.json
   output: overlay/messages/08_output_ngd.json
@@ -27,15 +27,10 @@ parameters:
       description: An label to help identify the virtual edge in the relation field
       type: string
       example: NGD1
-    subject_qnode_key:
-      description: A specific subject query node id
-      type: string
-      example: n00
-    object_qnode_key:
-      description: A specific object query node id
-      type: string
-      example: n01
+    qnode_keys:
+      description: A list of qnode keys to overlay pairwise edges onto.
+      type: list
+      example: [n00, n01]
   required: 
   - virtual_relation_label
-  - subject_qnode_key
-  - object_qnode_key
+  - qnode_keys
