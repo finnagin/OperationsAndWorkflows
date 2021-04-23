@@ -1,0 +1,60 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "examples": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "input": {
+                        "type": "string"
+                    },
+                    "output": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "input_requirements": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "output_guarantees": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "allowed_changes": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "parameters": {
+            "$ref": "https://json-schema.org/draft/2020-12/schema"
+        },
+        "unique": {
+            "type": "boolean"
+        },
+        "subclass_of": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "description"
+    ],
+    "additionalProperties": false
+}
