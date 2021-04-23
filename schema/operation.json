@@ -179,7 +179,8 @@
                 }
             },
             "required": [
-                "id"
+                "id",
+                "parameters"
             ],
             "additionalProperties": false
         },
