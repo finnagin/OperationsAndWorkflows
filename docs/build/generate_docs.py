@@ -41,10 +41,10 @@ def generate_index(operations):
 
 
 if __name__ == "__main__":
-    operations = [    
+    operations = sorted([    
         Path(filename).stem
         for filename in glob.glob(str(OPERATIONS_DIR / "*.yml"))
-    ]
+    ])
     generate_index(operations)
     for op in operations:
         generate_md(op)
