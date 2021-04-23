@@ -66,7 +66,7 @@ if __name__ == "__main__":
             }
             for op in operations
         ],
-        "definitions": {
+        "$defs": {
             op_to_component(op): generate_component(op)
             for op in operations
         },

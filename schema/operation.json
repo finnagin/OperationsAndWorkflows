@@ -33,7 +33,7 @@
             "$ref": "#/definitions/OperationFilterKgraphOrphans"
         }
     ],
-    "definitions": {
+    "$defs": {
         "OperationOverlay": {
             "type": "object",
             "properties": {
