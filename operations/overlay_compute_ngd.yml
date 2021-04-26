@@ -30,6 +30,8 @@ parameters:
     qnode_keys:
       description: A list of qnode keys to overlay pairwise edges onto.
       type: list
+      items:
+        type: string
       example: [n00, n01]
   required: 
   - virtual_relation_label
