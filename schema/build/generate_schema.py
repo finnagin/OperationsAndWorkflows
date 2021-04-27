@@ -62,7 +62,7 @@ if __name__ == "__main__":
         "$id": "http://standards.ncats.io/operation.json",
         "anyOf": [
             {
-                "$ref": f"#/definitions/{op_to_component(op)}"
+                "$ref": f"#/$defs/{op_to_component(op)}"
             }
             for op in operations
         ],

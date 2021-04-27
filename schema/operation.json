@@ -3,34 +3,34 @@
     "$id": "http://standards.ncats.io/operation.json",
     "anyOf": [
         {
-            "$ref": "#/definitions/OperationOverlay"
+            "$ref": "#/$defs/OperationOverlay"
         },
         {
-            "$ref": "#/definitions/OperationBind"
+            "$ref": "#/$defs/OperationBind"
         },
         {
-            "$ref": "#/definitions/OperationOverlayComputeNgd"
+            "$ref": "#/$defs/OperationOverlayComputeNgd"
         },
         {
-            "$ref": "#/definitions/OperationFill"
+            "$ref": "#/$defs/OperationFill"
         },
         {
-            "$ref": "#/definitions/OperationFilterResults"
+            "$ref": "#/$defs/OperationFilterResults"
         },
         {
-            "$ref": "#/definitions/OperationFilterKgraph"
+            "$ref": "#/$defs/OperationFilterKgraph"
         },
         {
-            "$ref": "#/definitions/OperationRestate"
+            "$ref": "#/$defs/OperationRestate"
         },
         {
-            "$ref": "#/definitions/OperationCompleteResults"
+            "$ref": "#/$defs/OperationCompleteResults"
         },
         {
-            "$ref": "#/definitions/OperationFilterResultsTopN"
+            "$ref": "#/$defs/OperationFilterResultsTopN"
         },
         {
-            "$ref": "#/definitions/OperationFilterKgraphOrphans"
+            "$ref": "#/$defs/OperationFilterKgraphOrphans"
         }
     ],
     "$defs": {
