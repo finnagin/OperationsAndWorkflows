@@ -5,8 +5,6 @@ description: This operation computes the normalized Google distance (co-occurren
 examples: 
 - input: overlay/messages/07_input_ngd.json
   output: overlay/messages/08_output_ngd.json
-input_requirements:
-- Input qgraph contains the two qnodes specified in 'subject_qnode_key' and 'object_qnode_key'
 output_guarantees:
 - At least 1 new edge between qnodes
 allowed_changes:
@@ -28,7 +26,7 @@ parameters:
       type: string
       example: NGD1
     qnode_keys:
-      description: A list of qnode keys to overlay pairwise edges onto.
+      description: A list of qnode keys to overlay pairwise edges onto. Must be be a list of at least 2 valid qnodes.
       type: list
       items:
         type: string
