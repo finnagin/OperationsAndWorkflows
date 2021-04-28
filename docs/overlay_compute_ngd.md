@@ -10,7 +10,7 @@ This operation computes the normalized Google distance (co-occurrence frequency)
 
 ### input requirements
 
-- Input qgraph contains the two qnodes specified in 'subject_qnode_key' and 'object_qnode_key'
+None
 
 ### output guarantees
 
@@ -35,10 +35,13 @@ properties:
     minimum: 0
     type: string
   qnode_keys:
-    description: A list of qnode keys to overlay pairwise edges onto.
+    description: A list of qnode keys to overlay pairwise edges onto. Must be be a
+      list of at least 2 valid qnodes.
     example:
     - n00
     - n01
+    items:
+      type: string
     type: list
   virtual_relation_label:
     description: An label to help identify the virtual edge in the relation field
