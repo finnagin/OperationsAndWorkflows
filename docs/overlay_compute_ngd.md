@@ -14,7 +14,7 @@ None
 
 ### output guarantees
 
-- At least 1 new edge between qnodes
+None
 
 ### allowed changes
 
@@ -27,13 +27,12 @@ None
 ```yaml
 properties:
   default_value:
-    default: inf
-    description: The default value of the normalized Google distance (if its value
-      cannot be determined)
-    example: 0
-    maximum: inf
-    minimum: 0
-    type: string
+    default: -1
+    description: The default value of the normalized Google distance (if no publications
+      can be found)
+    example: 999
+    minimum: -1
+    type: number
   qnode_keys:
     description: A list of qnode keys to overlay pairwise edges onto. Must be be a
       list of at least 2 valid qnodes.

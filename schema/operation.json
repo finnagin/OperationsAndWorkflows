@@ -91,7 +91,8 @@
                 }
             },
             "required": [
-                "id"
+                "id",
+                "parameters"
             ],
             "additionalProperties": false
         },
@@ -172,12 +173,11 @@
                     "type": "object",
                     "properties": {
                         "default_value": {
-                            "description": "The default value of the normalized Google distance (if its value cannot be determined)",
-                            "type": "string",
-                            "example": 0,
-                            "minimum": 0,
-                            "maximum": "inf",
-                            "default": "inf"
+                            "description": "The default value of the normalized Google distance (if no publications can be found)",
+                            "type": "number",
+                            "example": 999,
+                            "minimum": -1,
+                            "default": -1
                         },
                         "virtual_relation_label": {
                             "description": "An label to help identify the virtual edge in the relation field",
