@@ -5,8 +5,8 @@ description: This operation computes the normalized Google distance (co-occurren
 examples: 
 - input: overlay/messages/07_input_ngd.json
   output: overlay/messages/08_output_ngd.json
-output_guarantees:
-- At least 1 new edge between qnodes
+input_requirements: []
+output_guarantees: []
 allowed_changes:
 - add kedges
 - add qedges
@@ -15,12 +15,11 @@ parameters:
   type: object
   properties: 
     default_value:
-      description: The default value of the normalized Google distance (if its value cannot be determined)
-      type: string
-      example: 0
-      minimum: 0
-      maximum: inf
-      default: inf
+      description: The default value of the normalized Google distance (if no publications can be found)
+      type: number
+      example: 999
+      minimum: -1
+      default: -1
     virtual_relation_label:
       description: An label to help identify the virtual edge in the relation field
       type: string
