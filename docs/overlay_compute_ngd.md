@@ -28,8 +28,8 @@ None
 properties:
   default_value:
     default: -1
-    description: The default value of the normalized Google distance (if no publications
-      can be found)
+    description: The default value of the normalized Google distance. (if no publications
+      can be found) The value -1 will be treated as infinity.
     example: 999
     minimum: -1
     type: number
