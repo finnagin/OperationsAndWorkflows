@@ -106,12 +106,5 @@
                 "ngd1": [{"id": "ngd1_1"}]
             }
         }
-    ],
-    "workflow": {
-        "id": "overlay_compute_ngd", 
-        "parameters": {
-            "virtual_relation_label": "ngd1", 
-            "qnode_keys": ["drug", "type-2 diabetes"]
-        }
-    }
+    ]
 }

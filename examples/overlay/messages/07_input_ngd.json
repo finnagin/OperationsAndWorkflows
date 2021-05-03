@@ -51,12 +51,5 @@
                 "treats": [{"id": "df87ff82"}]
             }
         }
-    ],
-    "workflow": {
-        "id": "overlay_compute_ngd", 
-        "parameters": {
-            "virtual_relation_label": "ngd1", 
-            "qnode_keys": ["drug", "type-2 diabetes"]
-        }
-    }
+    ]
 }

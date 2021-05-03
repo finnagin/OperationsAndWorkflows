@@ -5,6 +5,11 @@ description: This operation computes the normalized Google distance (co-occurren
 examples: 
 - input: overlay/messages/07_input_ngd.json
   output: overlay/messages/08_output_ngd.json
+  parameters:
+    virtual_relation_label: ngd1 
+    qnode_keys: 
+    - drug 
+    - type-2 diabetes
 input_requirements: []
 output_guarantees: []
 allowed_changes:
