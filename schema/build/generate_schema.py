@@ -33,7 +33,7 @@ def generate_component(op: str):
         },
         "required": [
             "id",
-        ],
+        ] + (["parameters"] if data["parameters"].get("required") else []),
         "additionalProperties": False,
     }
 
