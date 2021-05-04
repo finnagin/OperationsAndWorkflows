@@ -2,7 +2,7 @@
 
 _subclass of [overlay](./overlay.md)_
 
-This operation computes the normalized Google distance (co-occurrence frequency) in PubMed abstracts and adds virual edges between qnodes AND/OR knodes AND/OR results edge bindings.
+This operation computes the normalized Google distance (co-occurrence frequency) in PubMed abstracts and adds virual edges between qnodes AND/OR knodes AND/OR results edge bindings. If no publications are found infinity is returned.
 
 ### examples
 
@@ -26,13 +26,6 @@ None
 
 ```yaml
 properties:
-  default_value:
-    default: -1
-    description: The default value of the normalized Google distance. (if no publications
-      can be found) The value -1 will be treated as infinity.
-    example: 999
-    minimum: -1
-    type: number
   qnode_keys:
     description: A list of qnode keys to overlay pairwise edges onto. Must be be a
       list of at least 2 valid qnodes.

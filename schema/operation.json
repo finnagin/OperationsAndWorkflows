@@ -172,13 +172,6 @@
                 "parameters": {
                     "type": "object",
                     "properties": {
-                        "default_value": {
-                            "description": "The default value of the normalized Google distance. (if no publications can be found) The value -1 will be treated as infinity.",
-                            "type": "number",
-                            "example": 999,
-                            "minimum": -1,
-                            "default": -1
-                        },
                         "virtual_relation_label": {
                             "description": "An label to help identify the virtual edge in the relation field",
                             "type": "string",
