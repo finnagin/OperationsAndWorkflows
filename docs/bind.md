@@ -18,7 +18,6 @@ This operation adds results binding kgraph elements to qgraph elements.
 ### allowed changes
 
 - add results
-- change qgraph
 
 ### parameters
 

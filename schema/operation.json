@@ -3,31 +3,147 @@
     "$id": "http://standards.ncats.io/operation.json",
     "anyOf": [
         {
+            "$ref": "#/definitions/OperationCompleteResults"
+        },
+        {
+            "$ref": "#/definitions/OperationFilterKgraphOrphans"
+        },
+        {
+            "$ref": "#/definitions/OperationFilterResultsTopN"
+        },
+        {
+            "$ref": "#/definitions/OperationFilterKgraph"
+        },
+        {
+            "$ref": "#/definitions/OperationOverlay"
+        },
+        {
+            "$ref": "#/definitions/OperationRestate"
+        },
+        {
             "$ref": "#/definitions/OperationBind"
+        },
+        {
+            "$ref": "#/definitions/OperationOverlayComputeNgd"
         },
         {
             "$ref": "#/definitions/OperationFill"
         },
         {
             "$ref": "#/definitions/OperationFilterResults"
-        },
-        {
-            "$ref": "#/definitions/OperationFilterKgraph"
-        },
-        {
-            "$ref": "#/definitions/OperationRestate"
-        },
-        {
-            "$ref": "#/definitions/OperationCompleteResults"
-        },
-        {
-            "$ref": "#/definitions/OperationFilterResultsTopN"
-        },
-        {
-            "$ref": "#/definitions/OperationFilterKgraphOrphans"
         }
     ],
     "definitions": {
+        "OperationCompleteResults": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "complete_results"
+                    ]
+                },
+                "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationFilterKgraphOrphans": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "filter_kgraph_orphans"
+                    ]
+                },
+                "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationFilterResultsTopN": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "filter_results_top_n"
+                    ]
+                },
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "max_results": {
+                            "description": "The maximum number of results to return.",
+                            "type": "integer",
+                            "minimum": 0,
+                            "example": 50
+                        }
+                    },
+                    "required": [
+                        "max_results"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "parameters"
+            ],
+            "additionalProperties": false
+        },
+        "OperationFilterKgraph": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "filter_kgraph"
+                    ]
+                },
+                "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationOverlay": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "overlay"
+                    ]
+                },
+                "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationRestate": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "restate"
+                    ]
+                },
+                "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
         "OperationBind": {
             "type": "object",
             "properties": {
@@ -41,6 +157,47 @@
             },
             "required": [
                 "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationOverlayComputeNgd": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "overlay_compute_ngd"
+                    ]
+                },
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "virtual_relation_label": {
+                            "description": "An label to help identify the virtual edge in the relation field",
+                            "type": "string",
+                            "example": "NGD1"
+                        },
+                        "qnode_keys": {
+                            "description": "A list of qnode keys to overlay pairwise edges onto. Must be be a list of at least 2 valid qnodes.",
+                            "type": "list",
+                            "items": {
+                                "type": "string"
+                            },
+                            "example": [
+                                "n00",
+                                "n01"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "virtual_relation_label",
+                        "qnode_keys"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "parameters"
             ],
             "additionalProperties": false
         },
@@ -97,100 +254,6 @@
                     "type": "string",
                     "enum": [
                         "filter_results"
-                    ]
-                },
-                "parameters": {}
-            },
-            "required": [
-                "id"
-            ],
-            "additionalProperties": false
-        },
-        "OperationFilterKgraph": {
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "enum": [
-                        "filter_kgraph"
-                    ]
-                },
-                "parameters": {}
-            },
-            "required": [
-                "id"
-            ],
-            "additionalProperties": false
-        },
-        "OperationRestate": {
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "enum": [
-                        "restate"
-                    ]
-                },
-                "parameters": {}
-            },
-            "required": [
-                "id"
-            ],
-            "additionalProperties": false
-        },
-        "OperationCompleteResults": {
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "enum": [
-                        "complete_results"
-                    ]
-                },
-                "parameters": {}
-            },
-            "required": [
-                "id"
-            ],
-            "additionalProperties": false
-        },
-        "OperationFilterResultsTopN": {
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "enum": [
-                        "filter_results_top_n"
-                    ]
-                },
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "max_results": {
-                            "description": "The maximum number of results to return.",
-                            "type": "integer",
-                            "minimum": 0,
-                            "example": 50
-                        }
-                    },
-                    "required": [
-                        "max_results"
-                    ]
-                }
-            },
-            "required": [
-                "id",
-                "parameters"
-            ],
-            "additionalProperties": false
-        },
-        "OperationFilterKgraphOrphans": {
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "enum": [
-                        "filter_kgraph_orphans"
                     ]
                 },
                 "parameters": {}

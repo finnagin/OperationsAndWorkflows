@@ -1,0 +1,10 @@
+id: overlay
+name: overlay
+description: This operation adds additional qedges and/or kedges and/or result edge bindings.
+input_requirements: []
+output_guarantees: []
+allowed_changes:
+- add qedges
+- add kedges
+- add bindings to results
+parameters: {}
