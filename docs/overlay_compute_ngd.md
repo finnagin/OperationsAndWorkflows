@@ -34,7 +34,7 @@ properties:
     - n01
     items:
       type: string
-    type: list
+    type: array
   virtual_relation_label:
     description: An label to help identify the virtual edge in the relation field
     example: NGD1

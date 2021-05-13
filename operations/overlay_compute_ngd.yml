@@ -25,7 +25,7 @@ parameters:
       example: NGD1
     qnode_keys:
       description: A list of qnode keys to overlay pairwise edges onto. Must be be a list of at least 2 valid qnodes.
-      type: list
+      type: array
       items:
         type: string
       example: [n00, n01]
