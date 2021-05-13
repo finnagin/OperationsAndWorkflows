@@ -17,6 +17,8 @@ parameters:
   - properties:
       allowlist:
         type: array
+        items:
+          type: string
         description: List of knowledge providers/sources that may be used to provide knowledge.
         example: ['icees']
         minLength: 1
@@ -24,6 +26,8 @@ parameters:
   - properties:
       denylist:
         type: array
+        items:
+          type: string
         description: List of knowledge providers/sources that may NOT be used to provide knowledge.
         example: ['ctd']
         minLength: 1

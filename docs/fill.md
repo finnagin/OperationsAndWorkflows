@@ -30,6 +30,8 @@ oneOf:
         knowledge.
       example:
       - icees
+      items:
+        type: string
       minLength: 1
       type: array
 - additionalProperties: false
@@ -39,6 +41,8 @@ oneOf:
         knowledge.
       example:
       - ctd
+      items:
+        type: string
       minLength: 1
       type: array
 type: object
