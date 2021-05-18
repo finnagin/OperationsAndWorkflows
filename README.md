@@ -1,5 +1,5 @@
 # OperationsAndWorkflows
-A repo for the nascent "operations and workflow" language
+A repo for the nascent "operations and workflow" language.
 
 # Helpful documents
 
@@ -9,3 +9,7 @@ A repo for the nascent "operations and workflow" language
 
 # Purpose of this repo
 Initially, design considerations will be discussed and voted on. Eventually, these will be incorporated to a YAML-like document describing the workflow language, how it works, etc.
+
+# Workflow Runner
+The following repo will, after you stand it up, provide an endpoint to which you can post workflows and registered ARAs will execute the operations they have implemented.
+https://github.com/NCATSTranslator/workflow-runner
