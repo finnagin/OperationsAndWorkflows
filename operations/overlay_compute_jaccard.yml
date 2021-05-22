@@ -15,7 +15,6 @@ allowed_changes:
   - add kedges
   - add qedges
   - add bindings to results
-
 parameters:
   type: object
   properties:
