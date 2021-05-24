@@ -61,7 +61,7 @@
                 "object": "UniProtKB:P30279"
             },
             "vk456hb1": {
-                "subject": "UniProtKB:Q92786"",
+                "subject": "UniProtKB:Q92786",
                 "predicate": "biolink:correlated_with",
                 "object": "MONDO:0005148"
             },
