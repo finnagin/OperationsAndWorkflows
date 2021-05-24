@@ -27,6 +27,9 @@
             "$ref": "#/$defs/OperationOverlay"
         },
         {
+            "$ref": "#/$defs/OperationOverlayComputeJaccard"
+        },
+        {
             "$ref": "#/$defs/OperationOverlayComputeNgd"
         },
         {
@@ -209,6 +212,53 @@
             },
             "required": [
                 "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationOverlayComputeJaccard": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "overlay_compute_jaccard"
+                    ]
+                },
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "start_node_key": {
+                            "description": "A qnode key specifying the starting node.",
+                            "type": "string",
+                            "example": "n0"
+                        },
+                        "intermediate_node_key": {
+                            "description": "A qnode key specifying the intermediate node.",
+                            "type": "string",
+                            "example": "n1"
+                        },
+                        "end_node_key": {
+                            "description": "A qnode key specifying the ending node.",
+                            "type": "string",
+                            "example": "n2"
+                        },
+                        "virtual_relation_label": {
+                            "description": "An label to help identify the virtual edge in the relation field.",
+                            "type": "string",
+                            "example": "J1"
+                        }
+                    },
+                    "required": [
+                        "start_node_key",
+                        "intermediate_node_key",
+                        "end_node_key",
+                        "virtual_relation_label"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "parameters"
             ],
             "additionalProperties": false
         },
