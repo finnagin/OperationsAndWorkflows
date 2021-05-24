@@ -1,0 +1,122 @@
+{
+    "query_graph": {
+        "nodes": {
+            "type-2 diabetes": {
+                "id": "MONDO:0005148"
+            },
+            "protein": {
+                "category": "biolink:Protein"
+            },
+            "drug": {
+                "category": "biolink:ChemicalSubstance"
+            }
+        },
+        "edges": {
+            "correlated": {
+                "subject": "protein",
+                "predicate": "biolink:correlated_with",
+                "object": "type-2 diabetes"
+            },
+            "interacts": {
+                "subject": "drug",
+                "predicate": "biolink:physically_interacts_with",
+                "object": "protein"
+            },
+            "j1": {
+                "subject": "drug",
+                "predicate": "biolink:has_jaccard_index_with",
+                "object": "type-2 diabetes"
+            }
+        }
+    },
+    "knowledge_graph": {
+        "nodes": {
+            "MONDO:0005148": {"name": "type-2 diabetes"},
+            "CHEBI:6801": {
+                "name": "metformin",
+                "category": "biolink:ChemicalSubstance"
+            },
+            "CHEBI:5441": {
+                "name": "glyburide",
+                "category": "biolink:ChemicalSubstance"
+            },
+            "UniProtKB:Q92786": {
+                "name": "PROX1",
+                "category": "biolink:Protein"
+            },
+            "UniProtKB:P30279": {
+                "name": "CCND2",
+                "category": "biolink:Protein"
+            }
+        },
+        "edges": {
+            "k7g89spc": {
+                "subject": "CHEBI:6801",
+                "predicate": "biolink:physically_interacts_with",
+                "object": "UniProtKB:P30279"
+            },
+            "df87ff82": {
+                "subject": "CHEBI:6801",
+                "predicate": "biolink:physically_interacts_with",
+                "object": "UniProtKB:Q92786"
+            },
+            "5133c100": {
+                "subject": "CHEBI:5441",
+                "predicate": "biolink:physically_interacts_with",
+                "object": "UniProtKB:P30279"
+            },
+            "vk456hb1": {
+                "subject": "UniProtKB:Q92786"",
+                "predicate": "biolink:correlated_with",
+                "object": "MONDO:0005148"
+            },
+            "lkg89002": {
+                "subject": "UniProtKB:P30279",
+                "predicate": "biolink:correlated_with",
+                "object": "MONDO:0005148"
+            },
+            "j1_1": {
+                "subject": "CHEBI:6801",
+                "predicate": "biolink:has_jaccard_index_with",
+                "object": "MONDO:0005148",
+                "attributes": [
+                    {
+                      "name": "jaccard_index",
+                      "value": "0.66",
+                      "type": "EDAM:data_1772",
+                      "url": null,
+                      "source": null
+                    }
+                ]
+            },
+            "j1_2": {
+                "subject": "CHEBI:5441",
+                "predicate": "biolink:has_jaccard_index_with",
+                "object": "MONDO:0005148",
+                "attributes": [
+                    {
+                      "name": "jaccard_index",
+                      "value": "0.33",
+                      "type": "EDAM:data_1772",
+                      "url": null,
+                      "source": null
+                    }
+                ]
+            }
+        }
+    },
+    "results": [
+        {
+            "node_bindings": {
+                "type-2 diabetes": [{"id": "MONDO:0005148"}],
+                "drug": [{"id": "CHEBI:6801"}],
+                "protein": [{"id": "UniProtKB:Q92786"},{"id": "UniProtKB:P30279"}]
+            },
+            "edge_bindings": {
+                "interacts": [{"id": "df87ff82"},{"id": "k7g89spc"}],
+                "correlated": [{"id": "vk456hb1"},{"id": "lkg89002"}],
+                "j1": [{"id": "j1_1"}]
+            }
+        }
+    ]
+}
