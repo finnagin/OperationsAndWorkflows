@@ -1,15 +1,19 @@
 id: overlay_compute_jaccard
 subclass_of: overlay
 name: overlay compute jaccard
-description: This operation computes the Jaccard similarity that measures how many `intermediate_node_key`'s are shared in common between each `start_node_key` and `object_node_key`. And it will then create virtual edges and add edge attributes (with the property name `jaccard_index`) between each `start_node_key` and `object_node_key`. This is used for purposes such as "find me all drugs (`start_node_key`) that have many proteins (`intermediate_node_key`) in common with this disease (`end_node_key`)." This can be used for downstream filtering to concentrate on relevant bioentities.
+description: This operation computes the Jaccard similarity that measures how many intermediate_node_key's are shared in common between each start_node_key and object_node_key. And it will then create virtual edges and add edge attributes (with the property name jaccard_index) between each start_node_key and object_node_key. This is used for purposes such as "find me all drugs (start_node_key) that have many proteins (intermediate_node_key) in common with this disease (end_node_key)." This can be used for downstream filtering to concentrate on relevant bioentities.
 examples: 
-  - input: ""
-    output: ""
+  - input: overlay/messages/09_input_jaccard.json
+    output: overlay/messages/10_output_jaccard.json
     parameters:
-
+      virtual_relation_label: j1
+      start_node_key: drug 
+      intermediate_node_key: protein
+      end_node_key: type-2 diabetes
 input_requirements: []
 output_guarantees: []
 allowed_changes:
+  - add kedges
   - add qedges
   - add bindings to results
 
@@ -17,21 +21,21 @@ parameters:
   type: object
   properties:
     start_node_key:
-      description: A curie id specifying the starting node
+      description: A qnode key specifying the starting node.
       type: string
-      example: `DOID:1872`, `CHEBI:7476`, and `UMLS:C1764836`
+      example: n0
     intermediate_node_key:
-      description: A curie id specifying the intermediate node
+      description: A qnode key specifying the intermediate node.
       type: string
-      example: `DOID:1872`, `CHEBI:7476`, and `UMLS:C1764836`
+      example: n1
     end_node_key:
-      description: A curie id specifying the ending node
+      description: A qnode key specifying the ending node.
       type: string
-      example: `DOID:1872`, `CHEBI:7476`, and `UMLS:C1764836`
+      example: n2
     virtual_relation_label:
-      description: An optional label to help identify the virtual edge in the relation field.
+      description: An label to help identify the virtual edge in the relation field.
       type: string
-      example: `N1`, `J2`, and `FET`
+      example: J1
   required:
     - start_node_key
     - intermediate_node_key
