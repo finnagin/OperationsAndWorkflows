@@ -2,7 +2,7 @@
 
 _subclass of [overlay](./overlay.md)_
 
-This operation computes the Jaccard similarity that measures how many intermediate_node_key's are shared in common between each start_node_key and object_node_key. And it will then create virtual edges and add edge attributes (with the property name jaccard_index) between each start_node_key and object_node_key. This is used for purposes such as "find me all drugs (start_node_key) that have many proteins (intermediate_node_key) in common with this disease (end_node_key)." This can be used for downstream filtering to concentrate on relevant bioentities.
+This operation computes the Jaccard similarity which measures how many intermediate_node_key's are directly connected to both the start_node_key and end_node_key for all pairs of start_node_keys and end_node_keys. It will then add edges to the knowledge graph along with edge attributes (with the property name jaccard_index) between each start_node_key and object_node_key. A query graph edge will also be added using the key specified by virtual_relation_label. This is used for purposes such as "find me all drugs (start_node_key) that have many proteins (intermediate_node_key) in common with this disease (end_node_key)." This can be used for downstream filtering to concentrate on relevant bioentities.
 
 ### examples
 
@@ -39,7 +39,8 @@ properties:
     example: n0
     type: string
   virtual_relation_label:
-    description: An label to help identify the virtual edge in the relation field.
+    description: The key of the query graph edge that corresponds to the knowledge
+      graph edges that were added by this operation.
     example: J1
     type: string
 required:
