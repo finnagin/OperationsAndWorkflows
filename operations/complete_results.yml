@@ -2,8 +2,8 @@ id: complete_results
 name: complete results
 description: This operation combines partial results into complete results.
 examples:
-- input: answer/messages/03_partial_results.json
-  output: answer/messages/04_complete_results.json
+- input: fill_and_bind/messages/03_partial_results.json
+  output: fill_and_bind/messages/04_complete_results.json
 input_requirements: []
 output_guarantees:
 - all results complete
