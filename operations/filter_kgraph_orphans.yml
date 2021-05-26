@@ -7,7 +7,7 @@ examples:
   output: fill_and_filter/messages/04_filtered_kgraph_orphans.json
 input_requirements: []
 output_guarantees:
-- Output will contain no kgraph elements that are not referenced by any results.
+- no orphaned knowledge graph elements
 allowed_changes:
 - remove knodes
 - remove kedges

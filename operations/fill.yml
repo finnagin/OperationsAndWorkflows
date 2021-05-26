@@ -6,8 +6,7 @@ examples:
 - input: fill_and_bind/messages/01_qgraph.json
   output: fill_and_bind/messages/02_kgraph.json
 input_requirements: []
-output_guarantees:
-- kgraph exists
+output_guarantees: []
 allowed_changes:
 - add knodes
 - add kedges

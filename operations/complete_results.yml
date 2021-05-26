@@ -6,7 +6,7 @@ examples:
   output: fill_and_bind/messages/04_complete_results.json
 input_requirements: []
 output_guarantees:
-- all results complete
+- results complete
 allowed_changes:
 - change results
 parameters: {}

@@ -9,7 +9,7 @@ examples:
     max_results: 1
 input_requirements: []
 output_guarantees:
-- Output will contain no more than `max_results` results.
+- max `max_results` results
 allowed_changes:
 - remove results
 parameters:
