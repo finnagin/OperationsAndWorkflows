@@ -32,8 +32,7 @@ parameters:
       type: string
       example: J1
   required:
-    - start_node_key
     - intermediate_node_key
-    - end_node_key
+    - end_node_keys
     - virtual_relation_label
 

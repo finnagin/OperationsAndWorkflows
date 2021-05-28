@@ -42,9 +42,8 @@ properties:
     example: J1
     type: string
 required:
-- start_node_key
 - intermediate_node_key
-- end_node_key
+- end_node_keys
 - virtual_relation_label
 type: object
 ```
