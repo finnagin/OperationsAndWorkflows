@@ -7,9 +7,8 @@ examples:
     output: overlay/messages/10_output_jaccard.json
     parameters:
       virtual_relation_label: j1
-      start_node_key: drug 
       intermediate_node_key: protein
-      end_node_key: type-2 diabetes
+      end_node_keys: [type-2 diabetes, drug]
 input_requirements: []
 output_guarantees: []
 allowed_changes:
@@ -20,18 +19,14 @@ allowed_changes:
 parameters:
   type: object
   properties:
-    start_node_key:
-      description: A qnode key specifying the starting node.
-      type: string
-      example: n0
     intermediate_node_key:
       description: A qnode key specifying the intermediate node.
       type: string
       example: n1
-    end_node_key:
-      description: A qnode key specifying the ending node.
-      type: string
-      example: n2
+    end_node_keys:
+      description: A list of qnode keys specifying the ending nodes.
+      type: array
+      example: [n0, n2]
     virtual_relation_label:
       description: The key of the query graph edge that corresponds to the knowledge graph edges that were added by this operation.
       type: string

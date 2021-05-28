@@ -26,17 +26,15 @@ None
 
 ```yaml
 properties:
-  end_node_key:
-    description: A qnode key specifying the ending node.
-    example: n2
-    type: string
+  end_node_keys:
+    description: A list of qnode keys specifying the ending nodes.
+    example:
+    - n0
+    - n2
+    type: array
   intermediate_node_key:
     description: A qnode key specifying the intermediate node.
     example: n1
-    type: string
-  start_node_key:
-    description: A qnode key specifying the starting node.
-    example: n0
     type: string
   virtual_relation_label:
     description: The key of the query graph edge that corresponds to the knowledge
