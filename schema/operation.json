@@ -3,53 +3,37 @@
     "$id": "http://standards.ncats.io/operation.json",
     "anyOf": [
         {
-            "$ref": "#/$defs/OperationOverlay"
-        },
-        {
             "$ref": "#/$defs/OperationBind"
-        },
-        {
-            "$ref": "#/$defs/OperationOverlayComputeNgd"
-        },
-        {
-            "$ref": "#/$defs/OperationFill"
-        },
-        {
-            "$ref": "#/$defs/OperationFilterResults"
-        },
-        {
-            "$ref": "#/$defs/OperationFilterKgraph"
-        },
-        {
-            "$ref": "#/$defs/OperationRestate"
         },
         {
             "$ref": "#/$defs/OperationCompleteResults"
         },
         {
-            "$ref": "#/$defs/OperationFilterResultsTopN"
+            "$ref": "#/$defs/OperationFill"
+        },
+        {
+            "$ref": "#/$defs/OperationFilterKgraph"
         },
         {
             "$ref": "#/$defs/OperationFilterKgraphOrphans"
+        },
+        {
+            "$ref": "#/$defs/OperationFilterResults"
+        },
+        {
+            "$ref": "#/$defs/OperationFilterResultsTopN"
+        },
+        {
+            "$ref": "#/$defs/OperationOverlay"
+        },
+        {
+            "$ref": "#/$defs/OperationOverlayComputeNgd"
+        },
+        {
+            "$ref": "#/$defs/OperationRestate"
         }
     ],
     "$defs": {
-        "OperationOverlay": {
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "enum": [
-                        "overlay"
-                    ]
-                },
-                "parameters": {}
-            },
-            "required": [
-                "id"
-            ],
-            "additionalProperties": false
-        },
         "OperationBind": {
             "type": "object",
             "properties": {
@@ -66,44 +50,19 @@
             ],
             "additionalProperties": false
         },
-        "OperationOverlayComputeNgd": {
+        "OperationCompleteResults": {
             "type": "object",
             "properties": {
                 "id": {
                     "type": "string",
                     "enum": [
-                        "overlay_compute_ngd"
+                        "complete_results"
                     ]
                 },
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "virtual_relation_label": {
-                            "description": "An label to help identify the virtual edge in the relation field",
-                            "type": "string",
-                            "example": "NGD1"
-                        },
-                        "qnode_keys": {
-                            "description": "A list of qnode keys to overlay pairwise edges onto. Must be be a list of at least 2 valid qnodes.",
-                            "type": "array",
-                            "items": {
-                                "type": "string"
-                            },
-                            "example": [
-                                "n00",
-                                "n01"
-                            ]
-                        }
-                    },
-                    "required": [
-                        "virtual_relation_label",
-                        "qnode_keys"
-                    ]
-                }
+                "parameters": {}
             },
             "required": [
-                "id",
-                "parameters"
+                "id"
             ],
             "additionalProperties": false
         },
@@ -159,22 +118,6 @@
             ],
             "additionalProperties": false
         },
-        "OperationFilterResults": {
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "enum": [
-                        "filter_results"
-                    ]
-                },
-                "parameters": {}
-            },
-            "required": [
-                "id"
-            ],
-            "additionalProperties": false
-        },
         "OperationFilterKgraph": {
             "type": "object",
             "properties": {
@@ -191,13 +134,13 @@
             ],
             "additionalProperties": false
         },
-        "OperationRestate": {
+        "OperationFilterKgraphOrphans": {
             "type": "object",
             "properties": {
                 "id": {
                     "type": "string",
                     "enum": [
-                        "restate"
+                        "filter_kgraph_orphans"
                     ]
                 },
                 "parameters": {}
@@ -207,13 +150,13 @@
             ],
             "additionalProperties": false
         },
-        "OperationCompleteResults": {
+        "OperationFilterResults": {
             "type": "object",
             "properties": {
                 "id": {
                     "type": "string",
                     "enum": [
-                        "complete_results"
+                        "filter_results"
                     ]
                 },
                 "parameters": {}
@@ -253,13 +196,70 @@
             ],
             "additionalProperties": false
         },
-        "OperationFilterKgraphOrphans": {
+        "OperationOverlay": {
             "type": "object",
             "properties": {
                 "id": {
                     "type": "string",
                     "enum": [
-                        "filter_kgraph_orphans"
+                        "overlay"
+                    ]
+                },
+                "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationOverlayComputeNgd": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "overlay_compute_ngd"
+                    ]
+                },
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "virtual_relation_label": {
+                            "description": "An label to help identify the virtual edge in the relation field",
+                            "type": "string",
+                            "example": "NGD1"
+                        },
+                        "qnode_keys": {
+                            "description": "A list of qnode keys to overlay pairwise edges onto. Must be be a list of at least 2 valid qnodes.",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "example": [
+                                "n00",
+                                "n01"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "virtual_relation_label",
+                        "qnode_keys"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "parameters"
+            ],
+            "additionalProperties": false
+        },
+        "OperationRestate": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "restate"
                     ]
                 },
                 "parameters": {}
