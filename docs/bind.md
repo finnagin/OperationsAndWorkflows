@@ -8,12 +8,11 @@ This operation adds results binding kgraph elements to qgraph elements.
 
 ### input requirements
 
-- qgraph exists
-- kgraph exists
+None
 
 ### output guarantees
 
-- results exists
+None
 
 ### allowed changes
 

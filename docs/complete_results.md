@@ -12,7 +12,7 @@ None
 
 ### output guarantees
 
-- all results complete
+- results complete
 
 ### allowed changes
 
