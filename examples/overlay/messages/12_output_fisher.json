@@ -22,9 +22,9 @@
                 "predicate": "biolink:correlated_with",
                 "object": "type-2 diabetes"
             },
-            "j1": {
+            "f1": {
                 "subject": "type-1 diabetes",
-                "predicate": "biolink:has_jaccard_index_with",
+                "predicate": "biolink:has_fisher_exact_test_p-value_with",
                 "object": "type-2 diabetes"
             }
         }
@@ -40,7 +40,7 @@
                 "predicate": "biolink:correlated_with",
                 "object": "type-2 diabetes"
             },
-            "j1": {
+            "f1_1": {
                 "subject": "type-1 diabetes",
                 "predicate": "biolink:has_fisher_exact_test_p-value_with",
                 "object": "type-2 diabetes",
@@ -64,7 +64,7 @@
             },
             "edge_bindings": {
                 "correlated": [{"id": "MONDO:0005147"},{"id": "MONDO:0005148"}]
-                "j1": [{"id": "j1"}]
+                "f1": [{"id": "f1_1"}]
             }
         }
     ]
