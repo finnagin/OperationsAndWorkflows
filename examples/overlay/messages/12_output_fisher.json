@@ -63,7 +63,7 @@
                 "type-2 diabetes": [{"id": "MONDO:0005148"}]
             },
             "edge_bindings": {
-                "correlated": [{"id": "MONDO:0005147"},{"id": "MONDO:0005148"}]
+                "correlated": [{"id": "MONDO:0005147"},{"id": "MONDO:0005148"}],
                 "f1": [{"id": "f1_1"}]
             }
         }
