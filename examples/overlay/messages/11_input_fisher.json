@@ -2,50 +2,65 @@
     "query_graph": {
         "nodes": {
             "type-2 diabetes": {
-                "id": "MONDO:0005148"
-            },
-            "type-1 diabetes": {
-                "id": "MONDO:0005147"
+                "id": "DOID:9352"
             },
             "protein": {
                 "category": "biolink:Protein"
             },
+            "drug": {
+                "category": "biolink:ChemicalSubstance"
+            }
         },
         "edges": {
-            "correlated1": {
+            "associated": {
                 "subject": "protein",
-                "predicate": "biolink:correlated_with",
-                "object": "type-1 diabetes"
-            },
-            "correlated2": {
-                "subject": "protein",
-                "predicate": "biolink:correlated_with",
+                "predicate": "biolink:gene_associated_with_condition",
                 "object": "type-2 diabetes"
             },
+            "interacts": {
+                "subject": "protein",
+                "predicate": "biolink:physically_interacts_with",
+                "object": "drug"
+            }
         }
     },
     "knowledge_graph": {
         "nodes": {
-            "MONDO:0005147": {"name": "type-1 diabetes"},
-            "MONDO:0005148": {"name": "type-2 diabetes"}
+            "UniProtKB:P20823": {
+                "name": "HNF1A",
+                "category": "biolink:Protein"
+            },
+            "CHEMBL.COMPOUND:CHEMBL783": {
+                "name": "NATEGLINIDE",
+                "category": "biolink:ChemicalSubstance"
+            },
+            "DOID:9352": {"name": "type-2 diabetes"}
         },
         "edges": {
-            "pesudo_name": {
-                "subject": "type-1 diabetes",
-                "predicate": "biolink:correlated_with",
-                "object": "type-2 diabetes"
+            "df87ff82": {
+                "subject": "UniProtKB:P20823",
+                "predicate": "biolink:gene_associated_with_condition",
+                "object": "DOID:9352"
             },
+            "vg56hkj9": {
+                "subject": "UniProtKB:P20823",
+                "predicate": "biolink:physically_interacts_with",
+                "object": "CHEMBL.COMPOUND:CHEMBL783"
+            }
         }
     },
     "results": [
         {
             "node_bindings": {
-                "type-1 diabetes": [{"id": "MONDO:0005147"}],
-                "type-2 diabetes": [{"id": "MONDO:0005148"}]
+                "protein": [{"id": "UniProtKB:P20823"}],
+                "drug": [{"id": "CHEMBL.COMPOUND:CHEMBL783"}],
+                "type-2 diabetes": [{"id": "DOID:9352"}]
             },
             "edge_bindings": {
-                "correlated": [{"id": "MONDO:0005147"},{"id": "MONDO:0005148"}]
+                "associated": [{"id": "df87ff82"}],
+                "interacts": [{"id": "vg56hkj9"}]
             }
         }
     ]
 }
+
