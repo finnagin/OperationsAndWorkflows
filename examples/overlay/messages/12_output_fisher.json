@@ -1,0 +1,72 @@
+{
+    "query_graph": {
+        "nodes": {
+            "type-2 diabetes": {
+                "id": "MONDO:0005148"
+            },
+            "type-1 diabetes": {
+                "id": "MONDO:0005147"
+            },
+            "protein": {
+                "category": "biolink:Protein"
+            },
+        },
+        "edges": {
+            "correlated1": {
+                "subject": "protein",
+                "predicate": "biolink:correlated_with",
+                "object": "type-1 diabetes"
+            },
+            "correlated2": {
+                "subject": "protein",
+                "predicate": "biolink:correlated_with",
+                "object": "type-2 diabetes"
+            },
+            "j1": {
+                "subject": "type-1 diabetes",
+                "predicate": "biolink:has_jaccard_index_with",
+                "object": "type-2 diabetes"
+            }
+        }
+    },
+    "knowledge_graph": {
+        "nodes": {
+            "MONDO:0005147": {"name": "type-1 diabetes"},
+            "MONDO:0005148": {"name": "type-2 diabetes"}
+        },
+        "edges": {
+            "pesudo_name": {
+                "subject": "type-1 diabetes",
+                "predicate": "biolink:correlated_with",
+                "object": "type-2 diabetes"
+            },
+            "j1": {
+                "subject": "type-1 diabetes",
+                "predicate": "biolink:has_fisher_exact_test_p-value_with",
+                "object": "type-2 diabetes",
+                "attributes": [
+                    {
+                      "name": "fisher_exact_test_p-value",
+                      "value": "0.001",
+                      "type": "EDAM:data_1669",
+                      "url": null,
+                      "source": null
+                    }
+                ]
+            },
+        }
+    },
+    "results": [
+        {
+            "node_bindings": {
+                "type-1 diabetes": [{"id": "MONDO:0005147"}],
+                "type-2 diabetes": [{"id": "MONDO:0005148"}]
+            },
+            "edge_bindings": {
+                "correlated": [{"id": "MONDO:0005147"},{"id": "MONDO:0005148"}]
+                "j1": [{"id": "j1"}]
+            }
+        }
+    ]
+}
+

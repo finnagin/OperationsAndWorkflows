@@ -1,0 +1,51 @@
+{
+    "query_graph": {
+        "nodes": {
+            "type-2 diabetes": {
+                "id": "MONDO:0005148"
+            },
+            "type-1 diabetes": {
+                "id": "MONDO:0005147"
+            },
+            "protein": {
+                "category": "biolink:Protein"
+            },
+        },
+        "edges": {
+            "correlated1": {
+                "subject": "protein",
+                "predicate": "biolink:correlated_with",
+                "object": "type-1 diabetes"
+            },
+            "correlated2": {
+                "subject": "protein",
+                "predicate": "biolink:correlated_with",
+                "object": "type-2 diabetes"
+            },
+        }
+    },
+    "knowledge_graph": {
+        "nodes": {
+            "MONDO:0005147": {"name": "type-1 diabetes"},
+            "MONDO:0005148": {"name": "type-2 diabetes"}
+        },
+        "edges": {
+            "pesudo_name": {
+                "subject": "type-1 diabetes",
+                "predicate": "biolink:correlated_with",
+                "object": "type-2 diabetes"
+            },
+        }
+    },
+    "results": [
+        {
+            "node_bindings": {
+                "type-1 diabetes": [{"id": "MONDO:0005147"}],
+                "type-2 diabetes": [{"id": "MONDO:0005148"}]
+            },
+            "edge_bindings": {
+                "correlated": [{"id": "MONDO:0005147"},{"id": "MONDO:0005148"}]
+            }
+        }
+    ]
+}

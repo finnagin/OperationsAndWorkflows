@@ -7,8 +7,8 @@ examples:
     output: overlay/messages/12_output_fisher.json
     parameters:
       virtual_relation_label: j1
-      intermediate_node_key: ""
-      end_node_keys: ""
+      subject_qnode_key: "type-1 diabetes" 
+      object_qnode_key: "type-2 diabetes"
 input_requirements: []
 output_guarantees: []
 allowed_changes:
@@ -30,7 +30,7 @@ parameters:
     virtual_relation_label:
       description: An label to help identify the virtual edge.
       type: string
-      example: F1
+      example: j1
     rel_edge_key:
       description: A specific Qedge id connected to both subject nodes and object nodes in message KG (optional, otherwise all edges connected to both subject nodes and object nodes in message KG are considered).
       type: string
