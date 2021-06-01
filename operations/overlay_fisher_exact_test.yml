@@ -6,7 +6,7 @@ examples:
   - input: overlay/messages/11_input_fisher.json
     output: overlay/messages/12_output_fisher.json
     parameters:
-      virtual_relation_label: j1
+      virtual_relation_label: f1
       subject_qnode_key: "type-1 diabetes" 
       object_qnode_key: "type-2 diabetes"
 input_requirements: []
@@ -30,20 +30,11 @@ parameters:
     virtual_relation_label:
       description: An label to help identify the virtual edge.
       type: string
-      example: j1
+      example: f1
     rel_edge_key:
       description: A specific Qedge id connected to both subject nodes and object nodes in message KG (optional, otherwise all edges connected to both subject nodes and object nodes in message KG are considered).
       type: string
       example: e01
-    filter_type:
-      description: Optional way to filter results. If "top_n" is set this indicate the top number (the smallest) of p-values will be returned acording to what is specified in the "value" parameter. If "cutoff" is set then this indicates the p-value cutoff should be used to return results acording to what is specified in the "value" parameter. (optional, otherwise all results returned)
-      type: string or None
-      example: top_n, cutoff, None
-      all_possible_input: top_n, cutoff, None
-    value:
-      description: if "top_n" is set for "filter_type" this is an int indicating the top number (the smallest) of p-values to return. If instead "cutoff" is set then this is a float indicating the p-value cutoff to return the results. (optional, otherwise all results returned)
-      type: int or float or None
-      example: all, 0.05, 0.95, 50
   required:
     - subject_qnode_key
     - object_qnode_key
