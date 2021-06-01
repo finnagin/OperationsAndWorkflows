@@ -7,7 +7,7 @@ examples:
     output: overlay/messages/12_output_fisher.json
     parameters:
       virtual_relation_label: f1
-      subject_qnode_key: "type-1 diabetes" 
+      subject_qnode_key: "protein" 
       object_qnode_key: "type-2 diabetes"
 input_requirements: []
 output_guarantees: []
