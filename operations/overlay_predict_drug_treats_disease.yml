@@ -8,6 +8,9 @@ examples:
   output: overlay/messages/14_output_pred_drug_trt_disease.json
   parameters:
     virtual_relation_label: pred_trt
+    qnode_keys:
+      - type-2 diabetes
+      - ibuprofen
 input_requirements: []
 output_guarantees: []
 allowed_changes:
