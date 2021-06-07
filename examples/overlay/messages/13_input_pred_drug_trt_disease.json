@@ -1,0 +1,49 @@
+{
+    "query_graph": {
+        "nodes": {
+            "type-2 diabetes": {
+                "id": "DOID:9352"
+            },
+            "ibuprofen": {
+                "name": "IBUPROFEN",
+                "category": "biolink:ChemicalSubstance"
+            }
+        },
+        "edges": {
+            "e01": {
+                "subject": "ibuprofen",
+                "object": "type-2 diabetes"
+            }
+        }
+    },
+    "knowledge_graph": {
+        "nodes": {
+            "type-2 diabetes": {
+                "id": "DOID:9352"
+            },
+            "ibuprofen": {
+                "name": "IBUPROFEN",
+                "category": "biolink:ChemicalSubstance"
+            }
+        },
+        "edges": {
+            "e00": {
+                "subject": "ibuprofen",
+                "predicate": "biolink:gene_associated_with_condition",
+                "object": "type-2 diabetes"
+            }
+        }
+    },
+    "results": [
+        {
+            "node_bindings": {
+                "ibuprofen": [{"name": "IBUPROFEN"}],
+                "type-2 diabetes": [{"id": "DOID:9352"}]
+            },
+            "edge_bindings": {
+                "e00": [{"id": "DOID:9352"}],
+		"e01": [{"id": "DOID:9352"}]
+            }
+        }
+    ]
+}
