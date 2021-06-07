@@ -12,7 +12,7 @@ None
 
 ### output guarantees
 
-- kgraph exists
+None
 
 ### allowed changes
 

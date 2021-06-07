@@ -53,10 +53,10 @@ def op_to_component(op):
 
 
 if __name__ == "__main__":
-    operations = [    
+    operations = sorted([    
         Path(filename).stem
         for filename in glob.glob(str(OPERATIONS_DIR / "*.yml"))
-    ]
+    ])
     operation = {
         "$schema": "https://json-schema.org/draft-07/schema",
         "$id": "http://standards.ncats.io/operation.json",

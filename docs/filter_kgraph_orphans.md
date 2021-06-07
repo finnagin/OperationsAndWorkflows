@@ -14,7 +14,7 @@ None
 
 ### output guarantees
 
-- Output will contain no kgraph elements that are not referenced by any results.
+- no orphaned knowledge graph elements
 
 ### allowed changes
 

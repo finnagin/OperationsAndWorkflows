@@ -14,7 +14,7 @@ None
 
 ### output guarantees
 
-- Output will contain no more than `max_results` results.
+- max `max_results` results
 
 ### allowed changes
 
