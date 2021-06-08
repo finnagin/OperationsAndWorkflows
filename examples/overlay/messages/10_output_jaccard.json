@@ -82,7 +82,7 @@
                 "attributes": [
                     {
                       "name": "jaccard_index",
-                      "value": "0.66",
+                      "value": "1.0",
                       "type": "EDAM:data_1772",
                       "url": null,
                       "source": null
@@ -96,7 +96,7 @@
                 "attributes": [
                     {
                       "name": "jaccard_index",
-                      "value": "0.33",
+                      "value": "0.5",
                       "type": "EDAM:data_1772",
                       "url": null,
                       "source": null
