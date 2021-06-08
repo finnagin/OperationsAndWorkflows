@@ -1,0 +1,48 @@
+id: filter_kgraph_std_dev
+subclass_of: filter_kgraph
+name: filter kgraph (standard deviation)
+description: This operation removes kgraph edges that have attribute values are below/above the mean +/- n standard deviations.
+examples:
+- input: fill_and_filter/messages/20_filtered_kgraph_std_dev_input.json
+  output: fill_and_filter/messages/21_filtered_kgraph_std_dev_output.json
+input_requirements: []
+output_guarantees:
+- no edges in the kgraph which have attribute values are below/above the mean +/- n standard deviations.
+allowed_changes:
+- remove knodes
+- remove kedges
+parameters:
+  type: object
+  properties:
+    edge_attribute:
+      description: The name of the edge attribute to filter on.
+      type: string
+      example: normalized_google_distance
+    threshold:
+      description: The number of standard deviations to threshold on.
+      type: float
+      example: 1.2
+      minimum: 0
+      default: 1
+    remove_above:
+      description: Indictes whether to remove above or below the given threshold.
+      type: bool
+      example: true
+      default: false
+    top:
+      description: Indicate whether or not the threshold should be placed in the top or bottom of the values. E.g. top set as True will set the cutoff for filtering as the mean + threshold * std_dev while setting top to False will set the cutoff as the mean - std_dev * threshold.
+      type: bool
+      example: false
+      default: true
+    remove_connected_nodes:
+      description: Indicates whether or not to remove the nodes connected to the edges.
+      type: bool
+      example: true
+      default: false
+    qnode_key:
+      description: If remove_connected_nodes is set to True this indicates if you only want nodes corresponding to a specific qnode_key to be removed. If not provided the qnode_key will not be considered when filtering.
+      type: string
+      example: n01
+      default: null
+  required:
+  - edge_attribute
