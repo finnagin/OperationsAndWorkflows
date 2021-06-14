@@ -11,7 +11,7 @@ examples:
     remove_above: false
     top: true
     remove_connected_nodes: true
-    qnode_key: n01
+    qnode_key: drug
 input_requirements: []
 output_guarantees:
 - no edges in the kgraph which have attribute values are below/above the mean +/- n standard deviations.
