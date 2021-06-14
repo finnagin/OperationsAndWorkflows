@@ -3,13 +3,13 @@ subclass_of: filter_kgraph
 name: filter kgraph (standard deviation)
 description: This operation removes kgraph edges that have attribute values are below/above the mean +/- n standard deviations.
 examples:
-- input: fill_and_filter/messages/20_filtered_kgraph_std_dev_input.json
-  output: fill_and_filter/messages/21_filtered_kgraph_std_dev_output.json
+- input: fill_and_filter/messages/05_filtered_kgraph_stat_input.json
+  output: fill_and_filter/messages/06_filtered_kgraph_std_dev_output.json
   parameters:
     edge_attribute: normalized_google_distance 
     threshold: 0.8
-    remove_above: false
-    top: true
+    remove_above: true
+    top: false
     remove_connected_nodes: true
     qnode_key: drug
 input_requirements: []
