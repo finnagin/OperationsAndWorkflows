@@ -6,6 +6,7 @@
 - [fill](./fill.md)
 - [filter_kgraph](./filter_kgraph.md)
 - [filter_kgraph_orphans](./filter_kgraph_orphans.md)
+- [filter_kgraph_percentile](./filter_kgraph_percentile.md)
 - [filter_kgraph_std_dev](./filter_kgraph_std_dev.md)
 - [filter_results](./filter_results.md)
 - [filter_results_top_n](./filter_results_top_n.md)
