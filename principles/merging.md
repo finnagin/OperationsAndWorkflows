@@ -6,7 +6,7 @@ After pre-processing, the `query_graph`, `knowledge_graph`, and `results` from t
 
 ## Pre-processing
 
-* Each knowledge graph and associated bindings should be normalized to use a shared set of preferred identifiers.
+* Each knowledge graph node key and associated bindings should be normalized to use a shared set of preferred identifiers.
 * All `name` properties should be removed.
 
 ## Query graph
@@ -23,7 +23,7 @@ The normalized knowledge graph `nodes` and `edges` should be merged independentl
 
 Knowledge graph nodes should be merged if and only if their keys are identical.
 
-Knowledge graph edges should be merged if and only if they share a `subject`, `predicate`, `object`, and `relation`. If `relation` is provided for one edge and omitted by the other, they should not be merged.
+Knowledge graph edges should be merged if and only if they share a `subject`, `predicate`, `object`, and `original_knowledge_source`. If `original_knowledge_source` is not provided for any edge, it should not be merged.
 
 ### Knowledge graph nodes
 
@@ -40,4 +40,41 @@ Knowledge graph edge values should be merged by:
 
 ## Results
 
-Results should be concatenated.
+Results should be merged if and only if their node and edge bindings are identical, after accounting for knowledge graph element equivalence. Two equivalent results should be merged by:
+
+* extracting all key-value pairs aside from node_bindings and edge_bindings into separate objects
+* using these objects as values in a `metadata` field, keyed by the corresponding source
+
+For example,
+```json
+{
+    "node_bindings": {"n0": [{"id": "MONDO:xxx"}]},
+    "edge_bindings": {},
+    "score": 1.0
+}
+```
+and
+```json
+{
+    "node_bindings": {"n0": [{"id": "MONDO:xxx"}]},
+    "edge_bindings": {},
+    "score": 0.5,
+    "description": "This is interesting!"
+}
+```
+will be merged into
+```json
+{
+    "node_bindings": {"n0": [{"id": "MONDO:xxx"}]},
+    "edge_bindings": {},
+    "metadata": {
+        "a": {
+            "score": 1.0
+        },
+        "b": {
+            "score": 0.5,
+            "description": "This is interesting!"
+        }
+    }
+}
+```
