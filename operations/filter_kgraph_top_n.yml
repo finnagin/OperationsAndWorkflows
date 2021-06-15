@@ -1,7 +1,7 @@
 id: filter_kgraph_top_n
 subclass_of: filter_kgraph
 name: filter kgraph (top n)
-description: This operation removes kgraph edges that have attribute values are below/above top/bottom n values.
+description: This operation removes kgraph edges that have attribute values are below/above the top/bottom n values.
 examples:
 - input: fill_and_filter/messages/05_filtered_kgraph_stat_input.json
   output: fill_and_filter/messages/08_filtered_kgraph_top_n_output.json
@@ -13,7 +13,7 @@ examples:
     qnode_key: drug
 input_requirements: []
 output_guarantees:
-- no edges in the kgraph which have attribute values are below/above the mean +/- n standard deviations.
+- no edges in the kgraph which have attribute values are below/above the top/bottom n values.
 allowed_changes:
 - remove knodes
 - remove kedges
@@ -24,7 +24,7 @@ parameters:
       description: The name of the edge attribute to filter on.
       type: string
       example: normalized_google_distance
-    threshold:
+    max_edges:
       description: The number of edges to keep.
       type: integer
       example: 10
