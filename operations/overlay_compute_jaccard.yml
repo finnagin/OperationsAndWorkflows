@@ -1,0 +1,37 @@
+id: overlay_compute_jaccard
+subclass_of: overlay
+name: overlay compute jaccard
+description: This operation computes the Jaccard Similarity which measures how many intermediate_node_key nodes are directly connected to both the end_node_keys nodes for all pairs of nodes with corresponding keys. It will then add edges to the knowledge graph along with edge attributes (with the property name jaccard_index) between each start_node_key and object_node_key. A query graph edge will also be added using the key specified by virtual_relation_label. This is used for purposes such as "find me all drugs (start_node_key) that have many proteins (intermediate_node_key) in common with this disease (end_node_key)." This can be used for downstream filtering to concentrate on relevant bioentities.
+examples: 
+  - input: overlay/messages/09_input_jaccard.json
+    output: overlay/messages/10_output_jaccard.json
+    parameters:
+      virtual_relation_label: j1
+      intermediate_node_key: protein
+      end_node_keys: [type-2 diabetes, drug]
+input_requirements: []
+output_guarantees: []
+allowed_changes:
+  - add kedges
+  - add qedges
+  - add bindings to results
+parameters:
+  type: object
+  properties:
+    intermediate_node_key:
+      description: A qnode key specifying the intermediate node.
+      type: string
+      example: n1
+    end_node_keys:
+      description: A list of qnode keys specifying the ending nodes.
+      type: array
+      example: [n0, n2]
+    virtual_relation_label:
+      description: The key of the query graph edge that corresponds to the knowledge graph edges that were added by this operation.
+      type: string
+      example: J1
+  required:
+    - intermediate_node_key
+    - end_node_keys
+    - virtual_relation_label
+

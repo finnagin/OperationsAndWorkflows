@@ -30,6 +30,9 @@
             "$ref": "#/$defs/OperationOverlay"
         },
         {
+            "$ref": "#/$defs/OperationOverlayComputeJaccard"
+        },
+        {
             "$ref": "#/$defs/OperationOverlayComputeNgd"
         },
         {
@@ -272,6 +275,50 @@
             },
             "required": [
                 "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationOverlayComputeJaccard": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "overlay_compute_jaccard"
+                    ]
+                },
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "intermediate_node_key": {
+                            "description": "A qnode key specifying the intermediate node.",
+                            "type": "string",
+                            "example": "n1"
+                        },
+                        "end_node_keys": {
+                            "description": "A list of qnode keys specifying the ending nodes.",
+                            "type": "array",
+                            "example": [
+                                "n0",
+                                "n2"
+                            ]
+                        },
+                        "virtual_relation_label": {
+                            "description": "The key of the query graph edge that corresponds to the knowledge graph edges that were added by this operation.",
+                            "type": "string",
+                            "example": "J1"
+                        }
+                    },
+                    "required": [
+                        "intermediate_node_key",
+                        "end_node_keys",
+                        "virtual_relation_label"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "parameters"
             ],
             "additionalProperties": false
         },
