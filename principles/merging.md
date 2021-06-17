@@ -6,41 +6,42 @@ After pre-processing, the `query_graph`, `knowledge_graph`, and `results` from t
 
 ## Pre-processing
 
-* Each knowledge graph node key and associated bindings should be normalized to use a shared set of preferred identifiers.
+* Each knowledge graph node key, knowledge graph edge endpoint, query graph node id, and node binding should be normalized to use a shared set of preferred identifiers.
+* Any superfluous predicates, categories, and ids should be removed (those whose ancestor is also present)
 * All `name` properties should be removed.
 
 ## Query graph
 
 The query graph `nodes` and `edges` should be merged independently.
 
-Query graph nodes should be merged if and only if their keys _and_ values are identical. Identical keys with different values should result in an error.
+Query graph nodes should be merged if and only if they are equivalent. Identical keys with inconsistent values should result in an error.
 
-Query graph edges should be merged if and only if their keys _and_ values are identical. Identical keys with different values should result in an error.
+Query graph edges should be merged if and only if they are equivalent. Identical keys with inconsistent values should result in an error.
 
 ## Knowledge graph
 
 The normalized knowledge graph `nodes` and `edges` should be merged independently.
 
-Knowledge graph nodes should be merged if and only if their keys are identical.
+Knowledge graph nodes should be merged if and only if they are equivalent.
 
-Knowledge graph edges should be merged if and only if they share a `subject`, `predicate`, `object`, and `original_knowledge_source`. If `original_knowledge_source` is not provided for any edge, it should not be merged.
+Knowledge graph edges should be merged if and only if they are equivalent.
 
 ### Knowledge graph nodes
 
 Knowledge graph node values should be merged by:
 
 * finding the union of their `categories` lists
-* concatenating their `attributes` lists
+* finding the union of their `attributes` lists
 
 ### Knowledge graph edges
 
 Knowledge graph edge values should be merged by:
 
-* concatenating their `attributes` lists
+* finding the union of their `attributes` lists
 
 ## Results
 
-Results should be merged if and only if their node and edge bindings are identical, after accounting for knowledge graph element equivalence. Two equivalent results should be merged by:
+Results should be merged if and only if they are equivalent. Two equivalent results should be merged by:
 
 * extracting all key-value pairs aside from node_bindings and edge_bindings into separate objects
 * using these objects as values in a `metadata` field, keyed by the corresponding source
