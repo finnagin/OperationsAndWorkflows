@@ -218,16 +218,20 @@
                             "example": true,
                             "default": false
                         },
-                        "remove_connected_nodes": {
-                            "description": "Indicates whether or not to remove the nodes connected to the edges.",
-                            "type": "bool",
-                            "example": true,
-                            "default": false
+                        "edge_keys": {
+                            "description": "This indicates if you only want to filter on specific edge_keys. If not provided or empty all edges will be filtered on and edge_key will not be considered when filtering.",
+                            "type": "array",
+                            "example": [
+                                "e01"
+                            ],
+                            "default": null
                         },
-                        "qnode_key": {
-                            "description": "If remove_connected_nodes is set to True this indicates if you only want nodes corresponding to a specific qnode_key to be removed. If not provided the qnode_key will not be considered when filtering.",
-                            "type": "string",
-                            "example": "n01",
+                        "qnode_keys": {
+                            "description": "This indicates if you only want nodes corresponding to a specific list of qnode_keys to be removed. If not provided oe empty no nodes will be removed when filtering.",
+                            "type": "array",
+                            "example": [
+                                "n01"
+                            ],
                             "default": null
                         }
                     },

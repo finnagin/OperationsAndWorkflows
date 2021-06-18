@@ -29,21 +29,25 @@ properties:
     description: The name of the edge attribute to filter on.
     example: normalized_google_distance
     type: string
-  qnode_key:
+  edge_keys:
     default: null
-    description: If remove_connected_nodes is set to True this indicates if you only
-      want nodes corresponding to a specific qnode_key to be removed. If not provided
-      the qnode_key will not be considered when filtering.
-    example: n01
-    type: string
+    description: This indicates if you only want to filter on specific edge_keys.
+      If not provided or empty all edges will be filtered on and edge_key will not
+      be considered when filtering.
+    example:
+    - e01
+    type: array
+  qnode_keys:
+    default: null
+    description: This indicates if you only want nodes corresponding to a specific
+      list of qnode_keys to be removed. If not provided oe empty no nodes will be
+      removed when filtering.
+    example:
+    - n01
+    type: array
   remove_above:
     default: false
     description: Indictes whether to remove above or below the given threshold.
-    example: true
-    type: bool
-  remove_connected_nodes:
-    default: false
-    description: Indicates whether or not to remove the nodes connected to the edges.
     example: true
     type: bool
   threshold:
