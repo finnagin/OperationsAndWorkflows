@@ -2,7 +2,7 @@
 
 _subclass of [filter_kgraph](./filter_kgraph.md)_
 
-This operation removes kgraph edges that have attribute values are below/above top/bottom n values.
+This operation removes kgraph edges that have attribute values are below/above the top/bottom n values.
 
 ### examples
 
@@ -14,7 +14,7 @@ None
 
 ### output guarantees
 
-- no edges in the kgraph which have attribute values are below/above the mean +/- n standard deviations.
+- no edges in the kgraph which have attribute values are below/above the top/bottom n values.
 
 ### allowed changes
 
@@ -29,24 +29,28 @@ properties:
     description: The name of the edge attribute to filter on.
     example: normalized_google_distance
     type: string
-  qnode_key:
+  edge_keys:
     default: null
-    description: If remove_connected_nodes is set to True this indicates if you only
-      want nodes corresponding to a specific qnode_key to be removed. If not provided
-      the qnode_key will not be considered when filtering.
-    example: n01
-    type: string
-  remove_connected_nodes:
-    default: false
-    description: Indicates whether or not to remove the nodes connected to the edges.
-    example: true
-    type: bool
-  threshold:
+    description: This indicates if you only want to filter on specific edge_keys.
+      If not provided or empty all edges will be filtered on and edge_key will not
+      be considered when filtering.
+    example:
+    - e01
+    type: array
+  max_edges:
     default: 50
     description: The number of edges to keep.
     example: 10
     minimum: 0
     type: integer
+  qnode_keys:
+    default: null
+    description: This indicates if you only want nodes corresponding to a specific
+      list of qnode_keys to be removed. If not provided oe empty no nodes will be
+      removed when filtering.
+    example:
+    - n01
+    type: array
   top:
     default: true
     description: Indicate whether or not the the top or bottom n values should be
