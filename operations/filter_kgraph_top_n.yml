@@ -9,8 +9,8 @@ examples:
     edge_attribute: normalized_google_distance 
     threshold: 3
     top: false
-    remove_connected_nodes: true
-    qnode_key: drug
+    qnode_keys: 
+      - drug
 input_requirements: []
 output_guarantees:
 - no edges in the kgraph which have attribute values are below/above the top/bottom n values.
@@ -35,15 +35,15 @@ parameters:
       type: bool
       example: false
       default: true
-    remove_connected_nodes:
-      description: Indicates whether or not to remove the nodes connected to the edges.
-      type: bool
-      example: true
-      default: false
-    qnode_key:
-      description: If remove_connected_nodes is set to True this indicates if you only want nodes corresponding to a specific qnode_key to be removed. If not provided the qnode_key will not be considered when filtering.
-      type: string
-      example: n01
+    edge_key:
+      description: This indicates if you only want to filter on specific edge_keys. If not provided or empty all edges will be filtered on and edge_key will not be considered when filtering.
+      type: array
+      example: [e01]
+      default: null
+    qnode_keys:
+      description: This indicates if you only want nodes corresponding to a specific list of qnode_keys to be removed. If not provided oe empty no nodes will be removed when filtering.
+      type: array
+      example: [n01]
       default: null
   required:
   - edge_attribute
