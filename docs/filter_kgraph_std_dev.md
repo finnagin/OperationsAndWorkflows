@@ -32,15 +32,14 @@ properties:
   edge_keys:
     default: null
     description: This indicates if you only want to filter on specific edge_keys.
-      If not provided or empty all edges will be filtered on and edge_key will not
-      be considered when filtering.
+      If not provided or empty, all edges will be filtered on.
     example:
     - e01
     type: array
   qnode_keys:
     default: null
     description: This indicates if you only want nodes corresponding to a specific
-      list of qnode_keys to be removed. If not provided oe empty no nodes will be
+      list of qnode_keys to be removed. If not provided or empty, no nodes will be
       removed when filtering.
     example:
     - n01
