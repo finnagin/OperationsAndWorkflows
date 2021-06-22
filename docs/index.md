@@ -1,5 +1,6 @@
 # Operation Index
 
+- [annotate](./annotate.md)
 - [bind](./bind.md)
 - [complete_results](./complete_results.md)
 - [fill](./fill.md)

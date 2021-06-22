@@ -3,6 +3,9 @@
     "$id": "http://standards.ncats.io/operation.json",
     "anyOf": [
         {
+            "$ref": "#/$defs/OperationAnnotate"
+        },
+        {
             "$ref": "#/$defs/OperationBind"
         },
         {
@@ -46,6 +49,22 @@
         }
     ],
     "$defs": {
+        "OperationAnnotate": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "annotate"
+                    ]
+                },
+                "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
         "OperationBind": {
             "type": "object",
             "properties": {
