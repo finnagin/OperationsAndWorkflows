@@ -46,6 +46,9 @@
         },
         {
             "$ref": "#/$defs/OperationRestate"
+        },
+        {
+            "$ref": "#/$defs/OperationScore"
         }
     ],
     "$defs": {
@@ -461,6 +464,22 @@
                     "type": "string",
                     "enum": [
                         "restate"
+                    ]
+                },
+                "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationScore": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "score"
                     ]
                 },
                 "parameters": {}
