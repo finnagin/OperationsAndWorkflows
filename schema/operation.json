@@ -27,6 +27,9 @@
             "$ref": "#/$defs/OperationFilterResultsTopN"
         },
         {
+            "$ref": "#/$defs/OperationLookup"
+        },
+        {
             "$ref": "#/$defs/OperationOverlay"
         },
         {
@@ -266,6 +269,22 @@
             "required": [
                 "id",
                 "parameters"
+            ],
+            "additionalProperties": false
+        },
+        "OperationLookup": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "lookup"
+                    ]
+                },
+                "parameters": {}
+            },
+            "required": [
+                "id"
             ],
             "additionalProperties": false
         },
