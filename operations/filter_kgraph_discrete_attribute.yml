@@ -1,0 +1,42 @@
+id: filter_kgraph_discrete_attribute
+subclass_of: filter_kgraph
+name: filter kgraph (discrete attribute)
+description: This operation removes kgraph edges which have a discrete attribute containing the specified value. Edges without the given attribute are left alone.
+examples:
+- input: fill_and_filter/messages/11_filtered_kgraph_discrete_attribute_input.json
+  output: fill_and_filter/messages/12_filtered_kgraph_discrete_attribute_output.json
+  parameters:
+    edge_attribute: provided_by
+    value: ARAX/KG2
+    qnode_keys: 
+      - drug
+input_requirements: []
+output_guarantees:
+- no edges in the kgraph which have the specified attribute with the given attribute.
+allowed_changes:
+- remove knodes
+- remove kedges
+parameters:
+  type: object
+  properties:
+    edge_attribute:
+      description: The name of the edge attribute to filter on.
+      type: string
+      example: provided_by
+    threshold:
+      description: The value to compare attribute values to.
+      type: string
+      example: infores:semmeddb
+    edge_keys:
+      description: This indicates if you only want to remove edges with specific edge_keys. If not provided or empty, all edges will be filtered on.
+      type: array
+      example: [e01]
+      default: null
+    qnode_keys:
+      description: This indicates if you only want nodes corresponding to a specific list of qnode_keys to be removed. If not provided or empty, no nodes will be removed when filtering.
+      type: array
+      example: [n01]
+      default: null
+  required:
+  - edge_attribute
+  - value
