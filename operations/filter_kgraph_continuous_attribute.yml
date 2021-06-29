@@ -25,7 +25,7 @@ parameters:
       type: string
       example: normalized_google_distance
     threshold:
-      description: The number of standard deviations to threshold on.
+      description: The value to compare attribute values to.
       type: float
       example: 1.2
     remove_above:
