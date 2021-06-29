@@ -15,6 +15,9 @@
             "$ref": "#/$defs/OperationFilterKgraph"
         },
         {
+            "$ref": "#/$defs/OperationFilterKgraphContinuousAttribute"
+        },
+        {
             "$ref": "#/$defs/OperationFilterKgraphOrphans"
         },
         {
@@ -137,6 +140,63 @@
             },
             "required": [
                 "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationFilterKgraphContinuousAttribute": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "filter_kgraph_continuous_attribute"
+                    ]
+                },
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "edge_attribute": {
+                            "description": "The name of the edge attribute to filter on.",
+                            "type": "string",
+                            "example": "normalized_google_distance"
+                        },
+                        "threshold": {
+                            "description": "The value to compare attribute values to.",
+                            "type": "float",
+                            "example": 1.2
+                        },
+                        "remove_above": {
+                            "description": "Indictes whether to remove above or below the given threshold.",
+                            "type": "bool",
+                            "example": true
+                        },
+                        "edge_keys": {
+                            "description": "This indicates if you only want to remove edges with specific edge_keys. If not provided or empty, all edges will be filtered on.",
+                            "type": "array",
+                            "example": [
+                                "e01"
+                            ],
+                            "default": null
+                        },
+                        "qnode_keys": {
+                            "description": "This indicates if you only want nodes corresponding to a specific list of qnode_keys to be removed. If not provided or empty, no nodes will be removed when filtering.",
+                            "type": "array",
+                            "example": [
+                                "n01"
+                            ],
+                            "default": null
+                        }
+                    },
+                    "required": [
+                        "edge_attribute",
+                        "threshold",
+                        "remove_above"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "parameters"
             ],
             "additionalProperties": false
         },
