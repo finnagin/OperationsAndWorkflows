@@ -7,7 +7,7 @@ examples:
   output: fill_and_filter/messages/10_filtered_kgraph_continuous_attribute_output.json
   parameters:
     edge_attribute: normalized_google_distance 
-    threshold: 0.8
+    threshold: 0.3
     remove_above: true
     qnode_keys: 
       - drug
