@@ -1,0 +1,19 @@
+id: annotate_node_pmids
+name: annotate (node pmids)
+description: This operation adds PubMed PMIDs as node attributes to each knode in the knowledge graph.
+examples:
+- input: annotation/messages/01_knowledge.json
+  output: annotation/messages/03_annotated_node_pmids_output.json
+input_requirements: []
+output_guarantees: []
+allowed_changes:
+- add attributes to knodes
+parameters:
+  type: object
+  properties:
+    max_results:
+      description: The maximum number of PMIDS to include. Arbitarily limits the number of PMIDS to prevent lists that are too large.
+      type: integer
+      minimum: 0
+      example: 50
+  required: []
