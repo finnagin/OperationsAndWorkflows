@@ -21,6 +21,9 @@
             "$ref": "#/$defs/OperationFilterKgraphOrphans"
         },
         {
+            "$ref": "#/$defs/OperationFilterKgraphStdDev"
+        },
+        {
             "$ref": "#/$defs/OperationFilterResults"
         },
         {
@@ -213,6 +216,70 @@
             },
             "required": [
                 "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationFilterKgraphStdDev": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "filter_kgraph_std_dev"
+                    ]
+                },
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "edge_attribute": {
+                            "description": "The name of the edge attribute to filter on.",
+                            "type": "string",
+                            "example": "normalized_google_distance"
+                        },
+                        "threshold": {
+                            "description": "The number of standard deviations to threshold on.",
+                            "type": "float",
+                            "example": 1.2,
+                            "minimum": 0,
+                            "default": 1
+                        },
+                        "remove_above": {
+                            "description": "Indictes whether to remove above or below the given threshold.",
+                            "type": "bool",
+                            "example": true,
+                            "default": false
+                        },
+                        "top": {
+                            "description": "Indicate whether or not the threshold should be placed in the top or bottom of the values. E.g. top set as True will set the cutoff for filtering as the mean + threshold * std_dev while setting top to False will set the cutoff as the mean - std_dev * threshold.",
+                            "type": "bool",
+                            "example": false,
+                            "default": true
+                        },
+                        "edge_keys": {
+                            "description": "This indicates if you only want to filter on specific edge_keys. If not provided or empty, all edges will be filtered on.",
+                            "type": "array",
+                            "example": [
+                                "e01"
+                            ],
+                            "default": null
+                        },
+                        "qnode_keys": {
+                            "description": "This indicates if you only want nodes corresponding to a specific list of qnode_keys to be removed. If not provided or empty, no nodes will be removed when filtering.",
+                            "type": "array",
+                            "example": [
+                                "n01"
+                            ],
+                            "default": null
+                        }
+                    },
+                    "required": [
+                        "edge_attribute"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "parameters"
             ],
             "additionalProperties": false
         },
