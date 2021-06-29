@@ -5,6 +5,7 @@
 - [complete_results](./complete_results.md)
 - [fill](./fill.md)
 - [filter_kgraph](./filter_kgraph.md)
+- [filter_kgraph_continuous_attribute](./filter_kgraph_continuous_attribute.md)
 - [filter_kgraph_orphans](./filter_kgraph_orphans.md)
 - [filter_kgraph_percentile](./filter_kgraph_percentile.md)
 - [filter_kgraph_std_dev](./filter_kgraph_std_dev.md)
