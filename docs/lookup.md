@@ -1,6 +1,6 @@
 # lookup
 
-This operation adds knodes/kedges and (complete) results. Implementations of this operation are _unique_; their behavior is not fully-specified by the operation parameters.
+This operation adds knodes/kedges and (complete) results. It is equivalent to the workflow fill + bind + complete_results. Implementations of this operation are _unique_; their behavior is not fully-specified by the operation parameters.
 
 ### examples
 
