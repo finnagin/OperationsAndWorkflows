@@ -11,4 +11,4 @@ allowed_changes:
   - add kedges
   - add bindings to results
 
-parameters: []
+parameters: {}
