@@ -1,0 +1,32 @@
+id: overlay_exposures_data
+subclass_of: overlay
+name: overlay exposures data
+description: exposures_data overlays edges with p-values obtained from the ICEES+ (Integrated Clinical and Environmental Exposures Service) knowledge provider. This information is included in edge attributes with the name "icees_p-value". You have the choice of applying this to all edges in the knowledge graph, or only between specified subject/object qnode IDs. If the latter, the data is added in 'virtual' edges with the type "has_icees_p-value_with".
+examples:
+- input: overlay/messages/17_input_exposures_data.json
+  output: overlay/messages/18_output_exposures_data.json
+  parameters:
+    virtual_relation_label: ""
+    subject_qnode_key: ""
+    object_qnode_key: ""
+input_requirements: []
+output_guarantees: []
+allowed_changes:
+- edit qedges
+- edit kedges
+parameters:
+  type: object
+  properties:
+    virtual_relation_label: 
+      description: An optional label to help identify the virtual edge in the relation field.
+      type: string
+      example: N1
+    subject_qnode_key:
+      description: A specific subject query node id (optional, otherwise applied to all edges, must have a virtual_relation_label to use this parameter)
+      type: string
+      example: n00
+    object_qnode_key:
+      description: A specific object query node id (optional, otherwise applied to all edges, must have a virtual_relation_label to use this parameter)
+      type: string
+      example: n01
+  required: ""

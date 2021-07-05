@@ -1,0 +1,40 @@
+{
+    "knowledge_graph": {
+        "nodes": {
+            "type-2 diabetes": {
+                "id": "DOID:9352"
+            },
+            "ibuprofen": {
+                "name": "IBUPROFEN",
+                "category": "biolink:ChemicalSubstance"
+            }
+        },
+        "edges": {
+            "e00": {
+                "subject": "ibuprofen",
+                "predicate": "biolink:gene_associated_with_condition",
+                "object": "type-2 diabetes",
+                "attributes": [
+                    {
+                        "name": "icees_p-value",
+                        "type": "EDAM:data_1669",
+                        "value": "0.95",
+                        "url": "https://icees.renci.org:16340/knowledge_graph_overlay",
+                        "source": null
+                    }
+                ]
+            },
+        }
+    },
+    "results": [
+        {
+            "node_bindings": {
+                "ibuprofen": [{"name": "IBUPROFEN"}],
+                "type-2 diabetes": [{"id": "DOID:9352"}]
+            },
+            "edge_bindings": {
+                "e00": [{"id": "DOID:9352"}],
+            }
+        }
+    ]
+}
