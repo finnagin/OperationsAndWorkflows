@@ -1,0 +1,23 @@
+id: overlay_add_node_pmids
+subclass_of: overlay
+name: overlay add node pmids
+description: add_node_pmids adds PubMed PMID's as node attributes to each node in the knowledge graph. This information is obtained from mapping node identifiers to MeSH terms and obtaining which PubMed articles have this MeSH term either labeling in the metadata or has the MeSH term occurring in the abstract of the article.
+unique: true   # depends on metadata and input DB?
+examples: 
+- input: overlay/messages/15_input_add_node_pmids.json
+  output: overlay/messages/16_output_add_node_pmids.json
+  parameters:
+    max_num: 5
+input_requirements: []
+output_guarantees: []
+allowed_changes:
+- edit knodes
+parameters:
+  type: object
+  properties:
+    max_num:
+      description: The maximum number of values to return. Enter all to return everything
+      type: int or string
+      example: [5, 100, all]
+      default: 100
+  required: 

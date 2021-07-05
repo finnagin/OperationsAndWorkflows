@@ -1,0 +1,49 @@
+{
+    "knowledge_graph": {
+        "nodes": {
+            "type-2 diabetes": {
+                "id": "DOID:9352",
+                "attributes": [
+                    {
+                        "name": "pubmed_ids",
+                        "type": "EDAM:data_0971",
+                        "value": [27879358, 27142870, 24088600, 25024373, 31326351],
+                        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
+                        "source": null
+                    }
+                ]
+            },
+            "ibuprofen": {
+                "name": "IBUPROFEN",
+                "category": "biolink:ChemicalSubstance",
+                "attributes": [
+                    {
+                        "name": "pubmed_ids",
+                        "type": "EDAM:data_0971",
+                        "value": [31194439, 25217187, 3755329, 21862693, 8828018],
+                        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
+                        "source": null
+                    }
+                ]
+            }
+        },
+        "edges": {
+            "e00": {
+                "subject": "ibuprofen",
+                "predicate": "biolink:gene_associated_with_condition",
+                "object": "type-2 diabetes"
+            }
+        }
+    },
+    "results": [
+        {
+            "node_bindings": {
+                "ibuprofen": [{"name": "IBUPROFEN"}],
+                "type-2 diabetes": [{"id": "DOID:9352"}]
+            },
+            "edge_bindings": {
+                "e00": [{"id": "DOID:9352"}],
+            }
+        }
+    ]
+}
