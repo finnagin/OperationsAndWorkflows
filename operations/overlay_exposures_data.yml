@@ -14,6 +14,7 @@ output_guarantees: []
 allowed_changes:
 - edit kedges
 - add qedges
+- add bindings to results
 parameters:
   type: object
   properties:
