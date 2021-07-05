@@ -15,7 +15,6 @@ allowed_changes:
 - edit qedges
 - edit kedges
 - add qedges
-- add kedges
 parameters:
   type: object
   properties:
