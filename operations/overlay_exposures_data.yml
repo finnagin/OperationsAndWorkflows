@@ -12,7 +12,6 @@ examples:
 input_requirements: []
 output_guarantees: []
 allowed_changes:
-- edit qedges
 - edit kedges
 - add qedges
 parameters:
