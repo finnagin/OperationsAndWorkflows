@@ -30,11 +30,12 @@ parameters:
       example: 10
       minimum: 0
       default: 50
-    top:
-      description: Indicate whether or not the the top or bottom n values should be kept.
-      type: bool
-      example: false
-      default: true
+    keep_top_or_bottom:
+      type: string
+      enum:
+      - top
+      - bottom
+      default: top
     edge_keys:
       description: This indicates if you only want to filter on specific edge_keys. If not provided or empty, all edges will be filtered on.
       type: array
