@@ -8,7 +8,7 @@ examples:
   parameters:
     edge_attribute: normalized_google_distance 
     threshold: 3
-    top: false
+    keep_top_or_bottom: bottom
     qnode_keys: 
       - drug
 input_requirements: []
