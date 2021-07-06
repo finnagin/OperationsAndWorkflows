@@ -31,11 +31,13 @@ parameters:
       minimum: 0
       maximum: 100
       default: 95
-    remove_above:
+    remove_above_or_below:
       description: Indictes whether to remove above or below the given threshold.
-      type: bool
-      example: true
-      default: false
+      type: string
+      enum:
+        - above
+        - below
+      default: below
     edge_keys:
       description: This indicates if you only want to filter on specific edge_keys. If not provided or empty all edges will be filtered on and edge_key will not be considered when filtering.
       type: array
