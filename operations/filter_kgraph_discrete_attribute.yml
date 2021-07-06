@@ -39,4 +39,4 @@ parameters:
       default: null
   required:
   - edge_attribute
-  - value
+  - remove_value
