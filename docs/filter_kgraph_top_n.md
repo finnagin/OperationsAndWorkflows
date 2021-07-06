@@ -29,34 +29,36 @@ properties:
     description: The name of the edge attribute to filter on.
     example: normalized_google_distance
     type: string
-  edge_keys:
-    default: null
-    description: This indicates if you only want to filter on specific edge_keys.
-      If not provided or empty all edges will be filtered on and edge_key will not
-      be considered when filtering.
-    example:
-    - e01
-    type: array
+  keep_top_or_bottom:
+    default: top
+    description: Indicate whether or not the the top or bottom n values should be
+      kept.
+    enum:
+    - top
+    - bottom
+    type: string
   max_edges:
     default: 50
     description: The number of edges to keep.
     example: 10
     minimum: 0
     type: integer
+  qedge_keys:
+    default: []
+    description: This indicates if you only want to filter on specific edge_keys.
+      If not provided or empty, all edges will be filtered on.
+    example:
+    - e01
+    type: array
   qnode_keys:
-    default: null
+    default: []
     description: This indicates if you only want nodes corresponding to a specific
-      list of qnode_keys to be removed. If not provided oe empty no nodes will be
-      removed when filtering.
+      list of qnode_keys to be removed. If not provided or empty, no nodes will be
+      removed when filtering. Allows us to know what to do with the nodes connected
+      to edges that are removed.
     example:
     - n01
     type: array
-  top:
-    default: true
-    description: Indicate whether or not the the top or bottom n values should be
-      kept.
-    example: false
-    type: bool
 required:
 - edge_attribute
 type: object
