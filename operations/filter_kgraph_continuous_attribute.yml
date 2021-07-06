@@ -32,7 +32,7 @@ parameters:
       description: Indictes whether to remove above or below the given threshold.
       type: bool
       example: true
-    edge_keys:
+    qedge_keys:
       description: This indicates if you only want to remove edges with specific edge_keys. If not provided or empty, all edges will be filtered on.
       type: array
       example: [e01]
