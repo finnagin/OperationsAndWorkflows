@@ -29,27 +29,29 @@ properties:
     description: The name of the edge attribute to filter on.
     example: provided_by
     type: string
-  edge_keys:
-    default: null
+  qedge_keys:
+    default: []
     description: This indicates if you only want to remove edges with specific edge_keys.
       If not provided or empty, all edges will be filtered on.
     example:
     - e01
     type: array
   qnode_keys:
-    default: null
+    default: []
     description: This indicates if you only want nodes corresponding to a specific
       list of qnode_keys to be removed. If not provided or empty, no nodes will be
-      removed when filtering.
+      removed when filtering. Allows us to know what to do with the nodes connected
+      to edges that are removed
     example:
     - n01
     type: array
-  threshold:
-    description: The value to compare attribute values to.
+  remove_value:
+    description: The value for which all edges containing this value in the specified
+      edge_attribute should be removed.
     example: infores:semmeddb
     type: string
 required:
 - edge_attribute
-- value
+- remove_value
 type: object
 ```
