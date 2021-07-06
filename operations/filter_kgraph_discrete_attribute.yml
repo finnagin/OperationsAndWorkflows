@@ -23,7 +23,7 @@ parameters:
       description: The name of the edge attribute to filter on.
       type: string
       example: provided_by
-    threshold:
+    remove_value:
       description: The value to compare attribute values to.
       type: string
       example: infores:semmeddb
