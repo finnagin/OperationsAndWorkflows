@@ -24,7 +24,7 @@ parameters:
       type: string
       example: provided_by
     remove_value:
-      description: The value to compare attribute values to.
+      description: The value for which all edges containing this value in the specified edge_attribute should be removed.
       type: string
       example: infores:semmeddb
     edge_keys:
