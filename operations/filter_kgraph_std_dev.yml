@@ -31,16 +31,20 @@ parameters:
       example: 1.2
       minimum: 0
       default: 1
-    remove_above:
+    remove_above_or_below:
       description: Indictes whether to remove above or below the given threshold.
-      type: bool
-      example: true
-      default: false
-    top:
+      type: string
+      enum:
+        - above
+        - below
+      default: below
+    keep_top_or_bottom:
       description: Indicate whether or not the threshold should be placed in the top or bottom of the values. E.g. top set as True will set the cutoff for filtering as the mean + threshold * std_dev while setting top to False will set the cutoff as the mean - std_dev * threshold.
-      type: bool
-      example: false
-      default: true
+      type: string
+      enum:
+        - top
+        - bottom
+      default: top
     edge_keys:
       description: This indicates if you only want to filter on specific edge_keys. If not provided or empty, all edges will be filtered on.
       type: array
