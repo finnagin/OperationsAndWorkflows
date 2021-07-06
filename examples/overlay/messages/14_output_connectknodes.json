@@ -46,7 +46,7 @@
                 "subject": "UniProtKB:P20823",
                 "predicate": "biolink:physically_interacts_with",
                 "object": "CHEMBL.COMPOUND:CHEMBL783"
-            }
+            },
             "_support_edge_1": {
                 "subject": "DOID:9352",
                 "object": "CHEMBL.COMPOUND:CHEMBL783",
