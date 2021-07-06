@@ -31,6 +31,7 @@ parameters:
       minimum: 0
       default: 50
     keep_top_or_bottom:
+      description: Indicate whether or not the the top or bottom n values should be kept.
       type: string
       enum:
       - top
