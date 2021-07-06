@@ -1,0 +1,12 @@
+id: score
+name: score
+description: This operation adds scores to results.
+unique: true
+examples:
+- input: fill_and_bind/messages/04_complete_results.json
+  output: fill_and_bind/messages/05_scored_results.json
+input_requirements: []
+output_guarantees: []
+allowed_changes:
+- add properties to results
+parameters: {}
