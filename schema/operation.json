@@ -3,6 +3,9 @@
     "$id": "http://standards.ncats.io/operation.json",
     "anyOf": [
         {
+            "$ref": "#/$defs/OperationAnnotate"
+        },
+        {
             "$ref": "#/$defs/OperationBind"
         },
         {
@@ -27,6 +30,9 @@
             "$ref": "#/$defs/OperationFilterResultsTopN"
         },
         {
+            "$ref": "#/$defs/OperationLookup"
+        },
+        {
             "$ref": "#/$defs/OperationOverlay"
         },
         {
@@ -40,9 +46,28 @@
         },
         {
             "$ref": "#/$defs/OperationRestate"
+        },
+        {
+            "$ref": "#/$defs/OperationScore"
         }
     ],
     "$defs": {
+        "OperationAnnotate": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "annotate"
+                    ]
+                },
+                "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
         "OperationBind": {
             "type": "object",
             "properties": {
@@ -269,6 +294,22 @@
             ],
             "additionalProperties": false
         },
+        "OperationLookup": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "lookup"
+                    ]
+                },
+                "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
         "OperationOverlay": {
             "type": "object",
             "properties": {
@@ -423,6 +464,22 @@
                     "type": "string",
                     "enum": [
                         "restate"
+                    ]
+                },
+                "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationScore": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "score"
                     ]
                 },
                 "parameters": {}

@@ -1,0 +1,13 @@
+id: annotate
+name: annotate
+description: This operation adds attributes to knowledge graph elements.
+unique: true
+examples:
+- input: annotation/messages/01_knowledge.json
+  output: annotation/messages/02_annotated.json
+input_requirements: []
+output_guarantees: []
+allowed_changes:
+- add attributes to knodes
+- add attributes to kedges
+parameters: {}

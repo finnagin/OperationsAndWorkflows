@@ -1,0 +1,15 @@
+id: lookup
+name: lookup
+description: This operation adds knodes/kedges and (complete) results. It is equivalent to the workflow fill + bind + complete_results.
+unique: true
+examples:
+- input: fill_and_bind/messages/01_qgraph.json
+  output: fill_and_bind/messages/04_complete_results.json
+input_requirements: []
+output_guarantees:
+- results complete
+allowed_changes:
+- add knodes
+- add kedges
+- add results
+parameters: {}

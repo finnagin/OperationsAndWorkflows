@@ -1,5 +1,6 @@
 # Operation Index
 
+- [annotate](./annotate.md)
 - [bind](./bind.md)
 - [complete_results](./complete_results.md)
 - [fill](./fill.md)
@@ -8,8 +9,10 @@
 - [filter_kgraph_std_dev](./filter_kgraph_std_dev.md)
 - [filter_results](./filter_results.md)
 - [filter_results_top_n](./filter_results_top_n.md)
+- [lookup](./lookup.md)
 - [overlay](./overlay.md)
 - [overlay_compute_jaccard](./overlay_compute_jaccard.md)
 - [overlay_compute_ngd](./overlay_compute_ngd.md)
 - [overlay_fisher_exact_test](./overlay_fisher_exact_test.md)
 - [restate](./restate.md)
+- [score](./score.md)
