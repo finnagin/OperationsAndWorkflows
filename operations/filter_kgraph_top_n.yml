@@ -7,7 +7,7 @@ examples:
   output: fill_and_filter/messages/08_filtered_kgraph_top_n_output.json
   parameters:
     edge_attribute: normalized_google_distance 
-    threshold: 3
+    max_edges: 3
     keep_top_or_bottom: bottom
     qnode_keys: 
       - drug
