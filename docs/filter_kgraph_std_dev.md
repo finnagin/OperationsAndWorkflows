@@ -29,40 +29,44 @@ properties:
     description: The name of the edge attribute to filter on.
     example: normalized_google_distance
     type: string
-  edge_keys:
-    default: null
+  keep_top_or_bottom:
+    default: top
+    description: Indicate whether or not the threshold should be placed in the top
+      or bottom of the values. E.g. top set as True will set the cutoff for filtering
+      as the mean + threshold * std_dev while setting top to False will set the cutoff
+      as the mean - std_dev * threshold.
+    enum:
+    - top
+    - bottom
+    type: string
+  qedge_keys:
+    default: []
     description: This indicates if you only want to filter on specific edge_keys.
       If not provided or empty, all edges will be filtered on.
     example:
     - e01
     type: array
   qnode_keys:
-    default: null
+    default: []
     description: This indicates if you only want nodes corresponding to a specific
       list of qnode_keys to be removed. If not provided or empty, no nodes will be
       removed when filtering.
     example:
     - n01
     type: array
-  remove_above:
-    default: false
+  remove_above_or_below:
+    default: below
     description: Indictes whether to remove above or below the given threshold.
-    example: true
-    type: bool
+    enum:
+    - above
+    - below
+    type: string
   threshold:
     default: 1
     description: The number of standard deviations to threshold on.
     example: 1.2
     minimum: 0
     type: float
-  top:
-    default: true
-    description: Indicate whether or not the threshold should be placed in the top
-      or bottom of the values. E.g. top set as True will set the cutoff for filtering
-      as the mean + threshold * std_dev while setting top to False will set the cutoff
-      as the mean - std_dev * threshold.
-    example: false
-    type: bool
 required:
 - edge_attribute
 type: object
