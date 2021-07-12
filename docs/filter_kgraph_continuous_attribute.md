@@ -30,7 +30,6 @@ properties:
     example: normalized_google_distance
     type: string
   qedge_keys:
-    default: []
     description: This indicates if you only want to remove edges with specific edge_keys.
       If not provided or empty, all edges will be filtered on.
     example:
@@ -45,10 +44,12 @@ properties:
     example:
     - n01
     type: array
-  remove_above:
-    description: Indictes whether to remove above or below the given threshold.
-    example: true
-    type: bool
+  remove_above_or_below:
+    description: Indicates whether to remove above or below the given threshold.
+    enum:
+    - above
+    - below
+    type: string
   threshold:
     description: The value to compare attribute values to.
     example: 1.2
