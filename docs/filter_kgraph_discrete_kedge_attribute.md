@@ -1,4 +1,4 @@
-# filter kgraph (discrete attribute)
+# filter kgraph (discrete kedge attribute)
 
 _subclass of [filter_kgraph](./filter_kgraph.md)_
 
@@ -30,7 +30,6 @@ properties:
     example: provided_by
     type: string
   qedge_keys:
-    default: []
     description: This indicates if you only want to remove edges with specific edge_keys.
       If not provided or empty, all edges will be filtered on.
     example:
@@ -49,7 +48,6 @@ properties:
     description: The value for which all edges containing this value in the specified
       edge_attribute should be removed.
     example: infores:semmeddb
-    type: string
 required:
 - edge_attribute
 - remove_value
