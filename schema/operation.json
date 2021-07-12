@@ -231,8 +231,7 @@
                             "type": "array",
                             "example": [
                                 "e01"
-                            ],
-                            "default": []
+                            ]
                         },
                         "qnode_keys": {
                             "description": "This indicates if you only want nodes corresponding to a specific list of qnode_keys to be removed. If not provided or empty, no nodes will be removed when filtering.",
