@@ -57,6 +57,6 @@ properties:
 required:
 - edge_attribute
 - threshold
-- remove_above
+- remove_above_or_below
 type: object
 ```
