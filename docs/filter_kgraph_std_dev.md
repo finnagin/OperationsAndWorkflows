@@ -40,7 +40,6 @@ properties:
     - bottom
     type: string
   qedge_keys:
-    default: []
     description: This indicates if you only want to filter on specific edge_keys.
       If not provided or empty, all edges will be filtered on.
     example:
