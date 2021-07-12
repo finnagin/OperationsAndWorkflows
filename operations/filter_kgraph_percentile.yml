@@ -32,7 +32,7 @@ parameters:
       maximum: 100
       default: 95
     remove_above_or_below:
-      description: Indictes whether to remove above or below the given threshold.
+      description: Indicates whether to remove above or below the given threshold.
       type: string
       enum:
         - above
