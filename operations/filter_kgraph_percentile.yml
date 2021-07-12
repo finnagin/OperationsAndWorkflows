@@ -42,7 +42,6 @@ parameters:
       description: This indicates if you only want to filter on specific edge_keys. If not provided or empty all edges will be filtered on and edge_key will not be considered when filtering.
       type: array
       example: [e01]
-      default: []
     qnode_keys:
       description: This indicates if you only want nodes corresponding to a specific list of qnode_keys to be removed. If not provided oe empty no nodes will be removed when filtering. Allows us to know what to do with the nodes connected to edges that are removed
       type: array
