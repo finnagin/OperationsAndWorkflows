@@ -1,6 +1,6 @@
-id: filter_kgraph_discrete_attribute
+id: filter_kgraph_discrete_kedge_attribute
 subclass_of: filter_kgraph
-name: filter kgraph (discrete attribute)
+name: filter kgraph (discrete kedge attribute)
 description: This operation removes kgraph edges which have a discrete attribute containing the specified value. Edges without the given attribute are left alone.
 examples:
 - input: fill_and_filter/messages/11_filtered_kgraph_discrete_attribute_input.json
