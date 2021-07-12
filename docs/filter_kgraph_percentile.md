@@ -30,17 +30,15 @@ properties:
     example: normalized_google_distance
     type: string
   qedge_keys:
-    default: []
     description: This indicates if you only want to filter on specific edge_keys.
-      If not provided or empty all edges will be filtered on and edge_key will not
-      be considered when filtering.
+      If not provided or empty, all edges will be filtered on.
     example:
     - e01
     type: array
   qnode_keys:
     default: []
     description: This indicates if you only want nodes corresponding to a specific
-      list of qnode_keys to be removed. If not provided oe empty no nodes will be
+      list of qnode_keys to be removed. If not provided or empty, no nodes will be
       removed when filtering. Allows us to know what to do with the nodes connected
       to edges that are removed
     example:
@@ -48,7 +46,7 @@ properties:
     type: array
   remove_above_or_below:
     default: below
-    description: Indictes whether to remove above or below the given threshold.
+    description: Indicates whether to remove above or below the given threshold.
     enum:
     - above
     - below
