@@ -8,7 +8,7 @@ examples:
   parameters:
     edge_attribute: normalized_google_distance 
     threshold: 0.3
-    remove_above: true
+    remove_above_or_below: above
     qnode_keys: 
       - drug
 input_requirements: []
@@ -28,10 +28,12 @@ parameters:
       description: The value to compare attribute values to.
       type: float
       example: 1.2
-    remove_above:
-      description: Indictes whether to remove above or below the given threshold.
-      type: bool
-      example: true
+    remove_above_or_below:
+      description: Indicates whether to remove above or below the given threshold.
+      type: string
+      enum:
+        - above
+        - below
     qedge_keys:
       description: This indicates if you only want to remove edges with specific edge_keys. If not provided or empty, all edges will be filtered on.
       type: array
