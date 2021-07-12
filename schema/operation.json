@@ -213,7 +213,7 @@
                             "default": 95
                         },
                         "remove_above_or_below": {
-                            "description": "Indictes whether to remove above or below the given threshold.",
+                            "description": "Indicates whether to remove above or below the given threshold.",
                             "type": "string",
                             "enum": [
                                 "above",
@@ -222,15 +222,14 @@
                             "default": "below"
                         },
                         "qedge_keys": {
-                            "description": "This indicates if you only want to filter on specific edge_keys. If not provided or empty all edges will be filtered on and edge_key will not be considered when filtering.",
+                            "description": "This indicates if you only want to filter on specific edge_keys. If not provided or empty, all edges will be filtered on.",
                             "type": "array",
                             "example": [
                                 "e01"
-                            ],
-                            "default": []
+                            ]
                         },
                         "qnode_keys": {
-                            "description": "This indicates if you only want nodes corresponding to a specific list of qnode_keys to be removed. If not provided oe empty no nodes will be removed when filtering. Allows us to know what to do with the nodes connected to edges that are removed",
+                            "description": "This indicates if you only want nodes corresponding to a specific list of qnode_keys to be removed. If not provided or empty, no nodes will be removed when filtering. Allows us to know what to do with the nodes connected to edges that are removed",
                             "type": "array",
                             "example": [
                                 "n01"
