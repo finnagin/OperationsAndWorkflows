@@ -39,7 +39,7 @@ parameters:
         - below
       default: below
     qedge_keys:
-      description: This indicates if you only want to filter on specific edge_keys. If not provided or empty all edges will be filtered on and edge_key will not be considered when filtering.
+      description: This indicates if you only want to filter on specific edge_keys. If not provided or empty, all edges will be filtered on.
       type: array
       example: [e01]
     qnode_keys:
