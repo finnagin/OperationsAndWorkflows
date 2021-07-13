@@ -2,6 +2,7 @@
 
 - [annotate](./annotate.md)
 - [annotate_edges](./annotate_edges.md)
+- [annotate_nodes](./annotate_nodes.md)
 - [bind](./bind.md)
 - [complete_results](./complete_results.md)
 - [fill](./fill.md)
