@@ -1,0 +1,19 @@
+id: annotate_nodes
+subclass_of: annotate
+name: annotate (nodes)
+description: This operation adds attributes to knowledge graph nodes.
+unique: true
+examples:
+- input: annotation/messages/01_knowledge.json
+  output: annotation/messages/03_annotated_nodes.json
+input_requirements: []
+output_guarantees: []
+allowed_changes:
+- add attributes to knodes
+parameters:
+  type: object
+  properties:
+    attributes:
+      description: A list of attributes to anotate the nodes with. If not included then all available data will be anotated.
+      type: array
+      example: [pmids]
