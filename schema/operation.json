@@ -6,6 +6,9 @@
             "$ref": "#/$defs/OperationAnnotate"
         },
         {
+            "$ref": "#/$defs/OperationAnnotateEdges"
+        },
+        {
             "$ref": "#/$defs/OperationBind"
         },
         {
@@ -77,6 +80,33 @@
                     ]
                 },
                 "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationAnnotateEdges": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "annotate_edges"
+                    ]
+                },
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "attributes": {
+                            "description": "A list of attributes to anotate the edges with. If not included then all available data will be anotated.",
+                            "type": "array",
+                            "example": [
+                                "pmids"
+                            ]
+                        }
+                    }
+                }
             },
             "required": [
                 "id"
