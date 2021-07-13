@@ -1,0 +1,19 @@
+id: annotate_edges
+subclass_of: annotate
+name: annotate (edges)
+description: This operation adds attributes to knowledge graph edges.
+unique: true
+examples:
+- input: annotation/messages/01_knowledge.json
+  output: annotation/messages/04_annotated_edges.json
+input_requirements: []
+output_guarantees: []
+allowed_changes:
+- add attributes to kedges
+parameters:
+  type: object
+  properties:
+    attributes:
+      description: A list of attributes to anotate the edges with. If not included then all available data will be anotated.
+      type: array
+      example: [pmids]
