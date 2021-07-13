@@ -1,6 +1,7 @@
 # Operation Index
 
 - [annotate](./annotate.md)
+- [annotate_edges](./annotate_edges.md)
 - [bind](./bind.md)
 - [complete_results](./complete_results.md)
 - [fill](./fill.md)
