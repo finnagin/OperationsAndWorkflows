@@ -14,7 +14,7 @@ None
 
 ### output guarantees
 
-- no edges in the kgraph which have the specified attribute with the given attribute.
+- no edges exist in the kgraph that have the specified attribute with the given value.
 
 ### allowed changes
 
