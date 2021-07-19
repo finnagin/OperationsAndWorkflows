@@ -7,9 +7,9 @@ examples:
   output: fill_and_filter/messages/06_filtered_kgraph_std_dev_output.json
   parameters:
     edge_attribute: normalized_google_distance 
-    threshold: 0.8
-    remove_above: true
-    top: false
+    num_sigma: 0.8
+    remove_above_or_below: above
+    plus_or_minus_std_dev: minus
     qnode_keys: 
       - drug
 input_requirements: []
@@ -25,7 +25,7 @@ parameters:
       description: The name of the edge attribute to filter on.
       type: string
       example: normalized_google_distance
-    threshold:
+    num_sigma:
       description: The number of standard deviations to threshold on.
       type: float
       example: 1.2
@@ -38,13 +38,13 @@ parameters:
         - above
         - below
       default: below
-    keep_top_or_bottom:
-      description: Indicate whether or not the threshold should be placed in the top or bottom of the values. E.g. top set as True will set the cutoff for filtering as the mean + threshold * std_dev while setting top to False will set the cutoff as the mean - std_dev * threshold.
+    plus_or_minus_std_dev:
+      description: Indicate whether or not the threshold should be found using plus or minus the standard deviation. E.g. when plus_or_minus_std_dev is set to plus will set the cutoff for filtering as the mean + num_sigma * std_dev while setting plus_or_minus_std_dev to minus will set the cutoff as the mean - num_sigma * std_dev.
       type: string
       enum:
-        - top
-        - bottom
-      default: top
+        - plus
+        - minus
+      default: plus
     qedge_keys:
       description: This indicates if you only want to filter on specific edge_keys. If not provided or empty, all edges will be filtered on.
       type: array
