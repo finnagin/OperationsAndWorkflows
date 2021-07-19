@@ -29,15 +29,22 @@ properties:
     description: The name of the edge attribute to filter on.
     example: normalized_google_distance
     type: string
-  keep_top_or_bottom:
-    default: top
-    description: Indicate whether or not the threshold should be placed in the top
-      or bottom of the values. E.g. top set as True will set the cutoff for filtering
-      as the mean + threshold * std_dev while setting top to False will set the cutoff
-      as the mean - std_dev * threshold.
+  num_sigma:
+    default: 1
+    description: The number of standard deviations to threshold on.
+    example: 1.2
+    minimum: 0
+    type: float
+  plus_or_minus_std_dev:
+    default: plus
+    description: Indicate whether or not the threshold should be found using plus
+      or minus the standard deviation. E.g. when plus_or_minus_std_dev is set to plus
+      will set the cutoff for filtering as the mean + num_sigma * std_dev while setting
+      plus_or_minus_std_dev to minus will set the cutoff as the mean - num_sigma *
+      std_dev.
     enum:
-    - top
-    - bottom
+    - plus
+    - minus
     type: string
   qedge_keys:
     description: This indicates if you only want to filter on specific edge_keys.
@@ -60,12 +67,6 @@ properties:
     - above
     - below
     type: string
-  threshold:
-    default: 1
-    description: The number of standard deviations to threshold on.
-    example: 1.2
-    minimum: 0
-    type: float
 required:
 - edge_attribute
 type: object
