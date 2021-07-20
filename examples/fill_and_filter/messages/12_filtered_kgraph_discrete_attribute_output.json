@@ -32,7 +32,7 @@
                 "attributes": [
                     {
                       "name": "provided_by",
-                      "value": "SemMedDB"
+                      "value": "infores:semmeddb"
                     }
                 ]
             }
