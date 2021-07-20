@@ -1,0 +1,49 @@
+id: filter_kgraph_continuous_attribute
+subclass_of: filter_kgraph
+name: filter kgraph (continuous attribute)
+description: This operation removes kgraph edges based on the value of a continuous edge attribute. Edges without the given attribute are left alone.
+examples:
+- input: fill_and_filter/messages/09_filtered_kgraph_attribute_input.json
+  output: fill_and_filter/messages/10_filtered_kgraph_continuous_attribute_output.json
+  parameters:
+    edge_attribute: normalized_google_distance 
+    threshold: 0.3
+    remove_above_or_below: above
+    qnode_keys: 
+      - drug
+input_requirements: []
+output_guarantees:
+- no edges in the kgraph which have attribute values that are below/above the given value.
+allowed_changes:
+- remove knodes
+- remove kedges
+parameters:
+  type: object
+  properties:
+    edge_attribute:
+      description: The name of the edge attribute to filter on.
+      type: string
+      example: normalized_google_distance
+    threshold:
+      description: The value to compare attribute values to.
+      type: float
+      example: 1.2
+    remove_above_or_below:
+      description: Indicates whether to remove above or below the given threshold.
+      type: string
+      enum:
+        - above
+        - below
+    qedge_keys:
+      description: This indicates if you only want to remove edges with specific edge_keys. If not provided or empty, all edges will be filtered on.
+      type: array
+      example: [e01]
+    qnode_keys:
+      description: This indicates if you only want nodes corresponding to a specific list of qnode_keys to be removed. If not provided or empty, no nodes will be removed when filtering. Allows us to know what to do with the nodes connected to edges that are removed.
+      type: array
+      example: [n01]
+      default: []
+  required:
+  - edge_attribute
+  - threshold
+  - remove_above_or_below

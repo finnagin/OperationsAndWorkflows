@@ -21,10 +21,19 @@
             "$ref": "#/$defs/OperationFilterKgraph"
         },
         {
+            "$ref": "#/$defs/OperationFilterKgraphContinuousAttribute"
+        },
+        {
             "$ref": "#/$defs/OperationFilterKgraphOrphans"
         },
         {
+            "$ref": "#/$defs/OperationFilterKgraphPercentile"
+        },
+        {
             "$ref": "#/$defs/OperationFilterKgraphStdDev"
+        },
+        {
+            "$ref": "#/$defs/OperationFilterKgraphTopN"
         },
         {
             "$ref": "#/$defs/OperationFilterResults"
@@ -198,6 +207,65 @@
             ],
             "additionalProperties": false
         },
+        "OperationFilterKgraphContinuousAttribute": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "filter_kgraph_continuous_attribute"
+                    ]
+                },
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "edge_attribute": {
+                            "description": "The name of the edge attribute to filter on.",
+                            "type": "string",
+                            "example": "normalized_google_distance"
+                        },
+                        "threshold": {
+                            "description": "The value to compare attribute values to.",
+                            "type": "float",
+                            "example": 1.2
+                        },
+                        "remove_above_or_below": {
+                            "description": "Indicates whether to remove above or below the given threshold.",
+                            "type": "string",
+                            "enum": [
+                                "above",
+                                "below"
+                            ]
+                        },
+                        "qedge_keys": {
+                            "description": "This indicates if you only want to remove edges with specific edge_keys. If not provided or empty, all edges will be filtered on.",
+                            "type": "array",
+                            "example": [
+                                "e01"
+                            ]
+                        },
+                        "qnode_keys": {
+                            "description": "This indicates if you only want nodes corresponding to a specific list of qnode_keys to be removed. If not provided or empty, no nodes will be removed when filtering. Allows us to know what to do with the nodes connected to edges that are removed.",
+                            "type": "array",
+                            "example": [
+                                "n01"
+                            ],
+                            "default": []
+                        }
+                    },
+                    "required": [
+                        "edge_attribute",
+                        "threshold",
+                        "remove_above_or_below"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "parameters"
+            ],
+            "additionalProperties": false
+        },
         "OperationFilterKgraphOrphans": {
             "type": "object",
             "properties": {
@@ -211,6 +279,67 @@
             },
             "required": [
                 "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationFilterKgraphPercentile": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "filter_kgraph_percentile"
+                    ]
+                },
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "edge_attribute": {
+                            "description": "The name of the edge attribute to filter on.",
+                            "type": "string",
+                            "example": "normalized_google_distance"
+                        },
+                        "threshold": {
+                            "description": "The percentile to threshold on.",
+                            "type": "float",
+                            "example": 96.8,
+                            "minimum": 0,
+                            "maximum": 100,
+                            "default": 95
+                        },
+                        "remove_above_or_below": {
+                            "description": "Indicates whether to remove above or below the given threshold.",
+                            "type": "string",
+                            "enum": [
+                                "above",
+                                "below"
+                            ],
+                            "default": "below"
+                        },
+                        "qedge_keys": {
+                            "description": "This indicates if you only want to filter on specific edge_keys. If not provided or empty, all edges will be filtered on.",
+                            "type": "array",
+                            "example": [
+                                "e01"
+                            ]
+                        },
+                        "qnode_keys": {
+                            "description": "This indicates if you only want nodes corresponding to a specific list of qnode_keys to be removed. If not provided or empty, no nodes will be removed when filtering. Allows us to know what to do with the nodes connected to edges that are removed.",
+                            "type": "array",
+                            "example": [
+                                "n01"
+                            ],
+                            "default": []
+                        }
+                    },
+                    "required": [
+                        "edge_attribute"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "parameters"
             ],
             "additionalProperties": false
         },
@@ -231,32 +360,37 @@
                             "type": "string",
                             "example": "normalized_google_distance"
                         },
-                        "threshold": {
+                        "num_sigma": {
                             "description": "The number of standard deviations to threshold on.",
                             "type": "float",
                             "example": 1.2,
                             "minimum": 0,
                             "default": 1
                         },
-                        "remove_above": {
+                        "remove_above_or_below": {
                             "description": "Indictes whether to remove above or below the given threshold.",
-                            "type": "bool",
-                            "example": true,
-                            "default": false
+                            "type": "string",
+                            "enum": [
+                                "above",
+                                "below"
+                            ],
+                            "default": "below"
                         },
-                        "top": {
-                            "description": "Indicate whether or not the threshold should be placed in the top or bottom of the values. E.g. top set as True will set the cutoff for filtering as the mean + threshold * std_dev while setting top to False will set the cutoff as the mean - std_dev * threshold.",
-                            "type": "bool",
-                            "example": false,
-                            "default": true
+                        "plus_or_minus_std_dev": {
+                            "description": "Indicate whether or not the threshold should be found using plus or minus the standard deviation. E.g. when plus_or_minus_std_dev is set to plus will set the cutoff for filtering as the mean + num_sigma * std_dev while setting plus_or_minus_std_dev to minus will set the cutoff as the mean - num_sigma * std_dev.",
+                            "type": "string",
+                            "enum": [
+                                "plus",
+                                "minus"
+                            ],
+                            "default": "plus"
                         },
-                        "edge_keys": {
+                        "qedge_keys": {
                             "description": "This indicates if you only want to filter on specific edge_keys. If not provided or empty, all edges will be filtered on.",
                             "type": "array",
                             "example": [
                                 "e01"
-                            ],
-                            "default": null
+                            ]
                         },
                         "qnode_keys": {
                             "description": "This indicates if you only want nodes corresponding to a specific list of qnode_keys to be removed. If not provided or empty, no nodes will be removed when filtering.",
@@ -264,7 +398,67 @@
                             "example": [
                                 "n01"
                             ],
-                            "default": null
+                            "default": []
+                        }
+                    },
+                    "required": [
+                        "edge_attribute"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "parameters"
+            ],
+            "additionalProperties": false
+        },
+        "OperationFilterKgraphTopN": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "filter_kgraph_top_n"
+                    ]
+                },
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "edge_attribute": {
+                            "description": "The name of the edge attribute to filter on.",
+                            "type": "string",
+                            "example": "normalized_google_distance"
+                        },
+                        "max_edges": {
+                            "description": "The number of edges to keep.",
+                            "type": "integer",
+                            "example": 10,
+                            "minimum": 0,
+                            "default": 50
+                        },
+                        "keep_top_or_bottom": {
+                            "description": "Indicate whether or not the the top or bottom n values should be kept.",
+                            "type": "string",
+                            "enum": [
+                                "top",
+                                "bottom"
+                            ],
+                            "default": "top"
+                        },
+                        "qedge_keys": {
+                            "description": "This indicates if you only want to filter on specific edge_keys. If not provided or empty, all edges will be filtered on.",
+                            "type": "array",
+                            "example": [
+                                "e01"
+                            ]
+                        },
+                        "qnode_keys": {
+                            "description": "This indicates if you only want nodes corresponding to a specific list of qnode_keys to be removed. If not provided or empty, no nodes will be removed when filtering. Allows us to know what to do with the nodes connected to edges that are removed.",
+                            "type": "array",
+                            "example": [
+                                "n01"
+                            ],
+                            "default": []
                         }
                     },
                     "required": [

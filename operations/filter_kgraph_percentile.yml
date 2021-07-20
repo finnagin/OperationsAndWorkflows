@@ -1,0 +1,51 @@
+id: filter_kgraph_percentile
+subclass_of: filter_kgraph
+name: filter kgraph (percentile)
+description: This operation removes kgraph edges that have attribute values are below/above the given percentile.
+examples:
+- input: fill_and_filter/messages/05_filtered_kgraph_stat_input.json
+  output: fill_and_filter/messages/06_filtered_kgraph_std_dev_output.json
+  parameters:
+    edge_attribute: normalized_google_distance 
+    threshold: 77.5
+    remove_above_or_below: below
+    qnode_keys: 
+      - drug
+input_requirements: []
+output_guarantees:
+- no edges in the kgraph which have attribute values are below/above the given percentile.
+allowed_changes:
+- remove knodes
+- remove kedges
+parameters:
+  type: object
+  properties:
+    edge_attribute:
+      description: The name of the edge attribute to filter on.
+      type: string
+      example: normalized_google_distance
+    threshold:
+      description: The percentile to threshold on.
+      type: float
+      example: 96.8
+      minimum: 0
+      maximum: 100
+      default: 95
+    remove_above_or_below:
+      description: Indicates whether to remove above or below the given threshold.
+      type: string
+      enum:
+        - above
+        - below
+      default: below
+    qedge_keys:
+      description: This indicates if you only want to filter on specific edge_keys. If not provided or empty, all edges will be filtered on.
+      type: array
+      example: [e01]
+    qnode_keys:
+      description: This indicates if you only want nodes corresponding to a specific list of qnode_keys to be removed. If not provided or empty, no nodes will be removed when filtering. Allows us to know what to do with the nodes connected to edges that are removed.
+      type: array
+      example: [n01]
+      default: []
+  required:
+  - edge_attribute
