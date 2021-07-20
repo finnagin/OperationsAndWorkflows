@@ -7,7 +7,7 @@ examples:
   output: fill_and_filter/messages/12_filtered_kgraph_discrete_attribute_output.json
   parameters:
     edge_attribute: provided_by
-    remove_value: infores:rtx-kg2
+    remove_value: infores:semmeddb
     qnode_keys: 
       - drug
 input_requirements: []
