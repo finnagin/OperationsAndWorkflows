@@ -19,20 +19,20 @@
     "knowledge_graph": {
         "nodes": {
             "MONDO:0005148": {"name": "type-2 diabetes"},
-            "CHEBI:5441": {
-                "name": "glyburide",
+            "CHEMBL.COMPOUND:CHEMBL1201631": {
+                "name": "INSULIN HUMAN",
                 "category": "biolink:ChemicalSubstance"
             }
         },
         "edges": {
-            "kdy789ng": {
-                "subject": "CHEBI:5441",
+            "109g8777": {
+                "subject": "CHEMBL.COMPOUND:CHEMBL1201631",
                 "predicate": "biolink:treats",
                 "object": "MONDO:0005148",
                 "attributes": [
                     {
                       "name": "provided_by",
-                      "value": "infores:semmeddb"
+                      "value": "infores:rtx-kg2"
                     }
                 ]
             }
