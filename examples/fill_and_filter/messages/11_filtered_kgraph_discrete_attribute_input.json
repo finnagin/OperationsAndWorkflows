@@ -36,7 +36,7 @@
                 "attributes": [
                     {
                       "name": "provided_by",
-                      "value": "SemMedDB"
+                      "value": "infores:semmeddb"
                     }
                 ]
             },
@@ -47,7 +47,7 @@
                 "attributes": [
                     {
                       "name": "provided_by",
-                      "value": "ARAX/KG2"
+                      "value": "infores:rtx-kg2"
                     }
                 ]
             }
