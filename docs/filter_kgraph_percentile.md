@@ -40,7 +40,7 @@ properties:
     description: This indicates if you only want nodes corresponding to a specific
       list of qnode_keys to be removed. If not provided or empty, no nodes will be
       removed when filtering. Allows us to know what to do with the nodes connected
-      to edges that are removed
+      to edges that are removed.
     example:
     - n01
     type: array
