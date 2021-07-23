@@ -1,0 +1,23 @@
+id: sort_results_score
+subclass_of: sort_results
+name: sort results (score)
+description: This operation sorts the results by the result score. If `max_results` is given the it truncates the results to at most the given value.
+examples:
+- input: sort/messages/01_results_full.json
+  output: sort/messages/03_sorted_results_score.json
+  parameters:
+    max_results: 1
+input_requirements: []
+output_guarantees:
+- max `max_results` results
+allowed_changes:
+- change results
+- remove results
+parameters:
+  type: object
+  properties:
+    max_results:
+      description: The maximum number of results to return. If not given all results will be returned.
+      type: integer
+      minimum: 0
+      example: 50
