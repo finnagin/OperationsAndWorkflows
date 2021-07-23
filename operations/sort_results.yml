@@ -1,0 +1,9 @@
+id: sort_results
+name: sort results
+description: This operation allows the TRAPI server to sort the elements of the list of results.
+input_requirements: []
+output_guarantees: []
+allowed_changes:
+- change results
+- remove results
+parameters: {}
