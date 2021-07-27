@@ -34,6 +34,8 @@ properties:
       If not provided or empty, all edges will be filtered on.
     example:
     - e01
+    items:
+      type: string
     type: array
   qnode_keys:
     default: []
@@ -43,6 +45,8 @@ properties:
       to edges that are removed.
     example:
     - n01
+    items:
+      type: string
     type: array
   remove_above_or_below:
     default: below
@@ -57,7 +61,7 @@ properties:
     example: 96.8
     maximum: 100
     minimum: 0
-    type: float
+    type: number
 required:
 - edge_attribute
 type: object

@@ -34,7 +34,7 @@ properties:
     description: The number of standard deviations to threshold on.
     example: 1.2
     minimum: 0
-    type: float
+    type: number
   plus_or_minus_std_dev:
     default: plus
     description: Indicate whether or not the threshold should be found using plus
@@ -51,6 +51,8 @@ properties:
       If not provided or empty, all edges will be filtered on.
     example:
     - e01
+    items:
+      type: string
     type: array
   qnode_keys:
     default: []
@@ -59,6 +61,8 @@ properties:
       removed when filtering.
     example:
     - n01
+    items:
+      type: string
     type: array
   remove_above_or_below:
     default: below
