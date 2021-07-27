@@ -25,10 +25,12 @@ None
 ```yaml
 properties:
   attributes:
-    description: A list of attributes to anotate the edges with. If not included then
-      all available data will be anotated.
+    description: A list of attributes to annotate the edges with. If not included
+      then all available data will be annotated.
     example:
     - pmids
+    items:
+      type: string
     type: array
 type: object
 ```
