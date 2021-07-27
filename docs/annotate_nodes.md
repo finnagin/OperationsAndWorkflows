@@ -25,8 +25,8 @@ None
 ```yaml
 properties:
   attributes:
-    description: A list of attributes to anotate the nodes with. If not included then
-      all available data will be anotated.
+    description: A list of attributes to annotate the nodes with. If not included
+      then all available data will be annotated.
     example:
     - pmids
     type: array
