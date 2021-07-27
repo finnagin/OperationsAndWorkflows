@@ -2,7 +2,7 @@
 
 _subclass of [sort_results](./sort_results.md)_
 
-This operation sorts the results by the given edge attribute. If in ascending order the maximum value of the results edges with the given attribute will be taken while the minimum will be taken for descending order. If the result has no edges with te given attribute it will be listed last. If `max_results` is given the it truncates the results to at most the given value.
+This operation sorts the results by the given edge attribute. If in ascending order, the maximum value of the results edges with the given attribute will be taken while the minimum will be taken for descending order. If a result has no edges with the given attribute, it will be listed last. If `max_results` is given, it truncates the results to at most the given value.
 
 ### examples
 
@@ -47,6 +47,8 @@ properties:
       If not provided or empty, all edges will be looked at.
     example:
     - e01
+    items:
+      type: string
     type: array
 required:
 - edge_attribute
