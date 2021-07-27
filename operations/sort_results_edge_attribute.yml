@@ -17,7 +17,7 @@ parameters:
   type: object
   properties:
     edge_attribute:
-      description: The name of the edge attribute to filter on.
+      description: The name of the edge attribute to order by.
       type: string
       example: normalized_google_distance
     ascending_or_descending:
