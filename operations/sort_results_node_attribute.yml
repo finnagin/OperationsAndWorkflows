@@ -8,13 +8,9 @@ examples:
   parameters:
     node_attribute: molecular_weight
     ascending_or_descending: descending
-    max_results: 2
 input_requirements: []
-output_guarantees:
-- max `max_results` results
 allowed_changes:
 - change results
-- remove results
 parameters:
   type: object
   properties:
@@ -34,11 +30,6 @@ parameters:
       items:
         type: string
       example: [e01]
-    max_results:
-      description: The maximum number of results to return. If not given all results will be returned.
-      type: integer
-      minimum: 0
-      example: 50
   required:
   - node_attribute
   - ascending_or_descending
