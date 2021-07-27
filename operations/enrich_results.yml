@@ -28,4 +28,3 @@ parameters:
       description: If specified, then only knodes bound to these qnodes will be examined for enrichment and combination. 
       type: array
       example: [n01]
-      default: []
