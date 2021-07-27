@@ -27,7 +27,7 @@ parameters:
       example: normalized_google_distance
     num_sigma:
       description: The number of standard deviations to threshold on.
-      type: float
+      type: number
       example: 1.2
       minimum: 0
       default: 1
@@ -48,10 +48,14 @@ parameters:
     qedge_keys:
       description: This indicates if you only want to filter on specific edge_keys. If not provided or empty, all edges will be filtered on.
       type: array
+      items:
+        type: string
       example: [e01]
     qnode_keys:
       description: This indicates if you only want nodes corresponding to a specific list of qnode_keys to be removed. If not provided or empty, no nodes will be removed when filtering.
       type: array
+      items:
+        type: string
       example: [n01]
       default: []
   required:
