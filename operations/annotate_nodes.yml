@@ -16,4 +16,6 @@ parameters:
     attributes:
       description: A list of attributes to annotate the nodes with. If not included then all available data will be annotated.
       type: array
+      items:
+        type: string
       example: [pmids]
