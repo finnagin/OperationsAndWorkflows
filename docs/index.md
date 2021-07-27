@@ -1,6 +1,7 @@
 # Operation Index
 
 - [annotate](./annotate.md)
+- [annotate_edges](./annotate_edges.md)
 - [bind](./bind.md)
 - [complete_results](./complete_results.md)
 - [fill](./fill.md)
@@ -17,6 +18,7 @@
 - [overlay](./overlay.md)
 - [overlay_compute_jaccard](./overlay_compute_jaccard.md)
 - [overlay_compute_ngd](./overlay_compute_ngd.md)
+- [overlay_connect_knodes](./overlay_connect_knodes.md)
 - [overlay_fisher_exact_test](./overlay_fisher_exact_test.md)
 - [restate](./restate.md)
 - [score](./score.md)

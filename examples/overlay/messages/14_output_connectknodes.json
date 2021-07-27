@@ -1,0 +1,71 @@
+{
+    "query_graph": {
+        "nodes": {
+            "type-2 diabetes": {
+                "id": "DOID:9352"
+            },
+            "protein": {
+                "category": "biolink:Protein"
+            },
+            "drug": {
+                "category": "biolink:ChemicalSubstance"
+            }
+        },
+        "edges": {
+            "associated": {
+                "subject": "protein",
+                "predicate": "biolink:gene_associated_with_condition",
+                "object": "type-2 diabetes"
+            },
+            "interacts": {
+                "subject": "protein",
+                "predicate": "biolink:physically_interacts_with",
+                "object": "drug"
+            }
+        }
+    },
+    "knowledge_graph": {
+        "nodes": {
+            "UniProtKB:P20823": {
+                "name": "HNF1A",
+                "category": "biolink:Protein"
+            },
+            "CHEMBL.COMPOUND:CHEMBL783": {
+                "name": "NATEGLINIDE",
+                "category": "biolink:ChemicalSubstance"
+            },
+            "DOID:9352": {"name": "type-2 diabetes"}
+        },
+        "edges": {
+            "df87ff82": {
+                "subject": "UniProtKB:P20823",
+                "predicate": "biolink:gene_associated_with_condition",
+                "object": "DOID:9352"
+            },
+            "vg56hkj9": {
+                "subject": "UniProtKB:P20823",
+                "predicate": "biolink:physically_interacts_with",
+                "object": "CHEMBL.COMPOUND:CHEMBL783"
+            },
+            "_support_edge_1": {
+                "subject": "DOID:9352",
+                "object": "CHEMBL.COMPOUND:CHEMBL783",
+                "predicate": "biolink:correlated_with"
+            }
+        }
+    },
+    "results": [
+        {
+            "node_bindings": {
+                "protein": [{"id": "UniProtKB:P20823"}],
+                "drug": [{"id": "CHEMBL.COMPOUND:CHEMBL783"}],
+                "type-2 diabetes": [{"id": "DOID:9352"}]
+            },
+            "edge_bindings": {
+                "associated": [{"id": "df87ff82"}],
+                "interacts": [{"id": "vg56hkj9"}],
+                "": [{"id":"_support_edge_1"}]
+            }
+        }
+    ]
+}
