@@ -9,7 +9,7 @@ input_requirements: []
 output_guarantees: []
 allowed_changes:
 - add qnodes
-- add qnodes
+- add qedges
 - modify qnodes
 - add kedges
 - add kedges
