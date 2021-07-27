@@ -1,7 +1,7 @@
 id: sort_results_edge_attribute
 subclass_of: sort_results
 name: sort results (edge attribute)
-description: This operation sorts the results by the given edge attribute. If `max_results` is given the it truncates the results to at most the given value.
+description: This operation sorts the results by the given edge attribute. If in ascending order the maximum of the results edges with the given attribute will be taken while the minimum will be taken for descending order. If the result has no edges with te given attribute it will be listed last. If `max_results` is given the it truncates the results to at most the given value.
 examples:
 - input: sort/messages/01_results_full.json
   output: sort/messages/02_sorted_results_edge_attribute.json
@@ -26,6 +26,10 @@ parameters:
       enum:
         - ascending
         - descending
+    qedge_keys:
+      description: This indicates if you only want to consider edges with specific edge_keys. If not provided or empty, all edges will be looked at.
+      type: array
+      example: [e01]
     max_results:
       description: The maximum number of results to return. If not given all results will be returned.
       type: integer
@@ -33,3 +37,4 @@ parameters:
       example: 50
   required:
   - edge_attribute
+  - ascending_or_descending
