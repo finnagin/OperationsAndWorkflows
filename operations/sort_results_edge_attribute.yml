@@ -6,7 +6,9 @@ examples:
 - input: sort/messages/01_results_full.json
   output: sort/messages/02_sorted_results_edge_attribute.json
   parameters:
-    max_results: 1
+    edge_attribute: normalized_google_distance
+    ascending_or_descending: ascending
+    max_results: 2
 input_requirements: []
 output_guarantees:
 - max `max_results` results
