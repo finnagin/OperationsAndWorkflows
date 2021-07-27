@@ -791,6 +791,9 @@
                         "qedge_keys": {
                             "description": "This indicates if you only want to consider edges with specific edge_keys. If not provided or empty, all edges will be looked at.",
                             "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
                             "example": [
                                 "e01"
                             ]
@@ -842,6 +845,9 @@
                         "qnode_keys": {
                             "description": "This indicates if you only want to consider nodes with specific node_keys. If not provided or empty, all nodes will be looked at.",
                             "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
                             "example": [
                                 "e01"
                             ]

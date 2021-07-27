@@ -2,7 +2,7 @@
 
 _subclass of [sort_results](./sort_results.md)_
 
-This operation sorts the results by the result score. If `max_results` is given the it truncates the results to at most the given value.
+This operation sorts the results by the result score. If `max_results` is given, it truncates the results to at most the given value.
 
 ### examples
 
