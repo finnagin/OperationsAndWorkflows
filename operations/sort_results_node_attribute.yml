@@ -31,6 +31,8 @@ parameters:
     qnode_keys:
       description: This indicates if you only want to consider nodes with specific node_keys. If not provided or empty, all nodes will be looked at.
       type: array
+      items:
+        type: string
       example: [e01]
     max_results:
       description: The maximum number of results to return. If not given all results will be returned.
