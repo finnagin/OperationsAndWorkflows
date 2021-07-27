@@ -6,7 +6,8 @@ examples:
 - input: sort/messages/01_results_full.json
   output: sort/messages/03_sorted_results_score.json
   parameters:
-    max_results: 1
+    ascending_or_descending: descending
+    max_results: 2
 input_requirements: []
 output_guarantees:
 - max `max_results` results
