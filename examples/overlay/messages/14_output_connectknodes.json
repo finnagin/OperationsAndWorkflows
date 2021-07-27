@@ -64,7 +64,7 @@
             "edge_bindings": {
                 "associated": [{"id": "df87ff82"}],
                 "interacts": [{"id": "vg56hkj9"}],
-                "_loose_binding_1": [{"id":"_support_edge_1"}]
+                "": [{"id":"_support_edge_1"}]
             }
         }
     ]
