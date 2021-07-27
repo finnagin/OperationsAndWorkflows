@@ -11,7 +11,7 @@ allowed_changes:
 - add qnodes
 - add qedges
 - modify qnodes
-- add kedges
+- add knodes
 - add kedges
 - add results
 parameters:
