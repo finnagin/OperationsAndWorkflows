@@ -13,7 +13,6 @@ output_guarantees:
 - max `max_results` results
 allowed_changes:
 - change results
-- remove results
 parameters:
   type: object
   properties:
@@ -23,10 +22,5 @@ parameters:
       enum:
         - ascending
         - descending
-    max_results:
-      description: The maximum number of results to return. If not given all results will be returned.
-      type: integer
-      minimum: 0
-      example: 50
   required:
   - ascending_or_descending
