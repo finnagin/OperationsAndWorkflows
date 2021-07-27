@@ -6,7 +6,9 @@ examples:
 - input: sort/messages/01_results_full.json
   output: sort/messages/04_sorted_results_node_attribute.json
   parameters:
-    max_results: 1
+    node_attribute: molecular_weight
+    ascending_or_descending: descending
+    max_results: 2
 input_requirements: []
 output_guarantees:
 - max `max_results` results
