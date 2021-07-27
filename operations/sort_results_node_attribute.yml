@@ -1,0 +1,40 @@
+id: sort_results_node_attribute
+subclass_of: sort_results
+name: sort results (node attribute)
+description: This operation sorts the results by the given node attribute. If in ascending order the maximum value of the results nodes with the given attribute will be taken while the minimum will be taken for descending order. If the result has no nodes with te given attribute it will be listed last. If `max_results` is given the it truncates the results to at most the given value.
+examples:
+- input: sort/messages/01_results_full.json
+  output: sort/messages/04_sorted_results_node_attribute.json
+  parameters:
+    max_results: 1
+input_requirements: []
+output_guarantees:
+- max `max_results` results
+allowed_changes:
+- change results
+- remove results
+parameters:
+  type: object
+  properties:
+    node_attribute:
+      description: The name of the node attribute to order by.
+      type: string
+      example: normalized_google_distance
+    ascending_or_descending:
+      description: Indicates whether results should be sorted in ascending or descending order.
+      type: string
+      enum:
+        - ascending
+        - descending
+    qnode_keys:
+      description: This indicates if you only want to consider nodes with specific node_keys. If not provided or empty, all nodes will be looked at.
+      type: array
+      example: [e01]
+    max_results:
+      description: The maximum number of results to return. If not given all results will be returned.
+      type: integer
+      minimum: 0
+      example: 50
+  required:
+  - node_attribute
+  - ascending_or_descending
