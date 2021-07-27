@@ -20,3 +20,7 @@
 - [overlay_fisher_exact_test](./overlay_fisher_exact_test.md)
 - [restate](./restate.md)
 - [score](./score.md)
+- [sort_results](./sort_results.md)
+- [sort_results_edge_attribute](./sort_results_edge_attribute.md)
+- [sort_results_node_attribute](./sort_results_node_attribute.md)
+- [sort_results_score](./sort_results_score.md)
