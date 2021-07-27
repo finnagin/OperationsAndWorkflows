@@ -5,5 +5,4 @@ input_requirements: []
 output_guarantees: []
 allowed_changes:
 - change results
-- remove results
 parameters: {}
