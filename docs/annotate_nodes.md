@@ -29,6 +29,8 @@ properties:
       then all available data will be annotated.
     example:
     - pmids
+    items:
+      type: string
     type: array
 type: object
 ```
