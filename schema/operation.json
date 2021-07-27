@@ -67,6 +67,18 @@
         },
         {
             "$ref": "#/$defs/OperationScore"
+        },
+        {
+            "$ref": "#/$defs/OperationSortResults"
+        },
+        {
+            "$ref": "#/$defs/OperationSortResultsEdgeAttribute"
+        },
+        {
+            "$ref": "#/$defs/OperationSortResultsNodeAttribute"
+        },
+        {
+            "$ref": "#/$defs/OperationSortResultsScore"
         }
     ],
     "$defs": {
@@ -817,6 +829,162 @@
             },
             "required": [
                 "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationSortResults": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "sort_results"
+                    ]
+                },
+                "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationSortResultsEdgeAttribute": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "sort_results_edge_attribute"
+                    ]
+                },
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "edge_attribute": {
+                            "description": "The name of the edge attribute to order by.",
+                            "type": "string",
+                            "example": "normalized_google_distance"
+                        },
+                        "ascending_or_descending": {
+                            "description": "Indicates whether results should be sorted in ascending or descending order.",
+                            "type": "string",
+                            "enum": [
+                                "ascending",
+                                "descending"
+                            ]
+                        },
+                        "qedge_keys": {
+                            "description": "This indicates if you only want to consider edges with specific edge_keys. If not provided or empty, all edges will be looked at.",
+                            "type": "array",
+                            "example": [
+                                "e01"
+                            ]
+                        },
+                        "max_results": {
+                            "description": "The maximum number of results to return. If not given all results will be returned.",
+                            "type": "integer",
+                            "minimum": 0,
+                            "example": 50
+                        }
+                    },
+                    "required": [
+                        "edge_attribute",
+                        "ascending_or_descending"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "parameters"
+            ],
+            "additionalProperties": false
+        },
+        "OperationSortResultsNodeAttribute": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "sort_results_node_attribute"
+                    ]
+                },
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "node_attribute": {
+                            "description": "The name of the node attribute to order by.",
+                            "type": "string",
+                            "example": "normalized_google_distance"
+                        },
+                        "ascending_or_descending": {
+                            "description": "Indicates whether results should be sorted in ascending or descending order.",
+                            "type": "string",
+                            "enum": [
+                                "ascending",
+                                "descending"
+                            ]
+                        },
+                        "qnode_keys": {
+                            "description": "This indicates if you only want to consider nodes with specific node_keys. If not provided or empty, all nodes will be looked at.",
+                            "type": "array",
+                            "example": [
+                                "e01"
+                            ]
+                        },
+                        "max_results": {
+                            "description": "The maximum number of results to return. If not given all results will be returned.",
+                            "type": "integer",
+                            "minimum": 0,
+                            "example": 50
+                        }
+                    },
+                    "required": [
+                        "node_attribute",
+                        "ascending_or_descending"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "parameters"
+            ],
+            "additionalProperties": false
+        },
+        "OperationSortResultsScore": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "sort_results_score"
+                    ]
+                },
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "ascending_or_descending": {
+                            "description": "Indicates whether results should be sorted in ascending or descending order.",
+                            "type": "string",
+                            "enum": [
+                                "ascending",
+                                "descending"
+                            ]
+                        },
+                        "max_results": {
+                            "description": "The maximum number of results to return. If not given all results will be returned.",
+                            "type": "integer",
+                            "minimum": 0,
+                            "example": 50
+                        }
+                    },
+                    "required": [
+                        "ascending_or_descending"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "parameters"
             ],
             "additionalProperties": false
         }
