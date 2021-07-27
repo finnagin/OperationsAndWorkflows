@@ -1,7 +1,7 @@
 id: sort_results_edge_attribute
 subclass_of: sort_results
 name: sort results (edge attribute)
-description: This operation sorts the results by the given edge attribute. If in ascending order, the maximum value of the results edges with the given attribute will be taken while the minimum will be taken for descending order. If a result has no edges with the given attribute, it will be listed last. If `max_results` is given, it truncates the results to at most the given value.
+description: This operation sorts the results by the given edge attribute. If in ascending order, the minimum value of the results edges with the given attribute will be taken while the maximum will be taken for descending order. If a result has no edges with the given attribute, it will be listed last. If `max_results` is given, it truncates the results to at most the given value.
 examples:
 - input: sort/messages/01_results_full.json
   output: sort/messages/02_sorted_results_edge_attribute.json
