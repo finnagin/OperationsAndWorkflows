@@ -882,12 +882,6 @@
                             "example": [
                                 "e01"
                             ]
-                        },
-                        "max_results": {
-                            "description": "The maximum number of results to return. If not given all results will be returned.",
-                            "type": "integer",
-                            "minimum": 0,
-                            "example": 50
                         }
                     },
                     "required": [
@@ -936,12 +930,6 @@
                             "example": [
                                 "e01"
                             ]
-                        },
-                        "max_results": {
-                            "description": "The maximum number of results to return. If not given all results will be returned.",
-                            "type": "integer",
-                            "minimum": 0,
-                            "example": 50
                         }
                     },
                     "required": [
@@ -975,12 +963,6 @@
                                 "ascending",
                                 "descending"
                             ]
-                        },
-                        "max_results": {
-                            "description": "The maximum number of results to return. If not given all results will be returned.",
-                            "type": "integer",
-                            "minimum": 0,
-                            "example": 50
                         }
                     },
                     "required": [
