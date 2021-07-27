@@ -34,6 +34,8 @@ properties:
       If not provided or empty, all edges will be filtered on.
     example:
     - e01
+    items:
+      type: string
     type: array
   qnode_keys:
     default: []
@@ -43,6 +45,8 @@ properties:
       to edges that are removed
     example:
     - n01
+    items:
+      type: string
     type: array
   remove_value:
     description: The value for which all edges containing this value in the specified
