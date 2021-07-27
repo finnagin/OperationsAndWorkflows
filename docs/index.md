@@ -5,6 +5,7 @@
 - [annotate_nodes](./annotate_nodes.md)
 - [bind](./bind.md)
 - [complete_results](./complete_results.md)
+- [enrich_results](./enrich_results.md)
 - [fill](./fill.md)
 - [filter_kgraph](./filter_kgraph.md)
 - [filter_kgraph_continuous_kedge_attribute](./filter_kgraph_continuous_kedge_attribute.md)

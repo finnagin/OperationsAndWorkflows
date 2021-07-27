@@ -1,0 +1,118 @@
+{
+    "message": {
+        "query_graph": {
+            "nodes": {
+                "drug": {
+                    "categories": [
+                        "biolink:ChemicalSubstance"
+                    ],
+                },
+                "asthma": {
+                    "ids": [
+                        "MONDO:0004979"
+                    ],
+                }
+            },
+            "edges": {
+                "treats": {
+                    "subject": "drug",
+                    "object": "asthma",
+                    "predicates": [
+                        "biolink:treats"
+                    ],
+                }
+            }
+        },
+        "knowledge_graph": {
+            "nodes": {
+                "PUBCHEM.COMPOUND:4887": {
+                    "categories": [
+                        "biolink:Entity",
+                        "biolink:MolecularEntity",
+                        "biolink:NamedThing",
+                        "biolink:ChemicalSubstance",
+                        "biolink:BiologicalEntity"
+                    ],
+                    "name": "PRANLUKAST"
+                },
+                "MONDO:0004979": {
+                    "categories": [
+                        "biolink:BiologicalEntity",
+                        "biolink:DiseaseOrPhenotypicFeature",
+                        "biolink:NamedThing",
+                        "biolink:Disease"
+                    ],
+                    "name": "asthma"
+                },
+                "PUBCHEM.COMPOUND:5282230": {
+                    "categories": [
+                        "biolink:Entity",
+                        "biolink:MolecularEntity",
+                        "biolink:NamedThing",
+                        "biolink:ChemicalSubstance",
+                        "biolink:BiologicalEntity"
+                    ],
+                    "name": "TRANILAST"
+                }
+            },
+            "edges": {
+                "2d4cbadbaa30": {
+                    "subject": "PUBCHEM.COMPOUND:4887",
+                    "object": "MONDO:0004979",
+                    "predicate": "biolink:treats",
+                },
+                "e16f7b93990b": {
+                    "subject": "PUBCHEM.COMPOUND:5282230",
+                    "object": "MONDO:0004979",
+                    "predicate": "biolink:treats"
+                }
+            }
+        },
+        "results": [
+            {
+                "node_bindings": {
+                    "asthma": [
+                        {
+                            "id": "MONDO:0004979"
+                        }
+                    ],
+                    "drug": [
+                        {
+                            "id": "PUBCHEM.COMPOUND:5282230"
+                        }
+                    ]
+                },
+                "edge_bindings": {
+                    "treats": [
+                        {
+                            "id": "e16f7b93990b"
+                        }
+                    ]
+                },
+                "score": null
+            },
+            {
+                "node_bindings": {
+                    "asthma": [
+                        {
+                            "id": "MONDO:0004979"
+                        }
+                    ],
+                    "drug": [
+                        {
+                            "id": "PUBCHEM.COMPOUND:4887"
+                        }
+                    ]
+                },
+                "edge_bindings": {
+                    "treats": [
+                        {
+                            "id": "2d4cbadbaa30"
+                        }
+                    ]
+                },
+                "score": null
+            }
+        ]
+    }
+}
