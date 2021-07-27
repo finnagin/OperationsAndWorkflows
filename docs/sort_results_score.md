@@ -14,12 +14,11 @@ None
 
 ### output guarantees
 
-- max `max_results` results
+None
 
 ### allowed changes
 
 - change results
-- remove results
 
 ### parameters
 
@@ -32,12 +31,6 @@ properties:
     - ascending
     - descending
     type: string
-  max_results:
-    description: The maximum number of results to return. If not given all results
-      will be returned.
-    example: 50
-    minimum: 0
-    type: integer
 required:
 - ascending_or_descending
 type: object

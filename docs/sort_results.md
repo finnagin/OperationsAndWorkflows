@@ -13,7 +13,6 @@ None
 ### allowed changes
 
 - change results
-- remove results
 
 ### parameters
 
