@@ -31,6 +31,8 @@ properties:
     example:
     - n0
     - n2
+    items:
+      type: string
     type: array
   intermediate_node_key:
     description: A qnode key specifying the intermediate node.

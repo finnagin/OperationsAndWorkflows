@@ -622,6 +622,9 @@
                         "end_node_keys": {
                             "description": "A list of qnode keys specifying the ending nodes.",
                             "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
                             "example": [
                                 "n0",
                                 "n2"
