@@ -1,4 +1,4 @@
-# filter kgraph (continuous attribute)
+# filter kgraph (continuous kedge attribute)
 
 _subclass of [filter_kgraph](./filter_kgraph.md)_
 
@@ -6,7 +6,7 @@ This operation removes kgraph edges based on the value of a continuous edge attr
 
 ### examples
 
-- [input](../examples/fill_and_filter/messages/09_filtered_kgraph_attribute_input.json), [output](../examples/fill_and_filter/messages/10_filtered_kgraph_continuous_attribute_output.json)
+- [input](../examples/fill_and_filter/messages/09_filtered_kgraph_attribute_input.json), [output](../examples/fill_and_filter/messages/10_filtered_kgraph_continuous_kedge_attribute_output.json)
 
 ### input requirements
 

@@ -21,7 +21,7 @@
             "$ref": "#/$defs/OperationFilterKgraph"
         },
         {
-            "$ref": "#/$defs/OperationFilterKgraphContinuousAttribute"
+            "$ref": "#/$defs/OperationFilterKgraphContinuousKedgeAttribute"
         },
         {
             "$ref": "#/$defs/OperationFilterKgraphDiscreteKedgeAttribute"
@@ -228,13 +228,13 @@
             ],
             "additionalProperties": false
         },
-        "OperationFilterKgraphContinuousAttribute": {
+        "OperationFilterKgraphContinuousKedgeAttribute": {
             "type": "object",
             "properties": {
                 "id": {
                     "type": "string",
                     "enum": [
-                        "filter_kgraph_continuous_attribute"
+                        "filter_kgraph_continuous_kedge_attribute"
                     ]
                 },
                 "parameters": {
