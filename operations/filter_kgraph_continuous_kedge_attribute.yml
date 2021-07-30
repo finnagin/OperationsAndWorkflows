@@ -1,10 +1,10 @@
-id: filter_kgraph_continuous_attribute
+id: filter_kgraph_continuous_kedge_attribute
 subclass_of: filter_kgraph
-name: filter kgraph (continuous attribute)
+name: filter kgraph (continuous kedge attribute)
 description: This operation removes kgraph edges based on the value of a continuous edge attribute. Edges without the given attribute are left alone.
 examples:
 - input: fill_and_filter/messages/09_filtered_kgraph_attribute_input.json
-  output: fill_and_filter/messages/10_filtered_kgraph_continuous_attribute_output.json
+  output: fill_and_filter/messages/10_filtered_kgraph_continuous_kedge_attribute_output.json
   parameters:
     edge_attribute: normalized_google_distance 
     threshold: 0.3
