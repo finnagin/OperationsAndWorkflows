@@ -1,0 +1,37 @@
+id: filter_kgraph_discrete_knode_attribute
+subclass_of: filter_kgraph
+name: filter kgraph (discrete knode attribute)
+description: This operation removes kgraph nodes which have a discrete attribute containing the specified value. Node without the given attribute are left alone. Edges connecting to the removed nodes will also be removed.
+examples:
+- input: fill_and_filter/messages/13_filtered_kgraph_discrete_knode_attribute_input.json
+  output: fill_and_filter/messages/14_filtered_kgraph_discrete_knode_attribute_output.json
+  parameters:
+    node_attribute: molecule_type
+    remove_value: protein
+    qnode_keys: 
+      - drug
+input_requirements: []
+output_guarantees:
+- no nodes exist in the kgraph that have the specified attribute with the given value.
+allowed_changes:
+- remove knodes
+- remove kedges
+parameters:
+  type: object
+  properties:
+    node_attribute:
+      description: The name of the node attribute to filter on.
+      type: string
+      example: molecule_type
+    remove_value:
+      description: The value for which all edges containing this value in the specified edge_attribute should be removed.
+      example: small_molecule
+    qnode_keys:
+      description: This indicates if you only want to remove nodes corresponding to a specific list of qnode_keys to be removed. If not provided or empty, all nodes will be considered when filtering.
+      type: array
+      items:
+        type: string
+      example: [n01]
+  required:
+  - node_attribute
+  - remove_value
