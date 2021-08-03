@@ -1,0 +1,305 @@
+{
+    "message": {
+        "query_graph": {
+            "nodes": {
+                "drug": {
+                    "ids": null,
+                    "categories": [
+                        "biolink:ChemicalSubstance"
+                    ],
+                    "is_set": true,
+                },
+                "asthma": {
+                    "ids": [
+                        "MONDO:0004979"
+                    ]
+                },
+                "extra_qn_0": {
+                    "ids": null,
+                    "categories": [
+                        "biolink:Disease",
+                    ],
+                    "is_set": false,
+                    "constraints": null
+                }
+            },
+            "edges": {
+                "treats": {
+                    "subject": "drug",
+                    "object": "asthma",
+                    "predicates": [
+                        "biolink:treats"
+                    ],
+                },
+                "extra_qe_0": {
+                    "subject": "drug",
+                    "object": "extra_qn_0",
+                    "predicates": null,
+                }            }
+        },
+        "knowledge_graph": {
+            "nodes": {
+                "PUBCHEM.COMPOUND:4887": {
+                    "categories": [
+                        "biolink:ChemicalSubstance",
+                        "biolink:MolecularEntity",
+                        "biolink:BiologicalEntity",
+                        "biolink:NamedThing",
+                        "biolink:Entity"
+                    ],
+                    "name": "Pranlukast"
+                },
+                "MONDO:0004979": {
+                    "categories": [
+                        "biolink:Disease",
+                        "biolink:DiseaseOrPhenotypicFeature",
+                        "biolink:BiologicalEntity",
+                        "biolink:NamedThing",
+                        "biolink:Entity"
+                    ],
+                    "name": "asthma"
+                },
+                "PUBCHEM.COMPOUND:5282230": {
+                    "categories": [
+                        "biolink:ChemicalSubstance",
+                        "biolink:MolecularEntity",
+                        "biolink:BiologicalEntity",
+                        "biolink:NamedThing",
+                        "biolink:Entity"
+                    ],
+                    "name": "Tranilast",
+                },
+                "MONDO:0011786": {
+                    "categories": [
+                        "biolink:Disease",
+                        "biolink:DiseaseOrPhenotypicFeature",
+                        "biolink:BiologicalEntity",
+                        "biolink:NamedThing",
+                        "biolink:Entity"
+                    ],
+                    "name": "allergic rhinitis"
+                }
+            },
+            "edges": {
+                "2d4cbadbaa30": { 
+                    "subject": "PUBCHEM.COMPOUND:4887", 
+                    "object": "MONDO:0004979", 
+                    "predicate": "biolink:treats", 
+                }, 
+                "e16f7b93990b": { 
+                    "subject": "PUBCHEM.COMPOUND:5282230", 
+                    "object": "MONDO:0004979", 
+                    "predicate": "biolink:treats" 
+                },
+                "7761208737905403789": {
+                    "subject": "PUBCHEM.COMPOUND:4887",
+                    "object": "MONDO:0011786",
+                    "predicate": "biolink:treats"
+                },
+                "5195041632023215096": {
+                    "subject": "PUBCHEM.COMPOUND:5282230",
+                    "object": "MONDO:0011786",
+                    "predicate": "biolink:treats",
+                },
+            }
+        },
+        "results": [
+            {
+                "node_bindings": {
+                    "asthma": [
+                        {
+                            "id": "MONDO:0004979"
+                        }
+                    ],
+                    "drug": [
+                        {
+                            "id": "PUBCHEM.COMPOUND:4887",
+                            "attributes": [
+                                {
+                                    "original_attribute_name": "coalescence_method",
+                                    "attribute_type_id": "biolink:has_attribute",
+                                    "value": "property_enrichment",
+                                    "value_type_id": "EDAM:operation_0004"
+                                },
+                                {
+                                    "original_attribute_name": "p_value",
+                                    "attribute_type_id": "biolink:has_numeric_value",
+                                    "value": [
+                                        2.972825259060474e-06,
+                                        3.2071379695246066e-06,
+                                        5.5818170298164766e-06,
+                                        1.6316305052953154e-05
+                                    ],
+                                    "value_type_id": "EDAM:data_1669"
+                                },
+                                {
+                                    "original_attribute_name": "properties",
+                                    "attribute_type_id": "biolink:has_attribute",
+                                    "value": [
+                                        "Cytochrome P-450 CYP3A4 Substrates",
+                                        "Cytochrome P-450 CYP3A Substrates",
+                                        "Cytochrome P-450 Substrates",
+                                        "drugbank.investigational"
+                                    ],
+                                    "value_type_id": "EDAM:data_0006"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "PUBCHEM.COMPOUND:5282230",
+                            "attributes": [
+                                {
+                                    "original_attribute_name": "coalescence_method",
+                                    "attribute_type_id": "biolink:has_attribute",
+                                    "value": "property_enrichment",
+                                    "value_type_id": "EDAM:operation_0004"
+                                },
+                                {
+                                    "original_attribute_name": "p_value",
+                                    "attribute_type_id": "biolink:has_numeric_value",
+                                    "value": [
+                                        2.972825259060474e-06,
+                                        3.2071379695246066e-06,
+                                        5.5818170298164766e-06,
+                                        1.6316305052953154e-05
+                                    ],
+                                    "value_type_id": "EDAM:data_1669"
+                                },
+                                {
+                                    "original_attribute_name": "properties",
+                                    "attribute_type_id": "biolink:has_attribute",
+                                    "value": [
+                                        "Cytochrome P-450 CYP3A4 Substrates",
+                                        "Cytochrome P-450 CYP3A Substrates",
+                                        "Cytochrome P-450 Substrates",
+                                        "drugbank.investigational"
+                                    ],
+                                    "value_type_id": "EDAM:data_0006"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "edge_bindings": {
+                    "treats": [
+                        {
+                            "id": "e16f7b93990b"
+                        },
+                        {
+                            "id": "2d4cbadbaa30"
+                        }
+                    ]
+                },
+                "score": null
+            },
+            {
+                "node_bindings": {
+                    "asthma": [
+                        {
+                            "id": "MONDO:0004979"
+                        }
+                    ],
+                    "drug": [
+                        {
+                            "id": "PUBCHEM.COMPOUND:4887",
+                            "attributes": [
+                                {
+                                    "original_attribute_name": "coalescence_method",
+                                    "attribute_type_id": "biolink:has_attribute",
+                                    "value": "graph_enrichment",
+                                    "value_type_id": "EDAM:operation_0004"
+                                },
+                                {
+                                    "original_attribute_name": "p_value",
+                                    "attribute_type_id": "biolink:has_numeric_value",
+                                    "value": 3.939060126570317e-07,
+                                    "value_type_id": "EDAM:data_1669"
+                                },
+                                {
+                                    "original_attribute_name": "enriched_nodes",
+                                    "attribute_type_id": "biolink:has_attribute",
+                                    "value": [
+                                        "MONDO:0011786"
+                                    ],
+                                    "value_type_id": "EDAM:data_0006"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "PUBCHEM.COMPOUND:5282230",
+                            "attributes": [
+                                {
+                                    "original_attribute_name": "coalescence_method",
+                                    "attribute_type_id": "biolink:has_attribute",
+                                    "value": "graph_enrichment",
+                                    "value_type_id": "EDAM:operation_0004"
+                                },
+                                {
+                                    "original_attribute_name": "p_value",
+                                    "attribute_type_id": "biolink:has_numeric_value",
+                                    "value": 3.939060126570317e-07,
+                                    "value_type_id": "EDAM:data_1669"
+                                },
+                                {
+                                    "original_attribute_name": "enriched_nodes",
+                                    "attribute_type_id": "biolink:has_attribute",
+                                    "value": [
+                                        "MONDO:0011786"
+                                    ],
+                                    "value_type_id": "EDAM:data_0006"
+                                }
+                            ]
+
+                        }
+                    ],
+                    "extra_qn_0": [
+                        {
+                            "id": "MONDO:0011786"
+                        }
+                    ]
+                },
+                "edge_bindings": {
+                    "treats": [
+                        {
+                            "id": "e16f7b93990b"
+                        },
+                        {
+                            "id": "2d4cbadbaa30"
+                        }
+                    ],
+                    "extra_qe_0": [
+                        {
+                            "id": "5195041632023215096"
+                        },
+                        {
+                            "id": "7761208737905403789"
+                        }
+                    ]
+                },
+                "score": null
+            },
+            {
+                "node_bindings": {
+                    "asthma": [
+                        {
+                            "id": "MONDO:0004979"
+                        }
+                    ],
+                    "drug": [
+                        {
+                            "id": "PUBCHEM.COMPOUND:4887"
+                        }
+                    ]
+                },
+                "edge_bindings": {
+                    "treats": [
+                        {
+                            "id": "2d4cbadbaa30"
+                        }
+                    ]
+                },
+                "score": null
+            }
+        ]
+    }
+}

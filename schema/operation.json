@@ -9,10 +9,16 @@
             "$ref": "#/$defs/OperationAnnotateEdges"
         },
         {
+            "$ref": "#/$defs/OperationAnnotateNodes"
+        },
+        {
             "$ref": "#/$defs/OperationBind"
         },
         {
             "$ref": "#/$defs/OperationCompleteResults"
+        },
+        {
+            "$ref": "#/$defs/OperationEnrichResults"
         },
         {
             "$ref": "#/$defs/OperationFill"
@@ -21,7 +27,7 @@
             "$ref": "#/$defs/OperationFilterKgraph"
         },
         {
-            "$ref": "#/$defs/OperationFilterKgraphContinuousAttribute"
+            "$ref": "#/$defs/OperationFilterKgraphContinuousKedgeAttribute"
         },
         {
             "$ref": "#/$defs/OperationFilterKgraphDiscreteKedgeAttribute"
@@ -131,6 +137,36 @@
             ],
             "additionalProperties": false
         },
+        "OperationAnnotateNodes": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "annotate_nodes"
+                    ]
+                },
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "attributes": {
+                            "description": "A list of attributes to annotate the nodes with. If not included then all available data will be annotated.",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "example": [
+                                "pmids"
+                            ]
+                        }
+                    }
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
         "OperationBind": {
             "type": "object",
             "properties": {
@@ -157,6 +193,44 @@
                     ]
                 },
                 "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationEnrichResults": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "enrich_results"
+                    ]
+                },
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "pvalue_threshold": {
+                            "description": "The cutoff p-value for enrichment.",
+                            "type": "number",
+                            "example": "1e-7",
+                            "minimum": 0,
+                            "maximum": 1,
+                            "default": "1e-6"
+                        },
+                        "qnode_keys": {
+                            "description": "If specified, then only knodes bound to these qnodes will be examined for enrichment and combination.",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "example": [
+                                "n01"
+                            ]
+                        }
+                    }
+                }
             },
             "required": [
                 "id"
@@ -231,13 +305,13 @@
             ],
             "additionalProperties": false
         },
-        "OperationFilterKgraphContinuousAttribute": {
+        "OperationFilterKgraphContinuousKedgeAttribute": {
             "type": "object",
             "properties": {
                 "id": {
                     "type": "string",
                     "enum": [
-                        "filter_kgraph_continuous_attribute"
+                        "filter_kgraph_continuous_kedge_attribute"
                     ]
                 },
                 "parameters": {

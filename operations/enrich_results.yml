@@ -1,0 +1,32 @@
+id: enrich_results
+name: enrich_results
+description: Create new results by applying enrichment analysis to existing results.  In particular, combines results by transforming a qnode into a set, formed of knodes that share a property or relation more often than expected by chance.
+unique: true
+examples:
+- input: enrich/messages/01_input_enrich_results.json
+  output: enrich/messages/02_output_enrich_results.json
+input_requirements: []
+output_guarantees: []
+allowed_changes:
+- add qnodes
+- add qedges
+- modify qnodes
+- add knodes
+- add kedges
+- add results
+parameters:
+  type: object
+  properties:
+    pvalue_threshold:
+      description: The cutoff p-value for enrichment.
+      type: number
+      example: 1e-7 
+      minimum: 0
+      maximum: 1
+      default: 1e-6
+    qnode_keys:
+      description: If specified, then only knodes bound to these qnodes will be examined for enrichment and combination. 
+      type: array
+      items:
+        type: string
+      example: [n01]
