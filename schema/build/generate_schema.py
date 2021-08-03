@@ -59,7 +59,7 @@ if __name__ == "__main__":
     ])
     operation = {
         "$schema": "https://json-schema.org/draft-07/schema",
-        "$id": "http://standards.ncats.io/operation.json",
+        "$id": "http://standards.ncats.io/operation/1.0.0/schema",
         "anyOf": [
             {
                 "$ref": f"#/$defs/{op_to_component(op)}"
