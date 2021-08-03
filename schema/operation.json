@@ -210,7 +210,7 @@
                     "properties": {
                         "pvalue_threshold": {
                             "description": "The cutoff p-value for enrichment.",
-                            "type": "float",
+                            "type": "number",
                             "example": "1e-7",
                             "minimum": 0,
                             "maximum": 1,
@@ -219,10 +219,12 @@
                         "qnode_keys": {
                             "description": "If specified, then only knodes bound to these qnodes will be examined for enrichment and combination.",
                             "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
                             "example": [
                                 "n01"
-                            ],
-                            "default": []
+                            ]
                         }
                     }
                 }

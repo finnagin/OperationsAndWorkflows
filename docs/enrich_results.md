@@ -17,9 +17,9 @@ None
 ### allowed changes
 
 - add qnodes
-- add qnodes
+- add qedges
 - modify qnodes
-- add kedges
+- add knodes
 - add kedges
 - add results
 
@@ -33,13 +33,14 @@ properties:
     example: 1e-7
     maximum: 1
     minimum: 0
-    type: float
+    type: number
   qnode_keys:
-    default: []
     description: If specified, then only knodes bound to these qnodes will be examined
       for enrichment and combination.
     example:
     - n01
+    items:
+      type: string
     type: array
 type: object
 ```
