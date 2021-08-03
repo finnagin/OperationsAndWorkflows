@@ -27,6 +27,9 @@
             "$ref": "#/$defs/OperationFilterKgraphDiscreteKedgeAttribute"
         },
         {
+            "$ref": "#/$defs/OperationFilterKgraphDiscreteKnodeAttribute"
+        },
+        {
             "$ref": "#/$defs/OperationFilterKgraphOrphans"
         },
         {
@@ -338,6 +341,50 @@
                     },
                     "required": [
                         "edge_attribute",
+                        "remove_value"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "parameters"
+            ],
+            "additionalProperties": false
+        },
+        "OperationFilterKgraphDiscreteKnodeAttribute": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "filter_kgraph_discrete_knode_attribute"
+                    ]
+                },
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "node_attribute": {
+                            "description": "The name of the node attribute to filter on.",
+                            "type": "string",
+                            "example": "molecule_type"
+                        },
+                        "remove_value": {
+                            "description": "The value for which all edges containing this value in the specified edge_attribute should be removed.",
+                            "example": "small_molecule"
+                        },
+                        "qnode_keys": {
+                            "description": "This indicates if you only want to remove nodes corresponding to a specific list of qnode_keys to be removed. If not provided or empty, all nodes will be considered when filtering.",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "example": [
+                                "n01"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "node_attribute",
                         "remove_value"
                     ]
                 }
