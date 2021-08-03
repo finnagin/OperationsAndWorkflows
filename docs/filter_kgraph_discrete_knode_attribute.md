@@ -2,7 +2,7 @@
 
 _subclass of [filter_kgraph](./filter_kgraph.md)_
 
-This operation removes kgraph nodes which have a discrete attribute containing the specified value. Node without the given attribute are left alone. Edges connecting to the removed nodes will also be removed.
+This operation removes kgraph nodes which have a discrete attribute containing the specified value. In TRAPI 1.1+ this will look in the `attribute_type_id` and `original_attribute_name` attribute fields for the attribute name. Node without the given attribute are left alone. Edges connecting to the removed nodes will also be removed.
 
 ### examples
 
