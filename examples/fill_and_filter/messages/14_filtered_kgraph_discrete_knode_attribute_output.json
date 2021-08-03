@@ -1,0 +1,48 @@
+{
+    "query_graph": {
+        "nodes": {
+            "type-2 diabetes": {
+                "id": "MONDO:0005148"
+            },
+            "drug": {
+                "category": "biolink:ChemicalSubstance"
+            }
+        },
+        "edges": {
+            "treats": {
+                "subject": "drug",
+                "predicate": "biolink:treats",
+                "object": "type-2 diabetes"
+            }
+        }
+    },
+    "knowledge_graph": {
+        "nodes": {
+            "MONDO:0005148": {"name": "type-2 diabetes"},
+            "CHEBI:5441": {
+                "name": "glyburide",
+                "category": "biolink:ChemicalSubstance",
+                "attributes": [
+                    {
+                      "name": "molecule_type",
+                      "value": "small_molecule"
+                    }
+                ]
+            }
+        },
+        "edges": {
+            "kdy789ng": {
+                "subject": "CHEBI:5441",
+                "predicate": "biolink:treats",
+                "object": "MONDO:0005148",
+                "attributes": [
+                    {
+                      "name": "provided_by",
+                      "value": "infores:semmeddb"
+                    }
+                ]
+            }
+        }
+    },
+    "results": []
+}
