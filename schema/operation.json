@@ -57,6 +57,9 @@
             "$ref": "#/$defs/OperationLookup"
         },
         {
+            "$ref": "#/$defs/OperationLookupAndScore"
+        },
+        {
             "$ref": "#/$defs/OperationOverlay"
         },
         {
@@ -746,6 +749,22 @@
                     "type": "string",
                     "enum": [
                         "lookup"
+                    ]
+                },
+                "parameters": {}
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+        },
+        "OperationLookupAndScore": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "enum": [
+                        "lookup_and_score"
                     ]
                 },
                 "parameters": {}
