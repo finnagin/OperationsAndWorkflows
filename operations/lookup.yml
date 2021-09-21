@@ -2,6 +2,10 @@ id: lookup
 name: lookup
 description: This operation adds knodes/kedges and (complete) results. It is equivalent to the workflow fill + bind + complete_results.
 unique: true
+composite_operation:
+- fill
+- bind
+- complete_results
 examples:
 - input: fill_and_bind/messages/01_qgraph.json
   output: fill_and_bind/messages/04_complete_results.json
