@@ -48,6 +48,12 @@
         "unique": {
             "type": "boolean"
         },
+        "composite_operation": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
         "subclass_of": {
             "type": "string"
         }
