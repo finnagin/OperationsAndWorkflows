@@ -2,6 +2,9 @@ id: lookup_and_score
 name: lookup_and_score
 description: This operation adds knodes/kedges, (complete) results, and scores (to the results). It is equivalent to the workflow fill + bind + complete_results + score.
 unique: true
+composite_operation:
+- lookup
+- score
 examples:
 - input: fill_and_bind/messages/01_qgraph.json
   output: fill_and_bind/messages/05_scored_results.json
