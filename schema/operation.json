@@ -96,6 +96,7 @@
     "$defs": {
         "OperationAnnotate": {
             "type": "object",
+            "description": "This operation adds attributes to knowledge graph elements.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -112,6 +113,7 @@
         },
         "OperationAnnotateEdges": {
             "type": "object",
+            "description": "This operation adds attributes to knowledge graph edges.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -142,6 +144,7 @@
         },
         "OperationAnnotateNodes": {
             "type": "object",
+            "description": "This operation adds attributes to knowledge graph nodes.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -172,6 +175,7 @@
         },
         "OperationBind": {
             "type": "object",
+            "description": "This operation adds results binding kgraph elements to qgraph elements.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -188,6 +192,7 @@
         },
         "OperationCompleteResults": {
             "type": "object",
+            "description": "This operation combines partial results into complete results.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -204,6 +209,7 @@
         },
         "OperationEnrichResults": {
             "type": "object",
+            "description": "Create new results by applying enrichment analysis to existing results.  In particular, combines results by transforming a qnode into a set, formed of knodes that share a property or relation more often than expected by chance.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -242,6 +248,7 @@
         },
         "OperationFill": {
             "type": "object",
+            "description": "This operation adds knodes and kedges.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -294,6 +301,7 @@
         },
         "OperationFilterKgraph": {
             "type": "object",
+            "description": "This operation removes kgraph elements (nodes and/or edges).",
             "properties": {
                 "id": {
                     "type": "string",
@@ -310,6 +318,7 @@
         },
         "OperationFilterKgraphContinuousKedgeAttribute": {
             "type": "object",
+            "description": "This operation removes kgraph edges based on the value of a continuous edge attribute. Edges without the given attribute are left alone.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -375,6 +384,7 @@
         },
         "OperationFilterKgraphDiscreteKedgeAttribute": {
             "type": "object",
+            "description": "This operation removes kgraph edges which have a discrete attribute containing the specified value. Edges without the given attribute are left alone.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -430,6 +440,7 @@
         },
         "OperationFilterKgraphDiscreteKnodeAttribute": {
             "type": "object",
+            "description": "This operation removes kgraph nodes which have a discrete attribute containing the specified value. In TRAPI 1.1+ this will look in the `attribute_type_id` and `original_attribute_name` attribute fields for the attribute name. Node without the given attribute are left alone. Edges connecting to the removed nodes will also be removed.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -474,6 +485,7 @@
         },
         "OperationFilterKgraphOrphans": {
             "type": "object",
+            "description": "This operation removes kgraph elements that are not referenced by any results.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -490,6 +502,7 @@
         },
         "OperationFilterKgraphPercentile": {
             "type": "object",
+            "description": "This operation removes kgraph edges that have attribute values are below/above the given percentile.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -557,6 +570,7 @@
         },
         "OperationFilterKgraphStdDev": {
             "type": "object",
+            "description": "This operation removes kgraph edges that have attribute values are below/above the mean +/- n standard deviations.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -632,6 +646,7 @@
         },
         "OperationFilterKgraphTopN": {
             "type": "object",
+            "description": "This operation removes kgraph edges that have attribute values are below/above the top/bottom n values.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -698,6 +713,7 @@
         },
         "OperationFilterResults": {
             "type": "object",
+            "description": "This operation allows the TRAPI server to remove elements from the list of results.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -714,6 +730,7 @@
         },
         "OperationFilterResultsTopN": {
             "type": "object",
+            "description": "This operation truncates the results to at most `max_results` that appear in the TRAPI JSON message.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -744,6 +761,7 @@
         },
         "OperationLookup": {
             "type": "object",
+            "description": "This operation adds knodes/kedges and (complete) results. It is equivalent to the workflow fill + bind + complete_results.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -760,6 +778,7 @@
         },
         "OperationLookupAndScore": {
             "type": "object",
+            "description": "This operation adds knodes/kedges, (complete) results, and scores (to the results). It is equivalent to the workflow fill + bind + complete_results + score.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -776,6 +795,7 @@
         },
         "OperationOverlay": {
             "type": "object",
+            "description": "This operation adds additional qedges and/or kedges and/or result edge bindings.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -792,6 +812,7 @@
         },
         "OperationOverlayComputeJaccard": {
             "type": "object",
+            "description": "This operation computes the Jaccard Similarity which measures how many intermediate_node_key nodes are directly connected to both the end_node_keys nodes for all pairs of nodes with corresponding keys. It will then add edges to the knowledge graph along with edge attributes (with the property name jaccard_index) between each start_node_key and object_node_key. A query graph edge will also be added using the key specified by virtual_relation_label. This is used for purposes such as \"find me all drugs (start_node_key) that have many proteins (intermediate_node_key) in common with this disease (end_node_key).\" This can be used for downstream filtering to concentrate on relevant bioentities.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -839,6 +860,7 @@
         },
         "OperationOverlayComputeNgd": {
             "type": "object",
+            "description": "This operation computes the normalized Google distance (co-occurrence frequency) in PubMed abstracts and adds virual edges between qnodes AND/OR knodes AND/OR results edge bindings. If no publications are found infinity is returned.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -880,6 +902,7 @@
         },
         "OperationOverlayConnectKnodes": {
             "type": "object",
+            "description": "Given a TRAPI message, create new kedges between existing knodes.  These may be created using arbitrary methods or data sources, though provenance should be attached to the new kedges.   Each new kedge is also added to all results containing node bindings to both the subject and object knodes.  This may be independent of any qedge connections, i.e. kedges can be created between any nodes in the kgraph.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -896,6 +919,7 @@
         },
         "OperationOverlayFisherExactTest": {
             "type": "object",
+            "description": "Fisher exact test computes the Fisher's Exact Test p-values of the connection between a list of given nodes with specified query id (subject_qnode_key e.g. n01) to their adjacent nodes with specified query id (object_qnode_key e.g. n02) in the message knowledge graph. This information is then added as an edge attribute to a virtual edge which is then added to the query graph and knowledge graph. It can also allow you to filter out the user-defined insignificance of connections based on a specified p-value cutoff or return the top n smallest p-value of connections and only add their corresponding virtual edges to the knowledge graph.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -942,6 +966,7 @@
         },
         "OperationRestate": {
             "type": "object",
+            "description": "This operation modifies the query graph.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -958,6 +983,7 @@
         },
         "OperationScore": {
             "type": "object",
+            "description": "This operation adds scores to results.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -974,6 +1000,7 @@
         },
         "OperationSortResults": {
             "type": "object",
+            "description": "This operation allows the TRAPI server to sort the elements of the list of results.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -990,6 +1017,7 @@
         },
         "OperationSortResultsEdgeAttribute": {
             "type": "object",
+            "description": "This operation sorts the results by the given edge attribute. If in ascending order, the minimum value of the results edges with the given attribute will be taken while the maximum will be taken for descending order. If a result has no edges with the given attribute, it will be listed last. If `max_results` is given, it truncates the results to at most the given value.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -1038,6 +1066,7 @@
         },
         "OperationSortResultsNodeAttribute": {
             "type": "object",
+            "description": "This operation sorts the results by the given node attribute. If in ascending order, the minimum value of the results nodes with the given attribute will be taken while the maximum will be taken for descending order. If a result has no nodes with the given attribute, it will be listed last. If `max_results` is given, it truncates the results to at most the given value.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -1086,6 +1115,7 @@
         },
         "OperationSortResultsScore": {
             "type": "object",
+            "description": "This operation sorts the results by the result score. If `max_results` is given, it truncates the results to at most the given value.",
             "properties": {
                 "id": {
                     "type": "string",

@@ -22,6 +22,7 @@ def generate_component(op: str):
 
     return {
         "type": "object",
+        "description": data.get("description", ""),
         "properties": {
             "id": {
                 "type": "string",
