@@ -21,6 +21,12 @@ parameters:
         description: List of knowledge providers/sources that may be used to provide knowledge.
         example: ['icees']
         minLength: 1
+      qedge_keys:
+        type: array
+        items:
+          type: string
+        description: A list of qedge keys. If included only edges corresponding to the given qedge keys, as well as their connected nodes, will be filled. If not included all edges will be filled.
+        example: ['e00']
     additionalProperties: false
   - properties:
       denylist:
@@ -30,4 +36,10 @@ parameters:
         description: List of knowledge providers/sources that may NOT be used to provide knowledge.
         example: ['ctd']
         minLength: 1
+      qedge_keys:
+        type: array
+        items:
+          type: string
+        description: A list of qedge keys. If included only edges corresponding to the given qedge keys, as well as their connected nodes, will be filled. If not included all edges will be filled.
+        example: ['e00']
     additionalProperties: false
