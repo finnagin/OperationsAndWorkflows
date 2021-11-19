@@ -34,6 +34,15 @@ oneOf:
         type: string
       minLength: 1
       type: array
+    qedge_keys:
+      description: A list of qedge keys. If included only edges corresponding to the
+        given qedge keys, as well as their connected nodes, will be filled. If not
+        included all edges will be filled.
+      example:
+      - e00
+      items:
+        type: string
+      type: array
 - additionalProperties: false
   properties:
     denylist:
@@ -44,6 +53,15 @@ oneOf:
       items:
         type: string
       minLength: 1
+      type: array
+    qedge_keys:
+      description: A list of qedge keys. If included only edges corresponding to the
+        given qedge keys, as well as their connected nodes, will be filled. If not
+        included all edges will be filled.
+      example:
+      - e00
+      items:
+        type: string
       type: array
 type: object
 ```

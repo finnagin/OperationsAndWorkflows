@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft-07/schema",
-    "$id": "https://standards.ncats.io/operation/1.0.1/schema",
+    "$id": "https://standards.ncats.io/operation/1.1.0/schema",
     "anyOf": [
         {
             "$ref": "#/$defs/OperationAnnotate"
@@ -271,6 +271,16 @@
                                         "icees"
                                     ],
                                     "minLength": 1
+                                },
+                                "qedge_keys": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "description": "A list of qedge keys. If included only edges corresponding to the given qedge keys, as well as their connected nodes, will be filled. If not included all edges will be filled.",
+                                    "example": [
+                                        "e00"
+                                    ]
                                 }
                             },
                             "additionalProperties": false
@@ -287,6 +297,16 @@
                                         "ctd"
                                     ],
                                     "minLength": 1
+                                },
+                                "qedge_keys": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "description": "A list of qedge keys. If included only edges corresponding to the given qedge keys, as well as their connected nodes, will be filled. If not included all edges will be filled.",
+                                    "example": [
+                                        "e00"
+                                    ]
                                 }
                             },
                             "additionalProperties": false
