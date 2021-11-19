@@ -1,8 +1,8 @@
 {
     "$schema": "https://json-schema.org/draft-07/schema",
-    "$id": "http://standards.ncats.io/workflow/1.0.1/schema",
+    "$id": "https://standards.ncats.io/workflow/1.0.1/schema",
     "type": "array",
     "items": {
-        "$ref": "http://standards.ncats.io/operation/1.0.1/schema"
+        "$ref": "https://standards.ncats.io/operation/1.0.1/schema"
     }
 }

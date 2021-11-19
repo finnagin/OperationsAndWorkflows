@@ -78,7 +78,7 @@ if __name__ == "__main__":
     ])
     operation = {
         "$schema": "https://json-schema.org/draft-07/schema",
-        "$id": f"http://standards.ncats.io/operation/{version}/schema",
+        "$id": f"https://standards.ncats.io/operation/{version}/schema",
         "anyOf": [
             {
                 "$ref": f"#/$defs/{op_to_component(op)}"
@@ -94,10 +94,10 @@ if __name__ == "__main__":
         json.dump(operation, stream, indent=4)
     workflow = {
         "$schema": "https://json-schema.org/draft-07/schema",
-        "$id": f"http://standards.ncats.io/workflow/{version}/schema",
+        "$id": f"https://standards.ncats.io/workflow/{version}/schema",
         "type": "array",
         "items": {
-            "$ref": f"http://standards.ncats.io/operation/{version}/schema"
+            "$ref": f"https://standards.ncats.io/operation/{version}/schema"
         }
     }
     with open(SCHEMA_DIR / "workflow.json", "w") as stream:
