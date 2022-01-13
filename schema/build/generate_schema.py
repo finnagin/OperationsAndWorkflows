@@ -31,6 +31,7 @@ def generate_component(op: str):
                     op,
                 ],
             },
+            "unique": (True if data.get("unique") else False),
             "parameters": data["parameters"],
         },
         "required": [

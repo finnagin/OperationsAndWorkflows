@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft-07/schema",
-    "$id": "https://standards.ncats.io/operation/1.1.0/schema",
+    "$id": "https://standards.ncats.io/operation/1.2.0/schema",
     "anyOf": [
         {
             "$ref": "#/$defs/OperationAnnotate"
@@ -104,6 +104,7 @@
                         "annotate"
                     ]
                 },
+                "unique": true,
                 "parameters": {}
             },
             "required": [
@@ -121,6 +122,7 @@
                         "annotate_edges"
                     ]
                 },
+                "unique": true,
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -152,6 +154,7 @@
                         "annotate_nodes"
                     ]
                 },
+                "unique": true,
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -183,6 +186,7 @@
                         "bind"
                     ]
                 },
+                "unique": false,
                 "parameters": {}
             },
             "required": [
@@ -200,6 +204,7 @@
                         "complete_results"
                     ]
                 },
+                "unique": false,
                 "parameters": {}
             },
             "required": [
@@ -217,6 +222,7 @@
                         "enrich_results"
                     ]
                 },
+                "unique": true,
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -256,6 +262,7 @@
                         "fill"
                     ]
                 },
+                "unique": true,
                 "parameters": {
                     "type": "object",
                     "oneOf": [
@@ -329,6 +336,7 @@
                         "filter_kgraph"
                     ]
                 },
+                "unique": false,
                 "parameters": {}
             },
             "required": [
@@ -346,6 +354,7 @@
                         "filter_kgraph_continuous_kedge_attribute"
                     ]
                 },
+                "unique": false,
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -412,6 +421,7 @@
                         "filter_kgraph_discrete_kedge_attribute"
                     ]
                 },
+                "unique": false,
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -468,6 +478,7 @@
                         "filter_kgraph_discrete_knode_attribute"
                     ]
                 },
+                "unique": false,
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -513,6 +524,7 @@
                         "filter_kgraph_orphans"
                     ]
                 },
+                "unique": false,
                 "parameters": {}
             },
             "required": [
@@ -530,6 +542,7 @@
                         "filter_kgraph_percentile"
                     ]
                 },
+                "unique": false,
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -598,6 +611,7 @@
                         "filter_kgraph_std_dev"
                     ]
                 },
+                "unique": false,
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -674,6 +688,7 @@
                         "filter_kgraph_top_n"
                     ]
                 },
+                "unique": false,
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -741,6 +756,7 @@
                         "filter_results"
                     ]
                 },
+                "unique": false,
                 "parameters": {}
             },
             "required": [
@@ -758,6 +774,7 @@
                         "filter_results_top_n"
                     ]
                 },
+                "unique": false,
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -789,6 +806,7 @@
                         "lookup"
                     ]
                 },
+                "unique": true,
                 "parameters": {}
             },
             "required": [
@@ -806,6 +824,7 @@
                         "lookup_and_score"
                     ]
                 },
+                "unique": true,
                 "parameters": {}
             },
             "required": [
@@ -823,6 +842,7 @@
                         "overlay"
                     ]
                 },
+                "unique": false,
                 "parameters": {}
             },
             "required": [
@@ -840,6 +860,7 @@
                         "overlay_compute_jaccard"
                     ]
                 },
+                "unique": false,
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -888,6 +909,7 @@
                         "overlay_compute_ngd"
                     ]
                 },
+                "unique": false,
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -930,6 +952,7 @@
                         "overlay_connect_knodes"
                     ]
                 },
+                "unique": false,
                 "parameters": {}
             },
             "required": [
@@ -947,6 +970,7 @@
                         "overlay_fisher_exact_test"
                     ]
                 },
+                "unique": false,
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -994,6 +1018,7 @@
                         "restate"
                     ]
                 },
+                "unique": true,
                 "parameters": {}
             },
             "required": [
@@ -1011,6 +1036,7 @@
                         "score"
                     ]
                 },
+                "unique": true,
                 "parameters": {}
             },
             "required": [
@@ -1028,6 +1054,7 @@
                         "sort_results"
                     ]
                 },
+                "unique": false,
                 "parameters": {}
             },
             "required": [
@@ -1045,6 +1072,7 @@
                         "sort_results_edge_attribute"
                     ]
                 },
+                "unique": false,
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -1094,6 +1122,7 @@
                         "sort_results_node_attribute"
                     ]
                 },
+                "unique": false,
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -1143,6 +1172,7 @@
                         "sort_results_score"
                     ]
                 },
+                "unique": false,
                 "parameters": {
                     "type": "object",
                     "properties": {
