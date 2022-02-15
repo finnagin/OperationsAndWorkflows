@@ -1,0 +1,13 @@
+id: weight_edges
+name: weight edges
+description: This operation adds weights to edges. !!TODO:NEED TO DECIDE WHERE THESE WEIGHTS GO. (edge bindings or in the kg somewhere?)!!
+unique: true
+examples:
+- input: weight/messages/01_knowledge.json
+  output: weight/messages/02_weighted_edges.json
+input_requirements: []
+output_guarantees: []
+allowed_changes:
+- add attributes to kedges
+- add attributes to edge bindings
+parameters: {}
