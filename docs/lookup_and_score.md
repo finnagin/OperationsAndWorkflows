@@ -1,6 +1,6 @@
 # lookup_and_score
 
-This operation adds knodes/kedges, (complete) results, and scores (to the results). It is equivalent to the workflow fill + bind + complete_results + score. Implementations of this operation are _unique_; their behavior is not fully-specified by the operation parameters.
+This operation adds knodes/kedges, (complete) results, and scores (to the results). It is equivalent to the workflow fill + bind + complete_results + score. Any constraints specified in the TRAPI must be respected. Implementations of this operation are _unique_; their behavior is not fully-specified by the operation parameters.
 
 ### examples
 

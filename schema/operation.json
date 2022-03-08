@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft-07/schema",
-    "$id": "https://standards.ncats.io/operation/1.2.0/schema",
+    "$id": "https://standards.ncats.io/operation/1.3.0/schema",
     "anyOf": [
         {
             "$ref": "#/$defs/OperationAnnotate"
@@ -254,7 +254,7 @@
         },
         "OperationFill": {
             "type": "object",
-            "description": "This operation adds knodes and kedges.",
+            "description": "This operation adds knodes and kedges. Any constraints specified in the TRAPI must be respected.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -798,7 +798,7 @@
         },
         "OperationLookup": {
             "type": "object",
-            "description": "This operation adds knodes/kedges and (complete) results. It is equivalent to the workflow fill + bind + complete_results.",
+            "description": "This operation adds knodes/kedges and (complete) results. It is equivalent to the workflow fill + bind + complete_results. Any constraints specified in the TRAPI must be respected.",
             "properties": {
                 "id": {
                     "type": "string",
@@ -816,7 +816,7 @@
         },
         "OperationLookupAndScore": {
             "type": "object",
-            "description": "This operation adds knodes/kedges, (complete) results, and scores (to the results). It is equivalent to the workflow fill + bind + complete_results + score.",
+            "description": "This operation adds knodes/kedges, (complete) results, and scores (to the results). It is equivalent to the workflow fill + bind + complete_results + score. Any constraints specified in the TRAPI must be respected.",
             "properties": {
                 "id": {
                     "type": "string",

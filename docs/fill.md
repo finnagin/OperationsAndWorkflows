@@ -1,6 +1,6 @@
 # fill
 
-This operation adds knodes and kedges. Implementations of this operation are _unique_; their behavior is not fully-specified by the operation parameters.
+This operation adds knodes and kedges. Any constraints specified in the TRAPI must be respected. Implementations of this operation are _unique_; their behavior is not fully-specified by the operation parameters.
 
 ### examples
 
