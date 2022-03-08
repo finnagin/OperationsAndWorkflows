@@ -1,6 +1,6 @@
 id: fill
 name: fill
-description: This operation adds knodes and kedges.
+description: This operation adds knodes and kedges. Any constraints specified in the TRAPI must be respected.
 unique: true
 examples:
 - input: fill_and_bind/messages/01_qgraph.json
