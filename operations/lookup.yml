@@ -1,6 +1,6 @@
 id: lookup
 name: lookup
-description: This operation adds knodes/kedges and (complete) results. It is equivalent to the workflow fill + bind + complete_results.
+description: This operation adds knodes/kedges and (complete) results. It is equivalent to the workflow fill + bind + complete_results. Any constraints specified in the TRAPI must be respected.
 unique: true
 composite_operation:
 - fill
