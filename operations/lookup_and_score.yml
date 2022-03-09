@@ -1,6 +1,6 @@
 id: lookup_and_score
 name: lookup_and_score
-description: This operation adds knodes/kedges, (complete) results, and scores (to the results). It is equivalent to the workflow fill + bind + complete_results + score. Any constraints specified in the TRAPI must be respected.
+description: This operation adds knodes/kedges, (complete) results, and scores (to the results). It is equivalent to the workflow fill + bind + complete_results + score. Any constraints attached to QNodes and QEdges specified in the TRAPI must be respected.
 unique: true
 composite_operation:
 - lookup
